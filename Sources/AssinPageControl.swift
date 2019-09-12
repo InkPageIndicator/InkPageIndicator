@@ -147,7 +147,6 @@ public enum DotType {
             animationStartDate = Date()
             return
         }
-        print("!!!!!!! asddsa")
     }
     
     private func updateDots() {
