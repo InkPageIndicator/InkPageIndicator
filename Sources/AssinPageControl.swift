@@ -201,6 +201,15 @@ public protocol AssinPageControlPageTransitionDelegate: class {
             numberOfPages > 1 else {
                 return
         }
+        let maxX = (from.frame.width / 2) + CGFloat(spacing / 2)
+        let controlX = CGFloat(progress) * maxX
+        
+        UIGraphicsBeginImageContextWithOptions(from.frame.size, false, 0.0)
+        if let _ = UIGraphicsGetCurrentContext() {
+            from.path = UIBeizerPathProvider.instance.inkPage(frame: from.frame, controlX: controlX).cgPath
+            from.fillColor = pageIndicatorTintColor.cgColor
+            UIGraphicsEndImageContext()
+        }
     }
 }
 
@@ -223,15 +232,22 @@ extension AssinPageControl: AssinPageControlPageTransitionDelegate {
     }
 
     public func beginAnimation(from: Int, to: Int) {
-        
-        if let leftFrame = self.dots[safe: from]?.layer.frame {
-            fromAnimationLayer = CAShapeLayer()
-            fromAnimationLayer?.path = UIBeizerPathProvider.instance.inkPage(frame: leftFrame, controlX: 0, spacing: 20).cgPath
+
+        if let leftFrame = self.dots[safe: from]?.layer.frame,
+            let rightFrame = self.dots[safe: to]?.layer.frame {
+            let from = CAShapeLayer()
+            from.frame = leftFrame
+            fromAnimationLayer = from
+            
+            self.layer.addSublayer(from)
+            
+            
+            toAnimationLayer = CAShapeLayer()
+            toAnimationLayer?.frame = rightFrame
+
+            displayLink?.invalidate()
+            displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))
+            displayLink?.add(to: .main, forMode: .common)
         }
-        
-        toAnimationLayer = CAShapeLayer()
-        displayLink?.invalidate()
-        displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))
-        displayLink?.add(to: .main, forMode: .common)
     }
 }
