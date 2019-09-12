@@ -10,4 +10,5 @@ import Foundation
 
  @objc protocol UIPageContarolDelegate: class {
     @objc optional func pageControl(curPage: Int)
+    @objc optional func pageControl(progress: Double)
 }

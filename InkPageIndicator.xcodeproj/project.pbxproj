@@ -27,6 +27,8 @@
 		BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */; };
 		BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3F2329CF13009AA076 /* Logger.swift */; };
 		BD3F0B462329DC1D009AA076 /* UIPageContarolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */; };
+		BDC5C62B232A70F9003B2C76 /* FunctionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */; };
+		BDC5C62D232A745D003B2C76 /* AssinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5C62C232A745D003B2C76 /* AssinError.swift */; };
 		BDC80239232A0B3B00BEF13C /* CenterLayoutArranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */; };
 		BDC8023D232A0C7700BEF13C /* CenterLayoutArrangerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */; };
 		BDC80240232A0DBE00BEF13C /* CGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023E232A0DAE00BEF13C /* CGUtils.swift */; };
@@ -99,6 +101,8 @@
 		BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Dot.swift"; sourceTree = "<group>"; };
 		BD3F0B3F2329CF13009AA076 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BD3F0B422329D9C2009AA076 /* InkPagePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = InkPagePlayGround.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTool.swift; sourceTree = "<group>"; };
+		BDC5C62C232A745D003B2C76 /* AssinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssinError.swift; sourceTree = "<group>"; };
 		BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutArranger.swift; sourceTree = "<group>"; };
 		BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutArrangerTest.swift; sourceTree = "<group>"; };
 		BDC8023E232A0DAE00BEF13C /* CGUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGUtils.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				3D9C42A122745900000A6585 /* AssinPageControl.swift */,
 				BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */,
 				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
+				BDC5C62C232A745D003B2C76 /* AssinError.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 				BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */,
 				BD3F0B3F2329CF13009AA076 /* Logger.swift */,
 				BDC80241232A207100BEF13C /* Array+Row.swift */,
+				BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -419,6 +425,8 @@
 				BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */,
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
 				BDC80242232A207100BEF13C /* Array+Row.swift in Sources */,
+				BDC5C62D232A745D003B2C76 /* AssinError.swift in Sources */,
+				BDC5C62B232A70F9003B2C76 /* FunctionTool.swift in Sources */,
 				BD3F0B462329DC1D009AA076 /* UIPageContarolDelegate.swift in Sources */,
 				BDC80239232A0B3B00BEF13C /* CenterLayoutArranger.swift in Sources */,
 				3D9C42A222745900000A6585 /* AssinPageControl.swift in Sources */,

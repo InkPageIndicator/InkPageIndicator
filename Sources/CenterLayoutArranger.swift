@@ -34,12 +34,14 @@ public class CenterLayoutArranger {
     internal func calculateStartEndPoint(viewSize: CGRect, childSizes: [CGSize], interval: CGFloat) -> CGRect {
         let halfCenterX = viewSize.width / 2
         if halfCenterX <= 0 {
+            conditionError(AssinError.zeroSize)
             return .zero
         }
         let spacing: CGFloat = interval * CGFloat(childSizes.count - 1)
         let halfRowWidth = (childSizes.rowWidth + spacing) / 2
 
         if halfCenterX < halfRowWidth {
+            conditionError(AssinError.excessSize)
             return .zero
         }
 

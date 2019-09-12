@@ -33,12 +33,12 @@ class CenterLayoutArrangerTest: XCTestCase {
     func testCenterStartPoint() {
         let actual = arranger.calculateStartEndPoint(viewSize: viewSize, childSizes: childSizes, interval: 20)
         /*
-         |------>---|---<-----|
+         |------<xxx|xxx>-----|
          */
         XCTAssertEqual(actual, CGRect(x: 157.0, y: 0, width: 100, height: 0))
     }
 
-    func testHeightZeroCenterArarange() {
+    func testZeroHeightCenterArarange() {
         
         let viewSize = CGRect(x: 0, y: 0, width: 414, height: 0)
         let actual = arranger.arrange(viewSize: viewSize, childSizes: childSizes, interval: 20)
@@ -50,7 +50,7 @@ class CenterLayoutArrangerTest: XCTestCase {
         XCTAssertEqual(actual, expect)
     }
     
-    func testWidthZeroCenterArarange() {
+    func testZeroWidthCenterArarange() {
         
         let viewSize = CGRect(x: 0, y: 0, width: 0, height: 50)
         let actual = arranger.arrange(viewSize: viewSize, childSizes: childSizes, interval: 20)
@@ -65,7 +65,9 @@ class CenterLayoutArrangerTest: XCTestCase {
         let actual = arranger.arrange(viewSize: viewSize, childSizes: childSizes, interval: 20)
 
         /*
+         |--------------------|
          |------o---o---o-----|
+         |--------------------|
          */
         let expect = [
             CGRect(x: 157, y: 15.0, width: 20, height: 20),

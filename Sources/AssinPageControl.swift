@@ -29,14 +29,14 @@ struct Dot {
 public enum DotType {
     case basic(CGSize)
 
-    func createImage(_ color: UIColor) -> UIImage? {
+    public func createImage(_ color: UIColor) -> UIImage? {
         switch self {
         case let .basic(size):
             return UIImage.dotEllipse(size: size, color: color)
         }
     }
-    
-    func createLayer(_ color: UIColor) -> CALayer {
+
+    public func createLayer(_ color: UIColor) -> CALayer {
         let layer = CALayer()
         switch self {
         case let .basic(size):
@@ -54,6 +54,12 @@ public enum DotType {
 
     private var cacheFrame: CGRect = .zero
 
+    private lazy var displayLink: CADisplayLink = {
+        CADisplayLink(target: self, selector: #selector(handleUpdate))
+    }()
+    
+    private var animationStartDate = Date()
+    private let duration = 5.0
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
             updateDots()
@@ -70,6 +76,11 @@ public enum DotType {
         }
     }
 
+    @IBInspectable open var progress: CGFloat = 0 {
+        didSet {
+            Logger.log(message: "progress: \(progress)")
+        }
+    }
     @IBInspectable open var dotSize: CGSize = CGSize(width: 16, height: 16) {
         didSet {
         }
@@ -78,13 +89,15 @@ public enum DotType {
     private var _prevPage = 0
     @IBInspectable open var currentPage: Int = 0 {
         didSet {
-            if _prevPage == currentPage { return }
+            if _prevPage == currentPage {
+                return
+            }
             updateDots()
             _prevPage = currentPage
         }
     }
 
-    @IBInspectable open var spacing: CGFloat = 20 {
+    @IBInspectable open var spacing: CGFloat = 30 {
         didSet {
             setNeedsDisplay()
             Logger.log(message: "currentPage: \(currentPage)")
@@ -111,6 +124,10 @@ public enum DotType {
         cacheFrame = frame
     }
 
+    deinit {
+        displayLink.invalidate()
+    }
+    
     open override func layoutSubviews() {
         super.layoutSubviews()
         if isChangedSize() {
@@ -123,10 +140,16 @@ public enum DotType {
         return !cacheFrame.equalTo(self.frame)
     }
 
-    private func update() {
-
+    @objc func handleUpdate(displaylink: CADisplayLink) {
+        let now = Date()
+        let elapsedTime = now.timeIntervalSince(animationStartDate) // 애니매이션이 시작한 후 부터 지난 시간
+        if elapsedTime > duration {
+            animationStartDate = Date()
+            return
+        }
+        print("!!!!!!! asddsa")
     }
-
+    
     private func updateDots() {
         Logger.log(message: "updateDots")
         self.layer.sublayers?.removeAll {
@@ -135,12 +158,12 @@ public enum DotType {
 
         dots = (0..<numberOfPages).map { i in
             let dotColorState = DotColorState(
-                isSelected: currentPage == i ,
+                isSelected: currentPage == i,
                 selectedColor: currentPageIndicatorTintColor,
                 normalColor: pageIndicatorTintColor
             )
             let dotType = DotType.basic(dotSize)
-            
+
             return Dot(
                 type: dotType,
                 layer: dotType.createLayer(dotColorState.stateColor)

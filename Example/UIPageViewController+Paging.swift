@@ -29,6 +29,14 @@ extension UIPageViewController {
         }
     }
     
+    var scrollView: UIScrollView? {
+        for view in view.subviews {
+            if let subView = view as? UIScrollView {
+                return subView
+            }
+        }
+        return nil
+    }
     func enableSwipeGesture(_ uipageDataSource: UIPageViewControllerDataSource) {
         self.dataSource = uipageDataSource
     }

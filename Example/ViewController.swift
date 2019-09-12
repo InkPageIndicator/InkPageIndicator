@@ -58,4 +58,7 @@ extension ViewController: UIPageContarolDelegate {
     func pageControl(curPage: Int) {
         self.pageControl.currentPage = curPage
     }
+    func pageControl(progress: Double) {
+        self.pageControl.progress = CGFloat(progress)
+    }
 }
