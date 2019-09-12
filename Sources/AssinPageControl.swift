@@ -57,7 +57,7 @@ public enum DotType {
     private lazy var displayLink: CADisplayLink = {
         CADisplayLink(target: self, selector: #selector(handleUpdate))
     }()
-    
+
     private var animationStartDate = Date()
     private let duration = 5.0
     @IBInspectable open var numberOfPages: Int = 0 {
@@ -78,7 +78,7 @@ public enum DotType {
 
     @IBInspectable open var progress: CGFloat = 0 {
         didSet {
-            Logger.log(message: "progress: \(progress)")
+//            Logger.log(message: "progress: \(progress)")
         }
     }
     @IBInspectable open var dotSize: CGSize = CGSize(width: 16, height: 16) {
@@ -86,13 +86,29 @@ public enum DotType {
         }
     }
 
+    private let translateAnimator = TranslateDotAnimator()
     private var _prevPage = 0
+    private var isAnimatingPageDot: Bool = false
+    private var startPageDotX: CGFloat = 0
+    private var endPageDotX: CGFloat = 0
+
     @IBInspectable open var currentPage: Int = 0 {
         didSet {
             if _prevPage == currentPage {
                 return
             }
-            updateDots()
+
+            if let selectedDot = self.dots[safe: _prevPage] {
+                bufferDot(for: selectedDot)
+                let dX = selectedDot.layer.frame.width + self.spacing
+                translateAnimator.animate(dot: selectedDot, dX: dX) {
+                    self.dots[safe: self.currentPage]?.layer.removeFromSuperlayer()
+                }
+            }
+
+//            displayLink.add(to: .main, forMode: .default)
+
+//            updateDots()
             _prevPage = currentPage
         }
     }
@@ -127,7 +143,7 @@ public enum DotType {
     deinit {
         displayLink.invalidate()
     }
-    
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         if isChangedSize() {
@@ -141,14 +157,24 @@ public enum DotType {
     }
 
     @objc func handleUpdate(displaylink: CADisplayLink) {
+
         let now = Date()
         let elapsedTime = now.timeIntervalSince(animationStartDate) // 애니매이션이 시작한 후 부터 지난 시간
         if elapsedTime > duration {
+            Logger.log(message: "handleUpdate: reset elapsedtime")
             animationStartDate = Date()
             return
         }
+//        Logger.log(message: "handleUpdate: run animation")
+        let percentage = CGFloat(elapsedTime / duration)
+
+//        if isAnimatingPageDot {
+//            let transX = CGFloat(self.startPageDotX - percentage * (self.endPageDotX - self.startPageDotX))
+//        }
+//
+        setNeedsDisplay()
     }
-    
+
     private func updateDots() {
         Logger.log(message: "updateDots")
         self.layer.sublayers?.removeAll {
@@ -184,10 +210,10 @@ public enum DotType {
     }
 }
 
-private extension CALayer {
-    func findLayerByKey(key: String) -> [CALayer] {
-        return self.sublayers?.filter {
-            $0.name == key
-        } ?? []
+extension AssinPageControl {
+    private func bufferDot(for dot: Dot) {
+        let layer = dot.type.createLayer(pageIndicatorTintColor)
+        layer.frame = dot.layer.frame
+        self.layer.addSublayer(layer)
     }
 }
