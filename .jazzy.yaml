@@ -1,0 +1,7 @@
+# InkPageIndicator document generator jazzy settings
+
+copyright: Copyright 2019 Tyler
+author: Tyler
+xcodebuild_arguments: [-target, InkPageIndicator-iOS]
+clean: true
+output: ./Documentation
