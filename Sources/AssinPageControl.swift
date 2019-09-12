@@ -10,20 +10,36 @@
 @_exported import Foundation
 import UIKit
 
-public enum DotType {
-    case basic(CGSize, UIColor)
+public struct DotColorState {
+    let isSelected: Bool
+    let selectedColor: UIColor
+    let normalColor: UIColor
+}
 
-    public var image: UIImage? {
+extension DotColorState {
+    var stateColor: UIColor {
+        return isSelected ? selectedColor : normalColor
+    }
+}
+
+struct Dot {
+    let type: DotType
+    let layer: CALayer
+}
+public enum DotType {
+    case basic(CGSize)
+
+    func createImage(_ color: UIColor) -> UIImage? {
         switch self {
-        case let .basic(size, color):
+        case let .basic(size):
             return UIImage.dotEllipse(size: size, color: color)
         }
     }
-
-    public var layer: CALayer {
+    
+    func createLayer(_ color: UIColor) -> CALayer {
         let layer = CALayer()
         switch self {
-        case let .basic(size, color):
+        case let .basic(size):
             layer.contents = UIImage.dotEllipse(size: size, color: color)?.cgImage
         }
         return layer
@@ -32,9 +48,11 @@ public enum DotType {
 
 @IBDesignable open class AssinPageControl: UIControl {
 
-    private static let dotName = "dot"
+    fileprivate static let dotName = "dot"
 
-    private var dots: [DotType] = []
+    private var dots: [Dot] = []
+
+    private var cacheFrame: CGRect = .zero
 
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
@@ -57,14 +75,18 @@ public enum DotType {
         }
     }
 
+    private var _prevPage = 0
     @IBInspectable open var currentPage: Int = 0 {
         didSet {
-            Logger.log(message: "currentPage: \(currentPage)")
+            if _prevPage == currentPage { return }
+            updateDots()
+            _prevPage = currentPage
         }
     }
 
     @IBInspectable open var spacing: CGFloat = 20 {
         didSet {
+            setNeedsDisplay()
             Logger.log(message: "currentPage: \(currentPage)")
         }
     }
@@ -79,15 +101,26 @@ public enum DotType {
     required public init?(coder aDecoder: NSCoder) {
         self.arranger = CenterLayoutArranger()
         super.init(coder: aDecoder)
+        cacheFrame = self.frame
+        self.layoutIfNeeded()
     }
 
     public override init(frame: CGRect) {
         self.arranger = CenterLayoutArranger()
         super.init(frame: frame)
+        cacheFrame = frame
     }
 
     open override func layoutSubviews() {
         super.layoutSubviews()
+        if isChangedSize() {
+            updateDots()
+            cacheFrame = self.frame
+        }
+    }
+
+    private func isChangedSize() -> Bool {
+        return !cacheFrame.equalTo(self.frame)
     }
 
     private func update() {
@@ -100,9 +133,18 @@ public enum DotType {
             $0.name == AssinPageControl.dotName
         }
 
-        let color = pageIndicatorTintColor
-        dots = (0..<numberOfPages).map { _ in
-            DotType.basic(dotSize, color)
+        dots = (0..<numberOfPages).map { i in
+            let dotColorState = DotColorState(
+                isSelected: currentPage == i ,
+                selectedColor: currentPageIndicatorTintColor,
+                normalColor: pageIndicatorTintColor
+            )
+            let dotType = DotType.basic(dotSize)
+            
+            return Dot(
+                type: dotType,
+                layer: dotType.createLayer(dotColorState.stateColor)
+            )
         }
 
         let frames = self.arranger.arrange(
@@ -117,6 +159,13 @@ public enum DotType {
             layer.name = AssinPageControl.dotName
             self.layer.addSublayer(layer)
         }
-        setNeedsLayout()
+    }
+}
+
+private extension CALayer {
+    func findLayerByKey(key: String) -> [CALayer] {
+        return self.sublayers?.filter {
+            $0.name == key
+        } ?? []
     }
 }

@@ -16,9 +16,8 @@ public extension UIImage {
             return nil
         }
         context.addEllipse(in: CGRect(origin: CGPoint(x: 0, y: 0), size: size))
-        context.fillPath()
         color.setFill()
-//        path.fill()
+        context.fillPath()
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()

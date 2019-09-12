@@ -56,6 +56,6 @@ extension ViewController {
 
 extension ViewController: UIPageContarolDelegate {
     func pageControl(curPage: Int) {
-//        self.pageControl.currentPage = curPage
+        self.pageControl.currentPage = curPage
     }
 }
