@@ -13,7 +13,10 @@ import UIKit
 class CenterLayoutArrangerTest: XCTestCase {
 
     static var allTests = [
-        ("testCenterArarange", testCenterArarange),
+        ("testCenterStartPoint", testCenterStartPoint),
+        ("testZeroHeightCenterArarange", testZeroHeightCenterArarange),
+        ("testZeroWidthCenterArarange", testZeroWidthCenterArarange),
+        ("testCenterArarange", testCenterArarange)
     ]
 
     var arranger: CenterLayoutArranger!

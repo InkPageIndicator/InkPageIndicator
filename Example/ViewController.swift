@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pageControl: AssinPageControl!
     /// View did load
 
+    private weak var pageControlTransitionDelegate: AssinPageControlPageTransitionDelegate?
+    
     private var pages =  [
         ViewController.generateViewController(UIColor.yellow),
         ViewController.generateViewController(UIColor.orange),
@@ -28,7 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-
+        pageControlTransitionDelegate = pageControl
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.numberOfPages = pages.count
         pageControl.currentPageIndicatorTintColor = UIColor.black
@@ -55,10 +57,16 @@ extension ViewController {
 }
 
 extension ViewController: UIPageContarolDelegate {
-    func pageControl(curPage: Int) {
-        self.pageControl.currentPage = curPage
+    func pageControl(completePage: Int) {
+        self.pageControl.currentPage = completePage
+    }
+    func pageControl(finished: Bool) {
+        self.pageControlTransitionDelegate?.endAnimation()
+    }
+    func pageControl(willStartPage: Int, toPage: Int) {
+        self.pageControlTransitionDelegate?.beginAnimation(from: willStartPage, to: toPage)
     }
     func pageControl(progress: Double) {
-        self.pageControl.progress = CGFloat(progress)
+        self.pageControlTransitionDelegate?.updateProgress(progress: progress)
     }
 }

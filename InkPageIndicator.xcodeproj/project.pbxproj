@@ -33,6 +33,8 @@
 		BD726211232A8EAD009AA2F4 /* EasingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726210232A8EAD009AA2F4 /* EasingFunction.swift */; };
 		BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726213232A99D1009AA2F4 /* TranslateDotAnimator.swift */; };
 		BD726219232AA39A009AA2F4 /* DotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726218232AA39A009AA2F4 /* DotType.swift */; };
+		BD72621B232AD171009AA2F4 /* UIBeizerPathProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */; };
+		BD72621E232AD257009AA2F4 /* UIBeizerPathProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */; };
 		BDC5C62B232A70F9003B2C76 /* FunctionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */; };
 		BDC5C62D232A745D003B2C76 /* AssinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5C62C232A745D003B2C76 /* AssinError.swift */; };
 		BDC80239232A0B3B00BEF13C /* CenterLayoutArranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */; };
@@ -113,6 +115,8 @@
 		BD726210232A8EAD009AA2F4 /* EasingFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasingFunction.swift; sourceTree = "<group>"; };
 		BD726213232A99D1009AA2F4 /* TranslateDotAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateDotAnimator.swift; sourceTree = "<group>"; };
 		BD726218232AA39A009AA2F4 /* DotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotType.swift; sourceTree = "<group>"; };
+		BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProvider.swift; sourceTree = "<group>"; };
+		BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProviderTest.swift; sourceTree = "<group>"; };
 		BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTool.swift; sourceTree = "<group>"; };
 		BDC5C62C232A745D003B2C76 /* AssinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssinError.swift; sourceTree = "<group>"; };
 		BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutArranger.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 				BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */,
 				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
 				BD726218232AA39A009AA2F4 /* DotType.swift */,
+				BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				3D9C42EC22745FDA000A6585 /* LinuxMain.swift */,
 				3D9C42D722745CDE000A6585 /* InkPageIndicatorTests.swift */,
 				BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */,
+				BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */,
 				BDC8023E232A0DAE00BEF13C /* CGUtils.swift */,
 			);
 			path = Tests;
@@ -347,6 +353,7 @@
 				3D9C431E2274629B000A6585 /* Frameworks */,
 				3D9C431F2274629B000A6585 /* Resources */,
 				3D9C433822746323000A6585 /* Embed Frameworks */,
+				BD035FEE232ADC4A0084D234 /* Copy File */,
 			);
 			buildRules = (
 			);
@@ -446,6 +453,25 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		BD035FEE232ADC4A0084D234 /* Copy File */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/InkPageIndicator-iOS",
+			);
+			name = "Copy File";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 		BD3F0B4A2329DDAF009AA076 /* Copy Files */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD726211232A8EAD009AA2F4 /* EasingFunction.swift in Sources */,
+				BD72621B232AD171009AA2F4 /* UIBeizerPathProvider.swift in Sources */,
 				BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */,
 				BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */,
 				BD726219232AA39A009AA2F4 /* DotType.swift in Sources */,
@@ -493,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD72621E232AD257009AA2F4 /* UIBeizerPathProviderTest.swift in Sources */,
 				BDC80240232A0DBE00BEF13C /* CGUtils.swift in Sources */,
 				BDC8023D232A0C7700BEF13C /* CenterLayoutArrangerTest.swift in Sources */,
 				3D9C42FC22746078000A6585 /* InkPageIndicatorTests.swift in Sources */,

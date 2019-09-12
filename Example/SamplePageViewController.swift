@@ -13,7 +13,7 @@ class SamplePageViewController: UIPageViewController {
 
 
     private var currentPage = 0
-
+    
     var pages: [UIViewController] = []
     weak var controlDelegate: UIPageContarolDelegate?
     
@@ -35,7 +35,7 @@ class SamplePageViewController: UIPageViewController {
         self.scrollView?.delegate = self
         self.delegate = self
         setViewControllers([pages[currentPage]], direction: .forward, animated: true)
-        controlDelegate?.pageControl?(curPage: currentPage)
+        controlDelegate?.pageControl(completePage: currentPage)
     }
 }
 //
@@ -71,13 +71,19 @@ extension SamplePageViewController: UIPageViewControllerDataSource {
 extension SamplePageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let page = pages.firstIndex(where: { vc in vc == pendingViewControllers.first }) {
+            controlDelegate?.pageControl(willStartPage: currentPage, toPage: page)
             currentPage = page
         }
     }
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            controlDelegate?.pageControl?(curPage: currentPage)
+            controlDelegate?.pageControl(completePage: currentPage)
+        } else {
+            if let page = pages.firstIndex(where: { vc in vc == previousViewControllers.first }) {
+                currentPage = page
+            }
         }
+        controlDelegate?.pageControl(finished: finished)
     }
 }
 
@@ -89,6 +95,6 @@ extension SamplePageViewController: UIScrollViewDelegate {
         let percent = Double(offset / total)
         
         let progress = percent * Double(numberOfPages - 1)
-        controlDelegate?.pageControl?(progress: progress)
+        controlDelegate?.pageControl(progress: progress)
     }
 }
