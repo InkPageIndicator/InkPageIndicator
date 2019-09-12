@@ -10,56 +10,31 @@
 @_exported import Foundation
 import UIKit
 
-public struct DotColorState {
-    let isSelected: Bool
-    let selectedColor: UIColor
-    let normalColor: UIColor
+public protocol AssinPageControlPageTransitionDelegate: class {
+    func beginAnimation(from: Int, to: Int)
+    func endAnimation()
+    func updateProgress(progress: Double)
 }
-
-extension DotColorState {
-    var stateColor: UIColor {
-        return isSelected ? selectedColor : normalColor
-    }
-}
-
-struct Dot {
-    let type: DotType
-    let layer: CALayer
-}
-public enum DotType {
-    case basic(CGSize)
-
-    public func createImage(_ color: UIColor) -> UIImage? {
-        switch self {
-        case let .basic(size):
-            return UIImage.dotEllipse(size: size, color: color)
-        }
-    }
-
-    public func createLayer(_ color: UIColor) -> CALayer {
-        let layer = CALayer()
-        switch self {
-        case let .basic(size):
-            layer.contents = UIImage.dotEllipse(size: size, color: color)?.cgImage
-        }
-        return layer
-    }
-}
-
 @IBDesignable open class AssinPageControl: UIControl {
 
     fileprivate static let dotName = "dot"
+
+    private let translateAnimator = TranslateDotAnimator()
+    private var _prevPage = 0
 
     private var dots: [Dot] = []
 
     private var cacheFrame: CGRect = .zero
 
-    private lazy var displayLink: CADisplayLink = {
-        CADisplayLink(target: self, selector: #selector(handleUpdate))
-    }()
-    
+    private var fromAnimationLayer: CAShapeLayer?
+    private var toAnimationLayer: CAShapeLayer?
+
+    private var displayLink: CADisplayLink?
+
     private var animationStartDate = Date()
-    private let duration = 5.0
+
+    open var transitionDuration: TimeInterval = 5.0
+
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
             updateDots()
@@ -68,39 +43,68 @@ public enum DotType {
 
     @IBInspectable open var currentPageIndicatorTintColor: UIColor = UIColor.black {
         didSet {
+            updateDots()
         }
     }
 
     @IBInspectable open var pageIndicatorTintColor: UIColor = UIColor.lightGray {
         didSet {
+            updateDots()
         }
     }
 
-    @IBInspectable open var progress: CGFloat = 0 {
+    open var pageTimingFunction: CAMediaTimingFunction
+        = CAMediaTimingFunction(EasingFunction.easeInCubic.rawValue)
+
+    @IBInspectable open var progress: Double = 0 {
         didSet {
-            Logger.log(message: "progress: \(progress)")
+//            updateProgress(for: progress)
         }
     }
+
     @IBInspectable open var dotSize: CGSize = CGSize(width: 16, height: 16) {
         didSet {
+            updateDots()
         }
     }
 
-    private var _prevPage = 0
     @IBInspectable open var currentPage: Int = 0 {
         didSet {
             if _prevPage == currentPage {
                 return
             }
-            updateDots()
+
+            if let selectedDot = self.dots[safe: _prevPage] {
+
+                // buffering layer
+                let bufferLayer = selectedDot.type.createLayer(currentPageIndicatorTintColor)
+                bufferLayer.frame = selectedDot.layer.frame
+                self.layer.addSublayer(bufferLayer)
+
+                var dX: CGFloat = 0
+                if _prevPage < currentPage {
+                    dX = selectedDot.layer.frame.width + self.spacing
+                } else if _prevPage > currentPage {
+                    dX = -(selectedDot.layer.frame.width + self.spacing)
+                } else {
+                    return
+                }
+                selectedDot.layer.zPosition = 1
+                translateAnimator.animate(
+                    layer: bufferLayer,
+                    dX: dX,
+                    timingFunction: pageTimingFunction,
+                    completion: {
+                        self.updateDots()
+                    })
+            }
             _prevPage = currentPage
         }
     }
 
-    @IBInspectable open var spacing: CGFloat = 30 {
+    @IBInspectable open var spacing: CGFloat = 50 {
         didSet {
-            setNeedsDisplay()
-            Logger.log(message: "currentPage: \(currentPage)")
+            updateDots()
         }
     }
 
@@ -125,9 +129,9 @@ public enum DotType {
     }
 
     deinit {
-        displayLink.invalidate()
+        displayLink?.invalidate()
     }
-    
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         if isChangedSize() {
@@ -142,14 +146,17 @@ public enum DotType {
 
     @objc func handleUpdate(displaylink: CADisplayLink) {
         let now = Date()
-        let elapsedTime = now.timeIntervalSince(animationStartDate) // 애니매이션이 시작한 후 부터 지난 시간
-        if elapsedTime > duration {
+        let elapsedTime = now.timeIntervalSince(animationStartDate)
+        if elapsedTime > transitionDuration {
+            Logger.log(message: "handleUpdate: reset elapsedtime")
             animationStartDate = Date()
             return
         }
-        print("!!!!!!! asddsa")
+//        Logger.log(message: "handleUpdate: run animation")
+        let percentage = elapsedTime / transitionDuration
+        updateProgress(for: percentage)
     }
-    
+
     private func updateDots() {
         Logger.log(message: "updateDots")
         self.layer.sublayers?.removeAll {
@@ -157,16 +164,11 @@ public enum DotType {
         }
 
         dots = (0..<numberOfPages).map { i in
-            let dotColorState = DotColorState(
-                isSelected: currentPage == i,
-                selectedColor: currentPageIndicatorTintColor,
-                normalColor: pageIndicatorTintColor
-            )
             let dotType = DotType.basic(dotSize)
 
             return Dot(
                 type: dotType,
-                layer: dotType.createLayer(dotColorState.stateColor)
+                layer: dotType.createLayer(getColorState(page: i))
             )
         }
 
@@ -183,12 +185,53 @@ public enum DotType {
             self.layer.addSublayer(layer)
         }
     }
+
+    internal var lastPage: Int = 0
+    private var radius: CGFloat = 4
+    fileprivate var diameter: CGFloat {
+        return radius * 2
+    }
+    var padding: CGFloat = 5
+
+    func updateProgress(for progress: Double) {
+//        print("!!!!!!!!! updateProgress: \(progress)")
+        guard progress >= 0,
+            let from = fromAnimationLayer,
+            let to = toAnimationLayer,
+            numberOfPages > 1 else {
+                return
+        }
+    }
 }
 
-private extension CALayer {
-    func findLayerByKey(key: String) -> [CALayer] {
-        return self.sublayers?.filter {
-            $0.name == key
-        } ?? []
+extension AssinPageControl {
+    private func getColorState(page: Int) -> UIColor {
+        return currentPage == page ? currentPageIndicatorTintColor : pageIndicatorTintColor
+    }
+}
+
+extension AssinPageControl: AssinPageControlPageTransitionDelegate {
+    public func updateProgress(progress: Double) {
+        self.progress = progress
+    }
+
+    public func endAnimation() {
+        fromAnimationLayer = nil
+        toAnimationLayer = nil
+        displayLink?.invalidate()
+        displayLink = nil
+    }
+
+    public func beginAnimation(from: Int, to: Int) {
+        
+        if let leftFrame = self.dots[safe: from]?.layer.frame {
+            fromAnimationLayer = CAShapeLayer()
+            fromAnimationLayer?.path = UIBeizerPathProvider.instance.inkPage(frame: leftFrame, controlX: 0, spacing: 20).cgPath
+        }
+        
+        toAnimationLayer = CAShapeLayer()
+        displayLink?.invalidate()
+        displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))
+        displayLink?.add(to: .main, forMode: .common)
     }
 }
