@@ -34,7 +34,7 @@ class SamplePageViewController: UIPageViewController {
         self.enableSwipeGesture(self)
         self.delegate = self
         setViewControllers([pages[currentPage]], direction: .forward, animated: true)
-        controlDelegate?.pageControl(curPage: currentPage)
+        controlDelegate?.pageControl?(curPage: currentPage)
     }
 }
 //
@@ -75,7 +75,7 @@ extension SamplePageViewController: UIPageViewControllerDelegate {
     }
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            controlDelegate?.pageControl(curPage: currentPage)
+            controlDelegate?.pageControl?(curPage: currentPage)
         }
     }
 }

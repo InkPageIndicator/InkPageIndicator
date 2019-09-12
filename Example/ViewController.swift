@@ -17,13 +17,13 @@ class ViewController: UIViewController {
     // MARK: Properties
 
     @IBOutlet weak var pageViewController: UIView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var pageControl: AssinPageControl!
     /// View did load
 
     private var pages =  [
-        ViewController.generateViewController(),
-        ViewController.generateViewController(),
-        ViewController.generateViewController()
+        ViewController.generateViewController(UIColor.yellow),
+        ViewController.generateViewController(UIColor.orange),
+        ViewController.generateViewController(UIColor.purple)
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,21 +40,22 @@ class ViewController: UIViewController {
             page.controlDelegate = self
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 }
 
 extension ViewController {
 
-    static let colors = [UIColor.red, UIColor.cyan, UIColor.orange, UIColor.green, UIColor.magenta, UIColor.yellow]
-
-    class func generateViewController() -> UIViewController {
+    class func generateViewController(_ color: UIColor) -> UIViewController {
         let vc = ChildViewController()
-        vc.view.backgroundColor = colors.randomElement()
+        vc.view.backgroundColor = color
         return vc
     }
 }
 
 extension ViewController: UIPageContarolDelegate {
     func pageControl(curPage: Int) {
-        self.pageControl.currentPage = curPage
+//        self.pageControl.currentPage = curPage
     }
 }

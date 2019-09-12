@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol UIPageContarolDelegate: class {
-    func pageControl(curPage: Int)
+ @objc protocol UIPageContarolDelegate: class {
+    @objc optional func pageControl(curPage: Int)
 }

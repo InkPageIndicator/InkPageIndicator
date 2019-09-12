@@ -18,32 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="8ha-Mp-Dpe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="45.5"/>
-                            </pageControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-vH-pX2">
-                                <rect key="frame" x="0.0" y="89.5" width="414" height="772.5"/>
+                                <rect key="frame" x="0.0" y="90" width="414" height="772"/>
                                 <connections>
                                     <segue destination="icg-U3-rXG" kind="embed" id="u0f-er-jie"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGi-nw-pA9" customClass="AssinPageControl" customModule="InkPageIndicator">
+                                <rect key="frame" x="0.0" y="44" width="414" height="45.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JJM-vH-pX2" firstAttribute="top" secondItem="8ha-Mp-Dpe" secondAttribute="bottom" id="0SN-Fx-Hah"/>
-                            <constraint firstItem="8ha-Mp-Dpe" firstAttribute="leading" secondItem="FQn-rq-Gk5" secondAttribute="leading" id="9Df-qF-JVJ"/>
-                            <constraint firstItem="8ha-Mp-Dpe" firstAttribute="top" secondItem="FQn-rq-Gk5" secondAttribute="top" id="Dm9-Pe-GA8"/>
+                            <constraint firstItem="sGi-nw-pA9" firstAttribute="centerX" secondItem="FQn-rq-Gk5" secondAttribute="centerX" id="6IT-ls-ue2"/>
                             <constraint firstItem="JJM-vH-pX2" firstAttribute="centerX" secondItem="FQn-rq-Gk5" secondAttribute="centerX" id="G1D-DL-F1Q"/>
                             <constraint firstItem="FQn-rq-Gk5" firstAttribute="bottom" secondItem="JJM-vH-pX2" secondAttribute="bottom" id="L1h-Rk-scX"/>
-                            <constraint firstItem="8ha-Mp-Dpe" firstAttribute="centerX" secondItem="FQn-rq-Gk5" secondAttribute="centerX" id="MLf-eT-RmM"/>
+                            <constraint firstItem="sGi-nw-pA9" firstAttribute="top" secondItem="FQn-rq-Gk5" secondAttribute="top" id="TKE-NJ-TDF"/>
                             <constraint firstItem="JJM-vH-pX2" firstAttribute="centerY" secondItem="FQn-rq-Gk5" secondAttribute="centerY" multiplier="1.05" id="TYb-M7-FZn"/>
                             <constraint firstItem="JJM-vH-pX2" firstAttribute="leading" secondItem="FQn-rq-Gk5" secondAttribute="leading" id="UFd-Sb-ZNK"/>
+                            <constraint firstItem="sGi-nw-pA9" firstAttribute="leading" secondItem="FQn-rq-Gk5" secondAttribute="leading" id="ZKa-LA-coj"/>
+                            <constraint firstItem="JJM-vH-pX2" firstAttribute="top" secondItem="sGi-nw-pA9" secondAttribute="bottom" id="aLw-aJ-CaQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FQn-rq-Gk5"/>
                     </view>
                     <connections>
-                        <outlet property="pageControl" destination="8ha-Mp-Dpe" id="O3X-gd-17h"/>
-                        <outlet property="pageViewController" destination="JJM-vH-pX2" id="exX-Vu-nox"/>
+                        <outlet property="pageControl" destination="sGi-nw-pA9" id="zPX-xK-xVf"/>
+                        <outlet property="pageViewController" destination="JJM-vH-pX2" id="BR6-uJ-Tqr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlb-ah-sKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -55,7 +56,7 @@
             <objects>
                 <viewController id="icg-U3-rXG" customClass="SamplePageViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="05M-qC-ihn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="772.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="772"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>

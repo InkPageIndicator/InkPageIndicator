@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ChildViewController: UIViewController {
-    override func viewDidLoad() {
+public class ChildViewController: UIViewController {
+    public override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
