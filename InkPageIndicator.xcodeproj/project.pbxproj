@@ -32,6 +32,7 @@
 		BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */; };
 		BD726211232A8EAD009AA2F4 /* EasingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726210232A8EAD009AA2F4 /* EasingFunction.swift */; };
 		BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726213232A99D1009AA2F4 /* TranslateDotAnimator.swift */; };
+		BD726219232AA39A009AA2F4 /* DotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726218232AA39A009AA2F4 /* DotType.swift */; };
 		BDC5C62B232A70F9003B2C76 /* FunctionTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */; };
 		BDC5C62D232A745D003B2C76 /* AssinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5C62C232A745D003B2C76 /* AssinError.swift */; };
 		BDC80239232A0B3B00BEF13C /* CenterLayoutArranger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */; };
@@ -111,6 +112,7 @@
 		BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CABasicAnimation+Init.swift"; sourceTree = "<group>"; };
 		BD726210232A8EAD009AA2F4 /* EasingFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasingFunction.swift; sourceTree = "<group>"; };
 		BD726213232A99D1009AA2F4 /* TranslateDotAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateDotAnimator.swift; sourceTree = "<group>"; };
+		BD726218232AA39A009AA2F4 /* DotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotType.swift; sourceTree = "<group>"; };
 		BDC5C62A232A70F9003B2C76 /* FunctionTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTool.swift; sourceTree = "<group>"; };
 		BDC5C62C232A745D003B2C76 /* AssinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssinError.swift; sourceTree = "<group>"; };
 		BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutArranger.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				3D9C42A122745900000A6585 /* AssinPageControl.swift */,
 				BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */,
 				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
+				BD726218232AA39A009AA2F4 /* DotType.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				BD726211232A8EAD009AA2F4 /* EasingFunction.swift in Sources */,
 				BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */,
 				BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */,
+				BD726219232AA39A009AA2F4 /* DotType.swift in Sources */,
 				BD72620D232A8BBA009AA2F4 /* Array+Subscript.swift in Sources */,
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
 				BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */,

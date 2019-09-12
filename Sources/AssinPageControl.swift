@@ -10,42 +10,6 @@
 @_exported import Foundation
 import UIKit
 
-public struct DotColorState {
-    let isSelected: Bool
-    let selectedColor: UIColor
-    let normalColor: UIColor
-}
-
-extension DotColorState {
-    var stateColor: UIColor {
-        return isSelected ? selectedColor : normalColor
-    }
-}
-
-struct Dot {
-    let type: DotType
-    let layer: CALayer
-}
-public enum DotType {
-    case basic(CGSize)
-
-    public func createImage(_ color: UIColor) -> UIImage? {
-        switch self {
-        case let .basic(size):
-            return UIImage.dotEllipse(size: size, color: color)
-        }
-    }
-
-    public func createLayer(_ color: UIColor) -> CALayer {
-        let layer = CALayer()
-        switch self {
-        case let .basic(size):
-            layer.contents = UIImage.dotEllipse(size: size, color: color)?.cgImage
-        }
-        return layer
-    }
-}
-
 @IBDesignable open class AssinPageControl: UIControl {
 
     fileprivate static let dotName = "dot"
@@ -76,6 +40,9 @@ public enum DotType {
         }
     }
 
+    open var pageTimingFunction: CAMediaTimingFunction
+        = CAMediaTimingFunction(EasingFunction.easeInCubic.rawValue)
+    
     @IBInspectable open var progress: CGFloat = 0 {
         didSet {
 //            Logger.log(message: "progress: \(progress)")
@@ -99,16 +66,29 @@ public enum DotType {
             }
 
             if let selectedDot = self.dots[safe: _prevPage] {
-                bufferDot(for: selectedDot)
-                let dX = selectedDot.layer.frame.width + self.spacing
-                translateAnimator.animate(dot: selectedDot, dX: dX) {
-                    self.dots[safe: self.currentPage]?.layer.removeFromSuperlayer()
+                
+                // buffering layer
+                let bufferLayer = selectedDot.type.createLayer(currentPageIndicatorTintColor)
+                bufferLayer.frame = selectedDot.layer.frame
+                self.layer.addSublayer(bufferLayer)
+                
+                var dX: CGFloat = 0
+                if _prevPage < currentPage {
+                    dX = selectedDot.layer.frame.width + self.spacing
+                } else if _prevPage > currentPage {
+                    dX = -(selectedDot.layer.frame.width + self.spacing)
+                } else {
+                    return
                 }
+                selectedDot.layer.zPosition = 1
+                translateAnimator.animate(
+                    layer: bufferLayer,
+                    dX: dX,
+                    timingFunction: pageTimingFunction,
+                    completion: {
+                        self.updateDots()
+                    })
             }
-
-//            displayLink.add(to: .main, forMode: .default)
-
-//            updateDots()
             _prevPage = currentPage
         }
     }
@@ -182,16 +162,11 @@ public enum DotType {
         }
 
         dots = (0..<numberOfPages).map { i in
-            let dotColorState = DotColorState(
-                isSelected: currentPage == i,
-                selectedColor: currentPageIndicatorTintColor,
-                normalColor: pageIndicatorTintColor
-            )
             let dotType = DotType.basic(dotSize)
 
             return Dot(
                 type: dotType,
-                layer: dotType.createLayer(dotColorState.stateColor)
+                layer: dotType.createLayer(getColorState(page: i))
             )
         }
 
@@ -211,9 +186,7 @@ public enum DotType {
 }
 
 extension AssinPageControl {
-    private func bufferDot(for dot: Dot) {
-        let layer = dot.type.createLayer(pageIndicatorTintColor)
-        layer.frame = dot.layer.frame
-        self.layer.addSublayer(layer)
+    private func getColorState(page: Int) -> UIColor {
+        return currentPage == page ? currentPageIndicatorTintColor : pageIndicatorTintColor
     }
 }
