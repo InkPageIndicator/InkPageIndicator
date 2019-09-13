@@ -474,7 +474,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		BD3F0B4A2329DDAF009AA076 /* Copy Files */ = {
 			isa = PBXShellScriptBuildPhase;

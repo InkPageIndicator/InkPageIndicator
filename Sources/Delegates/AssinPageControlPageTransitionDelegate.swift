@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol AssinPageControlPageTransitionDelegate: class {
-    func beginAnimation(from: Int, to: Int)
-    func endAnimation()
-    func updateProgress(progress: Double)
+@objc public protocol AssinPageControlPageTransitionDelegate: class {
+    @objc optional func beginAnimation(from: Int, to: Int)
+    @objc optional func endAnimation()
+    @objc optional func updateProgress(progress: Double)
 }

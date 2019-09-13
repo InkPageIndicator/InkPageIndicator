@@ -10,7 +10,6 @@
 @_exported import Foundation
 import UIKit
 
-
 @IBDesignable open class AssinPageControl: UIControl {
 
     fileprivate static let dotName = "dot"
@@ -184,11 +183,11 @@ import UIKit
     
     private func updateInkShapeLayer(shapeLayer: CAShapeLayer, controlX: CGFloat) {
         UIGraphicsBeginImageContextWithOptions(shapeLayer.frame.size, false, 0.0)
-        if let _ = UIGraphicsGetCurrentContext() {
+        if UIGraphicsGetCurrentContext() != nil {
             shapeLayer.path = UIBeizerPathProvider.instance.inkPage(frame: shapeLayer.frame, controlX: controlX).cgPath
             shapeLayer.fillColor = pageIndicatorTintColor.cgColor
+            UIGraphicsEndImageContext()
         }
-        UIGraphicsEndImageContext()
     }
 }
 
