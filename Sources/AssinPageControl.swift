@@ -91,6 +91,8 @@ public protocol AssinPageControlPageTransitionDelegate: class {
                     dX: dX,
                     timingFunction: pageTimingFunction,
                     completion: {
+                        bufferLayer.removeAllAnimations()
+                        bufferLayer.removeFromSuperlayer()
                         self.updateDots()
                     })
             }
