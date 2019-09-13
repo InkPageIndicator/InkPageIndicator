@@ -191,8 +191,8 @@ public protocol AssinPageControlPageTransitionDelegate: class {
         if let _ = UIGraphicsGetCurrentContext() {
             shapeLayer.path = UIBeizerPathProvider.instance.inkPage(frame: shapeLayer.frame, controlX: controlX).cgPath
             shapeLayer.fillColor = pageIndicatorTintColor.cgColor
-            UIGraphicsEndImageContext()
         }
+        UIGraphicsEndImageContext()
     }
 }
 
@@ -205,15 +205,9 @@ extension AssinPageControl: AssinPageControlPageTransitionDelegate {
         self.progress = progress
     }
     public func endAnimation() {
-        reverseLayer(shapeLayer: fromAnimationLayer) { [weak fromAnimationLayer] in
-            fromAnimationLayer?.removeFromSuperlayer()
-            fromAnimationLayer = nil
-        }
-        reverseLayer(shapeLayer: toAnimationLayer) { [weak toAnimationLayer] in
-            toAnimationLayer?.removeFromSuperlayer()
-            toAnimationLayer = nil
-        }
+        clearAnimations()
     }
+    
     private func reverseLayer(shapeLayer: CAShapeLayer?, completion: (() -> Void)? = nil) {
         if let shape = shapeLayer {
             shape.removeAllAnimations()

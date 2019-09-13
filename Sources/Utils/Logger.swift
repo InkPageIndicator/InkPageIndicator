@@ -12,6 +12,7 @@ final class Logger {
     
     private init() { }
 
+    static var ENABLED: Bool = false
     static func log(message: String = "") {
         _log(message: "\(Timestamp.timestamp()): \(message)")
     }
@@ -21,6 +22,9 @@ final class Logger {
     }
     
     static private func _log(message: String) {
+        if !ENABLED {
+            return 
+        }
         #if DEBUG
         print(message)
         #endif
