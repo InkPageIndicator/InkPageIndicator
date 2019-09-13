@@ -53,7 +53,7 @@ import UIKit
         }
     }
 
-    @IBInspectable open var dotSize: CGSize = CGSize(width: 16, height: 16) {
+    @IBInspectable open var dotSize: CGSize = CGSize(width: 10, height: 10) {
         didSet {
             updateDots()
         }
