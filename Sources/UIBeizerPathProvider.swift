@@ -13,11 +13,16 @@ public class UIBeizerPathProvider {
     public static let instance = UIBeizerPathProvider()
 
     private init() { }
+    
+    public func zeroInkPage(frame: CGRect) -> UIBezierPath {
+        return inkPage(frame: frame, controlX: 0)
+    }
+    
     public func inkPage(frame: CGRect, controlX: CGFloat) -> UIBezierPath {
         let bezierPath = UIBezierPath()
         var temp = frame
+        
         // start point
-        temp.origin.x = frame.width / 2
         temp.origin.y = 0
         let minX: CGFloat = 0
         let minY: CGFloat = 0

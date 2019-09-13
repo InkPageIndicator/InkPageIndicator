@@ -8,8 +8,8 @@
 
 import UIKit
 
-private extension CALayer {
-    func findLayerByKey(key: String) -> [CALayer] {
+extension CALayer {
+    func findSubLayersByKey(key: String) -> [CALayer] {
         return self.sublayers?.filter {
             $0.name == key
             } ?? []

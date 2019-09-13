@@ -95,6 +95,10 @@ extension SamplePageViewController: UIScrollViewDelegate {
         let percent = Double(offset / total)
         
         let progress = percent * Double(numberOfPages - 1)
-        controlDelegate?.pageControl(progress: progress)
+        
+        
+        var newProgress = progress
+        newProgress = abs(1 - progress)
+        controlDelegate?.pageControl(progress: newProgress)
     }
 }

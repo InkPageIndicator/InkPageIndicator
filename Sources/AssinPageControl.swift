@@ -29,12 +29,8 @@ public protocol AssinPageControlPageTransitionDelegate: class {
     private var fromAnimationLayer: CAShapeLayer?
     private var toAnimationLayer: CAShapeLayer?
 
-    private var displayLink: CADisplayLink?
-
-    private var animationStartDate = Date()
-
-    open var transitionDuration: TimeInterval = 5.0
-
+    open var transitionDuration: TimeInterval = 2.0
+    
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
             updateDots()
@@ -58,7 +54,7 @@ public protocol AssinPageControlPageTransitionDelegate: class {
 
     @IBInspectable open var progress: Double = 0 {
         didSet {
-//            updateProgress(for: progress)
+            updateProgress(for: progress)
         }
     }
 
@@ -129,7 +125,7 @@ public protocol AssinPageControlPageTransitionDelegate: class {
     }
 
     deinit {
-        displayLink?.invalidate()
+        clearAnimations()
     }
 
     open override func layoutSubviews() {
@@ -142,19 +138,6 @@ public protocol AssinPageControlPageTransitionDelegate: class {
 
     private func isChangedSize() -> Bool {
         return !cacheFrame.equalTo(self.frame)
-    }
-
-    @objc func handleUpdate(displaylink: CADisplayLink) {
-        let now = Date()
-        let elapsedTime = now.timeIntervalSince(animationStartDate)
-        if elapsedTime > transitionDuration {
-            Logger.log(message: "handleUpdate: reset elapsedtime")
-            animationStartDate = Date()
-            return
-        }
-//        Logger.log(message: "handleUpdate: run animation")
-        let percentage = elapsedTime / transitionDuration
-        updateProgress(for: percentage)
     }
 
     private func updateDots() {
@@ -186,68 +169,105 @@ public protocol AssinPageControlPageTransitionDelegate: class {
         }
     }
 
-    internal var lastPage: Int = 0
-    private var radius: CGFloat = 4
-    fileprivate var diameter: CGFloat {
-        return radius * 2
-    }
-    var padding: CGFloat = 5
-
     func updateProgress(for progress: Double) {
-//        print("!!!!!!!!! updateProgress: \(progress)")
         guard progress >= 0,
             let from = fromAnimationLayer,
             let to = toAnimationLayer,
             numberOfPages > 1 else {
                 return
         }
-        let maxX = (from.frame.width / 2) + CGFloat(spacing / 2)
+        let maxX = from.frame.width + spacing
         let controlX = CGFloat(progress) * maxX
         
-        UIGraphicsBeginImageContextWithOptions(from.frame.size, false, 0.0)
+        updateInkShapeLayer(shapeLayer: from, controlX: controlX)
+        updateInkShapeLayer(shapeLayer: to, controlX: -controlX)
+    }
+    
+    private func updateInkShapeLayer(shapeLayer: CAShapeLayer, controlX: CGFloat) {
+        UIGraphicsBeginImageContextWithOptions(shapeLayer.frame.size, false, 0.0)
         if let _ = UIGraphicsGetCurrentContext() {
-            from.path = UIBeizerPathProvider.instance.inkPage(frame: from.frame, controlX: controlX).cgPath
-            from.fillColor = pageIndicatorTintColor.cgColor
+            shapeLayer.path = UIBeizerPathProvider.instance.inkPage(frame: shapeLayer.frame, controlX: controlX).cgPath
+            shapeLayer.fillColor = pageIndicatorTintColor.cgColor
             UIGraphicsEndImageContext()
         }
     }
 }
 
-extension AssinPageControl {
+extension AssinPageControl: AssinPageControlPageTransitionDelegate {
     private func getColorState(page: Int) -> UIColor {
         return currentPage == page ? currentPageIndicatorTintColor : pageIndicatorTintColor
     }
-}
-
-extension AssinPageControl: AssinPageControlPageTransitionDelegate {
+    
     public func updateProgress(progress: Double) {
         self.progress = progress
     }
-
     public func endAnimation() {
-        fromAnimationLayer = nil
-        toAnimationLayer = nil
-        displayLink?.invalidate()
-        displayLink = nil
+        reverseLayer(shapeLayer: fromAnimationLayer) { [weak fromAnimationLayer] in
+            fromAnimationLayer?.removeFromSuperlayer()
+            fromAnimationLayer = nil
+        }
+        reverseLayer(shapeLayer: toAnimationLayer) { [weak toAnimationLayer] in
+            toAnimationLayer?.removeFromSuperlayer()
+            toAnimationLayer = nil
+        }
     }
-
+    private func reverseLayer(shapeLayer: CAShapeLayer?, completion: (() -> Void)? = nil) {
+        if let shape = shapeLayer {
+            shape.removeAllAnimations()
+            CATransaction.begin()
+            CATransaction.setCompletionBlock {
+                completion?()
+            }
+            let reverseTranslate = CABasicAnimation.createAnimationLayer(
+                withDuration: 0.3,
+                delay: 0,
+                animationKeyPath: "path",
+                fromValue: shape.path,
+                toValue: UIBeizerPathProvider.instance.zeroInkPage(frame: shape.frame).cgPath)
+            shape.add(reverseTranslate, forKey: "asd")
+            CATransaction.commit()
+        }
+    }
     public func beginAnimation(from: Int, to: Int) {
-
+        clearAnimations()
         if let leftFrame = self.dots[safe: from]?.layer.frame,
             let rightFrame = self.dots[safe: to]?.layer.frame {
-            let from = CAShapeLayer()
-            from.frame = leftFrame
-            fromAnimationLayer = from
-            
-            self.layer.addSublayer(from)
-            
-            
-            toAnimationLayer = CAShapeLayer()
-            toAnimationLayer?.frame = rightFrame
-
-            displayLink?.invalidate()
-            displayLink = CADisplayLink(target: self, selector: #selector(handleUpdate))
-            displayLink?.add(to: .main, forMode: .common)
+            if from < to {
+                let from = makeInkShapeLayer(dotFrame: leftFrame)
+                self.layer.addSublayer(from)
+                fromAnimationLayer = from
+                
+                let to = makeInkShapeLayer(dotFrame: rightFrame)
+                self.layer.addSublayer(to)
+                toAnimationLayer = to
+            } else {
+                let from = makeInkShapeLayer(dotFrame: rightFrame)
+                self.layer.addSublayer(from)
+                fromAnimationLayer = from
+                
+                let to = makeInkShapeLayer(dotFrame: leftFrame)
+                self.layer.addSublayer(to)
+                toAnimationLayer = to
+            }
         }
+    }
+    private func makeInkShapeLayer(dotFrame: CGRect) -> CAShapeLayer {
+        let layer = CAShapeLayer()
+        layer.frame = dotFrame
+        // shift half width
+        layer.frame.origin.x += dotFrame.width / 2
+        layer.zPosition = -1
+        return layer
+    }
+    
+    private func clearAnimations() {
+        CATransaction.flush()
+        self.fromAnimationLayer?.removeAllAnimations()
+        self.fromAnimationLayer?.removeFromSuperlayer()
+        self.fromAnimationLayer = nil
+        
+        self.toAnimationLayer?.removeAllAnimations()
+        self.toAnimationLayer?.removeFromSuperlayer()
+        self.toAnimationLayer = nil
     }
 }
