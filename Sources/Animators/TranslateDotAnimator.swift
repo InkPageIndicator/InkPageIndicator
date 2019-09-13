@@ -12,6 +12,7 @@ class TranslateDotAnimator {
     func animate(
         layer: CALayer,
         dX: CGFloat,
+        duration: TimeInterval,
         timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(EasingFunction.easeInCubic.rawValue),
         before: (() -> Void)? = nil,
         completion: (() -> Void)? = nil
@@ -26,7 +27,7 @@ class TranslateDotAnimator {
             completion?()
         }
         let translateX = CABasicAnimation.createAnimationLayer(
-            withDuration: 0.3,
+            withDuration: duration,
             delay: 0,
             animationKeyPath: "transform.translation.x",
             timingFunction: timingFunction,

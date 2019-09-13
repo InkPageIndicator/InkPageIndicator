@@ -89,6 +89,7 @@ public protocol AssinPageControlPageTransitionDelegate: class {
                 translateAnimator.animate(
                     layer: bufferLayer,
                     dX: dX,
+                    duration: 0.2,
                     timingFunction: pageTimingFunction,
                     completion: {
                         bufferLayer.removeAllAnimations()
@@ -221,7 +222,7 @@ extension AssinPageControl: AssinPageControlPageTransitionDelegate {
                 completion?()
             }
             let reverseTranslate = CABasicAnimation.createAnimationLayer(
-                withDuration: 0.3,
+                withDuration: 0.1,
                 delay: 0,
                 animationKeyPath: "path",
                 fromValue: shape.path,

@@ -9,7 +9,7 @@
 import UIKit
 
 extension CABasicAnimation {
-    open class func createAnimationLayer(
+    static func createAnimationLayer(
         withDuration duration: TimeInterval,
         delay: TimeInterval,
         animationKeyPath: String,
