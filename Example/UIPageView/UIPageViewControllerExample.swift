@@ -12,7 +12,7 @@ import InkPageIndicator
 // MARK: - ViewController
 
 /// The ViewController
-class ViewController: UIViewController {
+class UIPageViewControllerExample: UIViewController {
 
     // MARK: Properties
 
@@ -21,9 +21,9 @@ class ViewController: UIViewController {
     /// View did load
 
     private var pages = [
-        ViewController.generateViewController(ChildModel.dummy[0]),
-        ViewController.generateViewController(ChildModel.dummy[1]),
-        ViewController.generateViewController(ChildModel.dummy[2])
+        generateViewController(ChildModel.dummy[0]),
+        generateViewController(ChildModel.dummy[1]),
+        generateViewController(ChildModel.dummy[2])
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,16 +44,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
-
-    class func generateViewController(_ model: ChildModel) -> UIViewController {
-        let vc = ChildViewController()
-        vc.model = model
-        return vc
-    }
-}
-
-extension ViewController: UIPageContarolDelegate {
+extension UIPageViewControllerExample: UIPageContarolDelegate {
     func pageControl(completePage: Int) {
         self.pageControl.currentPage = completePage
     }

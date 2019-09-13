@@ -222,6 +222,9 @@ extension AssinPageControl: AssinPageControlPageTransitionDelegate {
     }
     public func beginAnimation(from: Int, to: Int) {
         clearAnimations()
+        if from == to {
+            return
+        }
         if let leftFrame = self.dots[safe: from]?.layer.frame,
             let rightFrame = self.dots[safe: to]?.layer.frame {
             if from < to {
