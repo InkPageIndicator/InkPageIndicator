@@ -10,11 +10,7 @@
 @_exported import Foundation
 import UIKit
 
-public protocol AssinPageControlPageTransitionDelegate: class {
-    func beginAnimation(from: Int, to: Int)
-    func endAnimation()
-    func updateProgress(progress: Double)
-}
+
 @IBDesignable open class AssinPageControl: UIControl {
 
     fileprivate static let dotName = "dot"

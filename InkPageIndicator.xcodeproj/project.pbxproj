@@ -27,6 +27,8 @@
 		BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */; };
 		BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3F2329CF13009AA076 /* Logger.swift */; };
 		BD3F0B462329DC1D009AA076 /* UIPageContarolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */; };
+		BD4D6675232B2FC400D1D38A /* AssinPageControlPageTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6674232B2FC400D1D38A /* AssinPageControlPageTransitionDelegate.swift */; };
+		BD4D6676232B2FE800D1D38A /* AssinPageControlPageTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6674232B2FC400D1D38A /* AssinPageControlPageTransitionDelegate.swift */; };
 		BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */; };
 		BD72620D232A8BBA009AA2F4 /* Array+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620C232A8BBA009AA2F4 /* Array+Subscript.swift */; };
 		BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */; };
@@ -109,6 +111,7 @@
 		BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Dot.swift"; sourceTree = "<group>"; };
 		BD3F0B3F2329CF13009AA076 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BD3F0B422329D9C2009AA076 /* InkPagePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = InkPagePlayGround.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BD4D6674232B2FC400D1D38A /* AssinPageControlPageTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssinPageControlPageTransitionDelegate.swift; sourceTree = "<group>"; };
 		BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssinPageControl+CALayer.swift"; sourceTree = "<group>"; };
 		BD72620C232A8BBA009AA2F4 /* Array+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Subscript.swift"; sourceTree = "<group>"; };
 		BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CABasicAnimation+Init.swift"; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 		BD726215232A9A02009AA2F4 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				BD4D6674232B2FC400D1D38A /* AssinPageControlPageTransitionDelegate.swift */,
 				BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */,
 			);
 			path = Delegates;
@@ -504,6 +508,7 @@
 				BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */,
 				BD726219232AA39A009AA2F4 /* DotType.swift in Sources */,
 				BD72620D232A8BBA009AA2F4 /* Array+Subscript.swift in Sources */,
+				BD4D6675232B2FC400D1D38A /* AssinPageControlPageTransitionDelegate.swift in Sources */,
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
 				BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */,
 				BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */,
@@ -537,6 +542,7 @@
 				BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */,
 				BD3F0B402329CF13009AA076 /* Logger.swift in Sources */,
 				3D9C43242274629B000A6585 /* AppDelegate.swift in Sources */,
+				BD4D6676232B2FE800D1D38A /* AssinPageControlPageTransitionDelegate.swift in Sources */,
 				BD3F0B2C2329BCEB009AA076 /* SamplePageViewController.swift in Sources */,
 				BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */,
 				BD3F0B362329C8EA009AA076 /* ChildViewController.swift in Sources */,
