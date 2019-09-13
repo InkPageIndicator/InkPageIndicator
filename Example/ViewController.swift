@@ -20,10 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var pageControl: AssinPageControl!
     /// View did load
 
-    private var pages =  [
-        ViewController.generateViewController(UIColor.yellow),
-        ViewController.generateViewController(UIColor.orange),
-        ViewController.generateViewController(UIColor.purple)
+    private var pages = [
+        ViewController.generateViewController(ChildModel.dummy[0]),
+        ViewController.generateViewController(ChildModel.dummy[1]),
+        ViewController.generateViewController(ChildModel.dummy[2])
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +46,9 @@ class ViewController: UIViewController {
 
 extension ViewController {
 
-    class func generateViewController(_ color: UIColor) -> UIViewController {
+    class func generateViewController(_ model: ChildModel) -> UIViewController {
         let vc = ChildViewController()
-        vc.view.backgroundColor = color
+        vc.model = model
         return vc
     }
 }
