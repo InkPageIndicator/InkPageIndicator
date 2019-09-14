@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="200" src="https://raw.githubusercontent.com/SvenTiigi/SwiftKit/gh-pages/readMeAssets/SwiftKitLogo.png" alt="InkPageIndicator Logo">
+   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/Icon/icon.png" alt="InkPageIndicator Logo">
 </p>
 
 <p align="center">
