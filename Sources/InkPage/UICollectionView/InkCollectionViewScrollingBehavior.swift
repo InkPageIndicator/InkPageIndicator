@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class InkPageScrollBehavior: NSObject {
+public final class InkCollectionViewScrollingBehavior: NSObject {
     private var indexOfCellBeforeDragging = 0
     private var lastContentOffset: CGPoint = .zero
     private var isAnimating: Bool = false

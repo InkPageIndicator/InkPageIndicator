@@ -43,7 +43,7 @@
 		BD726219232AA39A009AA2F4 /* DotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726218232AA39A009AA2F4 /* DotType.swift */; };
 		BD72621B232AD171009AA2F4 /* UIBeizerPathProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */; };
 		BD72621E232AD257009AA2F4 /* UIBeizerPathProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */; };
-		BD83DD57232D7D2200C86363 /* InkPageScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */; };
+		BD83DD57232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD55232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift */; };
 		BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */; };
 		BD83DD5A232D876E00C86363 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD59232D876E00C86363 /* UIView+Blur.swift */; };
 		BD83DD5D232D885900C86363 /* UIPageViewPageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */; };
@@ -157,7 +157,7 @@
 		BD726218232AA39A009AA2F4 /* DotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotType.swift; sourceTree = "<group>"; };
 		BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProvider.swift; sourceTree = "<group>"; };
 		BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProviderTest.swift; sourceTree = "<group>"; };
-		BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageScrollBehavior.swift; sourceTree = "<group>"; };
+		BD83DD55232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkCollectionViewScrollingBehavior.swift; sourceTree = "<group>"; };
 		BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageCollectionViewBridge.swift; sourceTree = "<group>"; };
 		BD83DD59232D876E00C86363 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewPageable.swift; sourceTree = "<group>"; };
@@ -353,15 +353,14 @@
 		BD63FB9E232CBC9C0086BCB1 /* InkPage */ = {
 			isa = PBXGroup;
 			children = (
-				BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */,
-				BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */,
+				BD83DD66232D8AB700C86363 /* UICollectionView */,
+				BD83DD65232D8A9F00C86363 /* UIPageView */,
 				BD726217232A9A2B009AA2F4 /* Extensions */,
 				BD726216232A9A1A009AA2F4 /* General */,
 				BD726212232A99C9009AA2F4 /* Animators */,
 				BD3F0B432329DB13009AA076 /* Utils */,
 				3D9C42A122745900000A6585 /* AssinPageControl.swift */,
 				BD4D6674232B2FC400D1D38A /* AssinPageController.swift */,
-				BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */,
 				BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */,
 				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
 				BD726218232AA39A009AA2F4 /* DotType.swift */,
@@ -420,6 +419,23 @@
 				BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BD83DD65232D8A9F00C86363 /* UIPageView */ = {
+			isa = PBXGroup;
+			children = (
+				BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */,
+			);
+			path = UIPageView;
+			sourceTree = "<group>";
+		};
+		BD83DD66232D8AB700C86363 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */,
+				BD83DD55232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift */,
+			);
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		BDABF1A2232B3A88003350DA /* UIPageView */ = {
@@ -753,7 +769,7 @@
 				BD4D6675232B2FC400D1D38A /* AssinPageController.swift in Sources */,
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
 				BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */,
-				BD83DD57232D7D2200C86363 /* InkPageScrollBehavior.swift in Sources */,
+				BD83DD57232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift in Sources */,
 				BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */,
 				BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */,
 				BDC80242232A207100BEF13C /* Array+Row.swift in Sources */,

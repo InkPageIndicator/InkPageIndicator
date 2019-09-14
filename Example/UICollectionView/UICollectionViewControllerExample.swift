@@ -24,7 +24,7 @@ class UICollectionViewControllerExample: UIViewController, StoryboardInitializab
     @IBOutlet weak var pageControl: AssinPageControl!
     weak var adapter: InkPageControlAdapter?
 
-    private lazy var behavior = InkPageScrollBehavior(self, adapter: adapter)
+    private lazy var behavior = InkCollectionViewScrollingBehavior(self, adapter: adapter)
 
     override func viewDidLoad() {
         super.viewDidLoad()
