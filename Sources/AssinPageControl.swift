@@ -90,6 +90,7 @@ import UIKit
                         bufferLayer.removeAllAnimations()
                         bufferLayer.removeFromSuperlayer()
                         self.updateDots()
+                        self.clearAnimations()
                     })
             }
             _prevPage = currentPage
@@ -191,7 +192,12 @@ import UIKit
     }
 }
 
-extension AssinPageControl: AssinPageControlPageTransitionDelegate {
+extension AssinPageControl: AssinPageController {
+    public func endAnimation(page: Int) {
+        self.currentPage = page
+        clearAnimations()
+    }
+    
     private func getColorState(page: Int) -> UIColor {
         return currentPage == page ? currentPageIndicatorTintColor : pageIndicatorTintColor
     }
@@ -199,26 +205,11 @@ extension AssinPageControl: AssinPageControlPageTransitionDelegate {
     public func updateProgress(progress: Double) {
         self.progress = progress
     }
-    public func endAnimation() {
+    public func cancelAnimation() {
         clearAnimations()
     }
-    
-    private func reverseLayer(shapeLayer: CAShapeLayer?, completion: (() -> Void)? = nil) {
-        if let shape = shapeLayer {
-            shape.removeAllAnimations()
-            CATransaction.begin()
-            CATransaction.setCompletionBlock {
-                completion?()
-            }
-            let reverseTranslate = CABasicAnimation.createAnimationLayer(
-                withDuration: 0.1,
-                delay: 0,
-                animationKeyPath: "path",
-                fromValue: shape.path,
-                toValue: UIBeizerPathProvider.instance.zeroInkPage(frame: shape.frame).cgPath)
-            shape.add(reverseTranslate, forKey: "asd")
-            CATransaction.commit()
-        }
+    public func endAnimation() {
+        clearAnimations()
     }
     public func beginAnimation(from: Int, to: Int) {
         clearAnimations()

@@ -18,8 +18,11 @@ class UIPageViewControllerExample: UIViewController {
 
     @IBOutlet weak var pageViewController: UIView!
     @IBOutlet weak var pageControl: AssinPageControl!
+    
+    private lazy var pageContoller: AssinPageController = {
+       return pageControl
+    }()
     /// View did load
-
     private var pages = [
         generateViewController(ChildModel.dummy[0]),
         generateViewController(ChildModel.dummy[1]),
@@ -46,15 +49,15 @@ class UIPageViewControllerExample: UIViewController {
 
 extension UIPageViewControllerExample: UIPageContarolDelegate {
     func pageControl(completePage: Int) {
-        self.pageControl.currentPage = completePage
+        pageContoller.endAnimation(page: completePage)
     }
     func pageControl(finished: Bool) {
-        self.pageControl?.endAnimation()
+        pageContoller.cancelAnimation()
     }
-    func pageControl(willStartPage: Int, toPage: Int) {
-        self.pageControl?.beginAnimation(from: willStartPage, to: toPage)
+    func pageControl(startPage: Int, endPage: Int) {
+        pageContoller.beginAnimation(from: startPage, to: endPage)
     }
     func pageControl(progress: Double) {
-        self.pageControl?.updateProgress(progress: progress)
+        pageContoller.updateProgress(progress: progress)
     }
 }

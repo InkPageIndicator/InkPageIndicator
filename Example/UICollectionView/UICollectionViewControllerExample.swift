@@ -105,7 +105,7 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
             currentItem = indexOfMajorCell
         }
         self.pageControl.currentPage = currentItem
-         self.pageControl.endAnimation()
+         self.pageControl.cancelAnimation()
     }
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -159,8 +159,8 @@ extension UICollectionViewControllerExample: UIPageContarolDelegate {
     func pageControl(finished: Bool) {
         self.pageControl?.endAnimation()
     }
-    func pageControl(willStartPage: Int, toPage: Int) {
-        self.pageControl?.beginAnimation(from: willStartPage, to: toPage)
+    func pageControl(startPage: Int, endPage: Int) {
+        self.pageControl?.beginAnimation(from: startPage, to: endPage)
     }
     func pageControl(progress: Double) {
         self.pageControl?.updateProgress(progress: progress)

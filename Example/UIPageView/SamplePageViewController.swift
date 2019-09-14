@@ -35,7 +35,6 @@ class SamplePageViewController: UIPageViewController {
         self.scrollView?.delegate = self
         self.delegate = self
         setViewControllers([pages[currentPage]], direction: .forward, animated: true)
-        controlDelegate?.pageControl?(completePage: currentPage)
     }
 }
 //
@@ -71,19 +70,19 @@ extension SamplePageViewController: UIPageViewControllerDataSource {
 extension SamplePageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let page = pages.firstIndex(where: { vc in vc == pendingViewControllers.first }) {
-            controlDelegate?.pageControl?(willStartPage: currentPage, toPage: page)
+            controlDelegate?.pageControl(startPage: currentPage, endPage: page)
             currentPage = page
         }
     }
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            controlDelegate?.pageControl?(completePage: currentPage)
+            controlDelegate?.pageControl(completePage: currentPage)
         } else {
             if let page = pages.firstIndex(where: { vc in vc == previousViewControllers.first }) {
                 currentPage = page
             }
         }
-        controlDelegate?.pageControl?(finished: finished)
+        controlDelegate?.pageControl(finished: finished)
     }
 }
 
@@ -99,6 +98,6 @@ extension SamplePageViewController: UIScrollViewDelegate {
         
         var newProgress = progress
         newProgress = abs(1 - progress)
-        controlDelegate?.pageControl?(progress: newProgress)
+        controlDelegate?.pageControl(progress: newProgress)
     }
 }
