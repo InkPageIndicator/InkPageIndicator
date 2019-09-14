@@ -23,7 +23,7 @@
 
 InkPageIndicator is a beatuful UIPageControl
 
-<img width="200" src="/Documents/Demo.gif" alt="InkPageIndicator Logo">
+<img width="200" src="/Screenshots/Demo.gif" alt="InkPageIndicator Logo">
 
 
 ## Features
@@ -50,7 +50,7 @@ pod 'InkPageIndicator'
 To integrate InkPageIndicator into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Tyler/InkPageIndicator"
+github "InkPageIndicator/InkPageIndicator"
 ```
 
 Run `carthage update` to build the framework and drag the built `InkPageIndicator.framework` into your Xcode project. 
