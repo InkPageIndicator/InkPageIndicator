@@ -209,17 +209,9 @@
 		3D9C42A0227458FA000A6585 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BD726217232A9A2B009AA2F4 /* Extensions */,
-				BD726216232A9A1A009AA2F4 /* General */,
-				BD726212232A99C9009AA2F4 /* Animators */,
-				BD3F0B432329DB13009AA076 /* Utils */,
-				3D9C42A122745900000A6585 /* AssinPageControl.swift */,
-				BD4D6674232B2FC400D1D38A /* AssinPageController.swift */,
-				BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */,
-				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
-				BD726218232AA39A009AA2F4 /* DotType.swift */,
-				BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */,
-				BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */,
+				BD63FB9E232CBC9C0086BCB1 /* InkPage */,
+				BD63FBA1232CBFB10086BCB1 /* ReactiveInkPage */,
+				BD63FBA0232CBCCC0086BCB1 /* RxInkPage */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -270,6 +262,38 @@
 				BD726210232A8EAD009AA2F4 /* EasingFunction.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BD63FB9E232CBC9C0086BCB1 /* InkPage */ = {
+			isa = PBXGroup;
+			children = (
+				BD726217232A9A2B009AA2F4 /* Extensions */,
+				BD726216232A9A1A009AA2F4 /* General */,
+				BD726212232A99C9009AA2F4 /* Animators */,
+				BD3F0B432329DB13009AA076 /* Utils */,
+				3D9C42A122745900000A6585 /* AssinPageControl.swift */,
+				BD4D6674232B2FC400D1D38A /* AssinPageController.swift */,
+				BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */,
+				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
+				BD726218232AA39A009AA2F4 /* DotType.swift */,
+				BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */,
+				BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */,
+			);
+			path = InkPage;
+			sourceTree = "<group>";
+		};
+		BD63FBA0232CBCCC0086BCB1 /* RxInkPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RxInkPage;
+			sourceTree = "<group>";
+		};
+		BD63FBA1232CBFB10086BCB1 /* ReactiveInkPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReactiveInkPage;
 			sourceTree = "<group>";
 		};
 		BD726212232A99C9009AA2F4 /* Animators */ = {

@@ -5,11 +5,26 @@ Pod::Spec.new do |s|
   s.homepage                  = "git@github.com:kimtaesu/InkPageIndicator.git"
   s.license                   = { :type => "MIT", :file => "LICENSE" }
   s.author                    = { "Tyler" => "kimtaesoo188@gmail.com" }
-  s.source                    = { :git => "git@github.com:kimtaesu/InkPageIndicator.git.git", :tag => s.version.to_s }
   s.ios.deployment_target     = "8.0"
-  s.tvos.deployment_target    = "9.0"
-  s.watchos.deployment_target = "2.0"
-  s.osx.deployment_target     = "10.10"
-  s.source_files              = "Sources/**/*"
-  s.frameworks                = "Foundation"
+  s.source       			  = { :git => "https://github.com/kimtaesu/InkPageIndicator.git", :tag => s.version }
+  s.default_subspec           = "Core"
+  s.swift_version             = '5.0'
+
+  s.subspec "Core" do |ss|
+  ss.source_files  = "Sources/InkPage/**/*"
+  ss.framework  = "Foundation"
+  end
+
+  s.subspec "ReactiveSwift" do |ss|
+  ss.source_files = "Sources/ReactiveInkPage/**/*"
+  ss.dependency "kimtaesu/Core"
+  ss.dependency "ReactiveSwift", "~> 5.0"
+  end
+
+  s.subspec "RxSwift" do |ss|
+  ss.source_files = "Sources/RxInkPage/**/*"
+  ss.dependency "kimtaesu/Core"
+  ss.dependency "RxSwift", "~> 5.0"
+  end
+
 end
