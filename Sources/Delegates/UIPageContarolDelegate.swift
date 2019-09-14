@@ -9,8 +9,7 @@
 import Foundation
 
 protocol UIPageContarolDelegate: class {
-    func pageControl(completePage: Int)
+    func pageControl(transitionCompleted page: Int)
     func pageControl(startPage: Int, endPage: Int)
-    func pageControl(finished: Bool)
     func pageControl(progress: Double)
 }

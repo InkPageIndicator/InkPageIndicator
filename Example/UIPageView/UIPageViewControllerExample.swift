@@ -48,11 +48,8 @@ class UIPageViewControllerExample: UIViewController {
 }
 
 extension UIPageViewControllerExample: UIPageContarolDelegate {
-    func pageControl(completePage: Int) {
-        pageContoller.endAnimation(page: completePage)
-    }
-    func pageControl(finished: Bool) {
-        pageContoller.cancelAnimation()
+    func pageControl(transitionCompleted page: Int) {
+        pageContoller.endAnimation(page: page)
     }
     func pageControl(startPage: Int, endPage: Int) {
         pageContoller.beginAnimation(from: startPage, to: endPage)

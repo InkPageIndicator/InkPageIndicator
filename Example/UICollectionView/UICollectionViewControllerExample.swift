@@ -153,11 +153,11 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
     }
 }
 extension UICollectionViewControllerExample: UIPageContarolDelegate {
-    func pageControl(completePage: Int) {
-        self.pageControl.currentPage = completePage
+    func pageControl(transitionCompleted page: Int) {
+        self.pageControl?.endAnimation(page: page)
     }
     func pageControl(finished: Bool) {
-        self.pageControl?.endAnimation()
+        
     }
     func pageControl(startPage: Int, endPage: Int) {
         self.pageControl?.beginAnimation(from: startPage, to: endPage)

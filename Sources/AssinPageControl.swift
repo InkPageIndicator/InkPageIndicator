@@ -24,8 +24,6 @@ import UIKit
     private var fromAnimationLayer: CAShapeLayer?
     private var toAnimationLayer: CAShapeLayer?
 
-    open var transitionDuration: TimeInterval = 2.0
-    
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
             updateDots()
@@ -190,25 +188,23 @@ import UIKit
             UIGraphicsEndImageContext()
         }
     }
+    private func getColorState(page: Int) -> UIColor {
+        return currentPage == page ? currentPageIndicatorTintColor : pageIndicatorTintColor
+    }
 }
 
 extension AssinPageControl: AssinPageController {
     public func endAnimation(page: Int) {
         self.currentPage = page
-        clearAnimations()
-    }
-    
-    private func getColorState(page: Int) -> UIColor {
-        return currentPage == page ? currentPageIndicatorTintColor : pageIndicatorTintColor
     }
     
     public func updateProgress(progress: Double) {
+        if progress <= 0 {
+            return
+        }
         self.progress = progress
     }
     public func cancelAnimation() {
-        clearAnimations()
-    }
-    public func endAnimation() {
         clearAnimations()
     }
     public func beginAnimation(from: Int, to: Int) {

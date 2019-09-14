@@ -76,13 +76,12 @@ extension SamplePageViewController: UIPageViewControllerDelegate {
     }
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            controlDelegate?.pageControl(completePage: currentPage)
+            controlDelegate?.pageControl(transitionCompleted: currentPage)
         } else {
             if let page = pages.firstIndex(where: { vc in vc == previousViewControllers.first }) {
                 currentPage = page
             }
         }
-        controlDelegate?.pageControl(finished: finished)
     }
 }
 
