@@ -19,6 +19,7 @@ Pod::Spec.new do |s|
   ss.source_files = "Sources/RxInkPage/**/*.{swift,h,m}"
   ss.dependency "InkPageIndicator/Core"
   ss.dependency "RxSwift", "~> 5.0"
+  ss.dependency "RxCocoa", "~> 5.0"
   end
 
 end
