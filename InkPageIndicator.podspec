@@ -15,13 +15,7 @@ Pod::Spec.new do |s|
   ss.framework  = "Foundation"
   end
 
-  s.subspec "ReactiveSwift" do |ss|
-  ss.source_files = "Sources/ReactiveInkPage/**/*"
-  ss.dependency "kimtaesu/Core"
-  ss.dependency "ReactiveSwift", "~> 5.0"
-  end
-
-  s.subspec "RxSwift" do |ss|
+  s.subspec "RxInkPage" do |ss|
   ss.source_files = "Sources/RxInkPage/**/*"
   ss.dependency "kimtaesu/Core"
   ss.dependency "RxSwift", "~> 5.0"
