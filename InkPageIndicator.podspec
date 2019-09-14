@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage                  = "git@github.com:kimtaesu/InkPageIndicator.git"
   s.license                   = { :type => "MIT", :file => "LICENSE" }
   s.author                    = { "Tyler" => "kimtaesoo188@gmail.com" }
-  s.ios.deployment_target     = "8.0"
+  s.ios.deployment_target     = "10.0"
   s.source       			  = { :git => "https://github.com/kimtaesu/InkPageIndicator.git", :tag => s.version }
   s.default_subspec           = "Core"
   s.swift_version             = '5.0'
