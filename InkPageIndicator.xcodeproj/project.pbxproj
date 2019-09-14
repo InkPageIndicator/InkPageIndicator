@@ -377,6 +377,13 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BD6923EF232D1E1600C3AB5B /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		BD726212232A99C9009AA2F4 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +425,7 @@
 		BDABF1A3232B3A92003350DA /* UICollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				BD6923EF232D1E1600C3AB5B /* Rx */,
 				BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */,
 				BDABF1A6232B3B08003350DA /* ScrollingImageCell.swift */,
 			);
