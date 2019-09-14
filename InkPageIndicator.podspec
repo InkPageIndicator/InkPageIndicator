@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary                   = "InkPageIndicator"
   s.homepage                  = "https://github.com/InkPageIndicator/InkPageIndicator.git"
   s.license                   = { :type => "MIT", :file => "LICENSE" }
-  s.author                    = { "Tyler" => "kimtaesoo188@gmail.com" }
+  s.author                    = { "InkPageIndicator" => "kimtaesoo188@gmail.com" }
   s.ios.deployment_target     = "10.0"
   s.source       			  = { :git => "https://github.com/InkPageIndicator/InkPageIndicator.git", :tag => s.version }
   s.default_subspec           = "Core"
