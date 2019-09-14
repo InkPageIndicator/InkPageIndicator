@@ -47,7 +47,7 @@ class UIPageViewControllerExample: UIViewController, StoryboardInitializable {
     }
 }
 
-extension UIPageViewControllerExample: UIPageControlAdapter {
+extension UIPageViewControllerExample: InkPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
         pageContoller.endAnimation(page: page)
     }

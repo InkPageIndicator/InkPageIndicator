@@ -16,7 +16,7 @@ class SamplePageViewController: UIPageViewController {
     private var currentPage = 0
     
     var pages: [UIViewController] = []
-    weak var adapter: UIPageControlAdapter?
+    weak var adapter: InkPageControlAdapter?
     
     override init(
         transitionStyle style: UIPageViewController.TransitionStyle,

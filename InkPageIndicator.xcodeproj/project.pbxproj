@@ -43,6 +43,8 @@
 		BD726219232AA39A009AA2F4 /* DotType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD726218232AA39A009AA2F4 /* DotType.swift */; };
 		BD72621B232AD171009AA2F4 /* UIBeizerPathProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */; };
 		BD72621E232AD257009AA2F4 /* UIBeizerPathProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */; };
+		BD83DD57232D7D2200C86363 /* InkPageScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */; };
+		BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */; };
 		BD978C4D232CE7670073FBE3 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD978C4C232CE7670073FBE3 /* DemoViewController.swift */; };
 		BDABF19D232B39D9003350DA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19C232B39D9003350DA /* Generator.swift */; };
 		BDABF19F232B3A06003350DA /* UICollectionViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */; };
@@ -59,7 +61,7 @@
 		BDC80240232A0DBE00BEF13C /* CGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023E232A0DAE00BEF13C /* CGUtils.swift */; };
 		BDC80242232A207100BEF13C /* Array+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80241232A207100BEF13C /* Array+Row.swift */; };
 		BDD9E747232CF4780005D0BC /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD9E746232CF4780005D0BC /* StoryboardInitializable.swift */; };
-		BDFA50C8232CB57B00116B3A /* UIPageControlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */; };
+		BDFA50C8232CB57B00116B3A /* InkPageControlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA50C7232CB57B00116B3A /* InkPageControlAdapter.swift */; };
 		FC4D596BDC2C39F19D14EBED /* Pods_RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56FF424036F6EFB0DEDC741 /* Pods_RxInkPage.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +155,8 @@
 		BD726218232AA39A009AA2F4 /* DotType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotType.swift; sourceTree = "<group>"; };
 		BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProvider.swift; sourceTree = "<group>"; };
 		BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProviderTest.swift; sourceTree = "<group>"; };
+		BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageScrollBehavior.swift; sourceTree = "<group>"; };
+		BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageCollectionViewBridge.swift; sourceTree = "<group>"; };
 		BD978C4C232CE7670073FBE3 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BDABF19C232B39D9003350DA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewControllerExample.swift; sourceTree = "<group>"; };
@@ -169,7 +173,7 @@
 		BDC8023E232A0DAE00BEF13C /* CGUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGUtils.swift; sourceTree = "<group>"; };
 		BDC80241232A207100BEF13C /* Array+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Row.swift"; sourceTree = "<group>"; };
 		BDD9E746232CF4780005D0BC /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
-		BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControlAdapter.swift; sourceTree = "<group>"; };
+		BDFA50C7232CB57B00116B3A /* InkPageControlAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPageControlAdapter.swift; sourceTree = "<group>"; };
 		D74EBE907A670E074022A187 /* Pods_InkPageIndicatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InkPageIndicatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15725A5F821988392D0E418 /* Pods-RxInkPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInkPage.release.xcconfig"; path = "Target Support Files/Pods-RxInkPage/Pods-RxInkPage.release.xcconfig"; sourceTree = "<group>"; };
 		F56FF424036F6EFB0DEDC741 /* Pods_RxInkPage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxInkPage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -345,6 +349,8 @@
 		BD63FB9E232CBC9C0086BCB1 /* InkPage */ = {
 			isa = PBXGroup;
 			children = (
+				BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */,
+				BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */,
 				BD726217232A9A2B009AA2F4 /* Extensions */,
 				BD726216232A9A1A009AA2F4 /* General */,
 				BD726212232A99C9009AA2F4 /* Animators */,
@@ -355,7 +361,7 @@
 				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
 				BD726218232AA39A009AA2F4 /* DotType.swift */,
 				BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */,
-				BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */,
+				BDFA50C7232CB57B00116B3A /* InkPageControlAdapter.swift */,
 			);
 			path = InkPage;
 			sourceTree = "<group>";
@@ -732,7 +738,7 @@
 			files = (
 				BD726211232A8EAD009AA2F4 /* EasingFunction.swift in Sources */,
 				BD72621B232AD171009AA2F4 /* UIBeizerPathProvider.swift in Sources */,
-				BDFA50C8232CB57B00116B3A /* UIPageControlAdapter.swift in Sources */,
+				BDFA50C8232CB57B00116B3A /* InkPageControlAdapter.swift in Sources */,
 				BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */,
 				BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */,
 				BD726219232AA39A009AA2F4 /* DotType.swift in Sources */,
@@ -740,6 +746,8 @@
 				BD4D6675232B2FC400D1D38A /* AssinPageController.swift in Sources */,
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
 				BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */,
+				BD83DD57232D7D2200C86363 /* InkPageScrollBehavior.swift in Sources */,
+				BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */,
 				BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */,
 				BDC80242232A207100BEF13C /* Array+Row.swift in Sources */,
 				BDC5C62D232A745D003B2C76 /* AssinError.swift in Sources */,

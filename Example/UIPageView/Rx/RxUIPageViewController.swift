@@ -48,7 +48,7 @@ class RxUIPageViewControllerExample: UIViewController, StoryboardInitializable {
     }
 }
 
-extension RxUIPageViewControllerExample: UIPageControlAdapter {
+extension RxUIPageViewControllerExample: InkPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
         pageContoller.endAnimation(page: page)
     }

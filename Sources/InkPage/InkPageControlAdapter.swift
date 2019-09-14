@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol UIPageControlAdapter: class {
+public protocol InkPageControlAdapter: class {
     func pageControl(transitionCompleted page: Int)
     func pageControl(startPage: Int, endPage: Int)
     func pageControl(progress: Double)
