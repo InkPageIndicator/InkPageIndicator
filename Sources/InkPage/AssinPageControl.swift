@@ -23,7 +23,6 @@ import UIKit
 
     private var fromAnimationLayer: CAShapeLayer?
     private var toAnimationLayer: CAShapeLayer?
-    private var isAnimating: Bool = false
 
     @IBInspectable open var numberOfPages: Int = 0 {
         didSet {
@@ -91,7 +90,6 @@ import UIKit
                         bufferLayer.removeFromSuperlayer()
                         self.updateDots()
                         self.clearAnimations()
-                        self.isAnimating = false
                     })
             }
             _prevPage = currentPage
@@ -178,11 +176,11 @@ import UIKit
         }
         let maxX = from.frame.width + spacing
         let controlX = CGFloat(progress) * maxX
-
+        
         updateInkShapeLayer(shapeLayer: from, controlX: controlX)
         updateInkShapeLayer(shapeLayer: to, controlX: -controlX)
     }
-
+    
     private func updateInkShapeLayer(shapeLayer: CAShapeLayer, controlX: CGFloat) {
         UIGraphicsBeginImageContextWithOptions(shapeLayer.frame.size, false, 0.0)
         if UIGraphicsGetCurrentContext() != nil {
@@ -200,30 +198,28 @@ extension AssinPageControl: AssinPageController {
     public func endAnimation(page: Int) {
         self.currentPage = page
     }
-
+    
     public func updateProgress(progress: Double) {
-        if progress <= 0 && !isAnimating {
+        if progress <= 0 {
             return
         }
         self.progress = progress
     }
     public func cancelAnimation() {
         clearAnimations()
-        isAnimating = false
     }
     public func beginAnimation(from: Int, to: Int) {
         clearAnimations()
-        if from == to && isAnimating {
+        if from == to {
             return
         }
-        isAnimating = true
         if let leftFrame = self.dots[safe: from]?.layer.frame,
             let rightFrame = self.dots[safe: to]?.layer.frame {
             if from < to {
                 let from = makeInkShapeLayer(dotFrame: leftFrame)
                 self.layer.addSublayer(from)
                 fromAnimationLayer = from
-
+                
                 let to = makeInkShapeLayer(dotFrame: rightFrame)
                 self.layer.addSublayer(to)
                 toAnimationLayer = to
@@ -231,7 +227,7 @@ extension AssinPageControl: AssinPageController {
                 let from = makeInkShapeLayer(dotFrame: rightFrame)
                 self.layer.addSublayer(from)
                 fromAnimationLayer = from
-
+                
                 let to = makeInkShapeLayer(dotFrame: leftFrame)
                 self.layer.addSublayer(to)
                 toAnimationLayer = to
@@ -246,13 +242,13 @@ extension AssinPageControl: AssinPageController {
         layer.zPosition = -1
         return layer
     }
-
+    
     private func clearAnimations() {
         CATransaction.flush()
         self.fromAnimationLayer?.removeAllAnimations()
         self.fromAnimationLayer?.removeFromSuperlayer()
         self.fromAnimationLayer = nil
-
+        
         self.toAnimationLayer?.removeAllAnimations()
         self.toAnimationLayer?.removeFromSuperlayer()
         self.toAnimationLayer = nil
