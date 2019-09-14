@@ -10,7 +10,7 @@
 import UIKit
 import InkPageIndicator
 
-class SamplePageViewController: UIPageViewController {
+class SamplePageViewController: UIPageViewController, UIPageViewPageable {
     
     
     private var currentPage = 0
