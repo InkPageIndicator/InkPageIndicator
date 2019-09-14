@@ -34,6 +34,7 @@ class UICollectionViewControllerExample: UIViewController, StoryboardInitializab
     private var indexOfCellBeforeDragging = 0
     private var lastContentOffset: CGPoint = .zero
     private var isAnimating: Bool = false
+    private var isBegenDragging: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
@@ -111,19 +112,19 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
         adapter?.pageControl(transitionCompleted: currentItem)
     }
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    }
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         self.isAnimating = false
+        self.isBegenDragging = false
         self.direction = .idle
     }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isBegenDragging = true
         indexOfCellBeforeDragging = indexOfMajorCell()
-        self.isAnimating = true
+        lastContentOffset = scrollView.contentOffset
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var nextItem = currentItem
-        if !isAnimating {
+        if isBegenDragging && !isAnimating {
             if lastContentOffset.x > scrollView.contentOffset.x {
                 // left
                 direction = .left
@@ -134,6 +135,7 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
                 nextItem = min(currentItem + 1, items.count - 1)
             }
             adapter?.pageControl(startPage: currentItem, endPage: nextItem)
+            isAnimating = true
         }
         if isAnimating {
             let numberOfPages = items.count
@@ -149,7 +151,6 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
                 newProgress = abs(1 - newProgress)
             }
             adapter?.pageControl(progress: newProgress)
-            self.lastContentOffset = scrollView.contentOffset
         }
     }
     private func indexOfMajorCell() -> Int {
@@ -162,15 +163,12 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
 }
 extension UICollectionViewControllerExample: UIPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
-//        print("!!!!!!!!!!! endAnimation \(page)")
         self.pageControl?.endAnimation(page: page)
     }
     func pageControl(startPage: Int, endPage: Int) {
-//        print("!!!!!!!!!!! beginAnimation \(startPage) \(endPage)")
         self.pageControl?.beginAnimation(from: startPage, to: endPage)
     }
     func pageControl(progress: Double) {
-//        print("!!!!!!!!!!! updateProgress \(progress)")
         self.pageControl?.updateProgress(progress: progress)
     }
 }

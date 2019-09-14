@@ -35,18 +35,6 @@ class RxUIPageViewControllerExample: UIViewController, StoryboardInitializable {
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.numberOfPages = pages.count
         pageControl.currentPageIndicatorTintColor = UIColor.black
-
-        Observable.just((1, 1))
-            .bind(to: pageControl.rx.beginAnimation)
-            .disposed(by: disposeBag)
-
-        Observable.just(1)
-            .bind(to: pageControl.rx.endAnimation)
-            .disposed(by: disposeBag)
-        
-        Observable.just(1.0)
-            .bind(to: pageControl.rx.progress)
-            .disposed(by: disposeBag)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

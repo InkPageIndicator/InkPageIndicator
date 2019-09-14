@@ -60,6 +60,7 @@ import UIKit
     @IBInspectable open var currentPage: Int = 0 {
         didSet {
             if _prevPage == currentPage {
+                clearAnimations()
                 return
             }
 
