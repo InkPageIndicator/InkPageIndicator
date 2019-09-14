@@ -6,13 +6,15 @@
 //  Copyright © 2019 Tyler. All rights reserved.
 //
 
-import UIKit
 import InkPageIndicator
+import UIKit
 
 enum ScrollDirection {
     case left
     case right
+    case idle
 }
+
 class UICollectionViewControllerExample: UIViewController, StoryboardInitializable {
 
     lazy var flowLayout: UICollectionViewFlowLayout = {
@@ -27,10 +29,11 @@ class UICollectionViewControllerExample: UIViewController, StoryboardInitializab
 
     @IBOutlet weak var pageControl: AssinPageControl!
     private var currentItem: Int = 0
-    private var direction: ScrollDirection = .left
+    private var direction: ScrollDirection = .idle
     weak var adapter: UIPageControlAdapter?
     private var indexOfCellBeforeDragging = 0
-    
+    private var lastContentOffset: CGPoint = .zero
+    private var isAnimating: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
@@ -44,6 +47,7 @@ class UICollectionViewControllerExample: UIViewController, StoryboardInitializab
         flowLayout.minimumLineSpacing = 0
         flowLayout.itemSize = collectionView.bounds.size
         self.collectionView.dataSource = self
+        adapter = self
     }
 }
 
@@ -76,73 +80,77 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         // Stop scrollView sliding:
         targetContentOffset.pointee = scrollView.contentOffset
-        
+
         // calculate where scrollView should snap to:
         let indexOfMajorCell = self.indexOfMajorCell()
-        
+
         // calculate conditions:
         let swipeVelocityThreshold: CGFloat = 0.5 // after some trail and error
         let hasEnoughVelocityToSlideToTheNextCell = indexOfCellBeforeDragging + 1 < items.count && velocity.x > swipeVelocityThreshold
         let hasEnoughVelocityToSlideToThePreviousCell = indexOfCellBeforeDragging - 1 >= 0 && velocity.x < -swipeVelocityThreshold
         let majorCellIsTheCellBeforeDragging = indexOfMajorCell == indexOfCellBeforeDragging
         let didUseSwipeToSkipCell = majorCellIsTheCellBeforeDragging && (hasEnoughVelocityToSlideToTheNextCell || hasEnoughVelocityToSlideToThePreviousCell)
-        
+
         if didUseSwipeToSkipCell {
             let snapToIndex = indexOfCellBeforeDragging + (hasEnoughVelocityToSlideToTheNextCell ? 1 : -1)
             let toValue = flowLayout.itemSize.width * CGFloat(snapToIndex)
-            
+
             // Damping equal 1 => no oscillations => decay animation:
             UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: velocity.x, options: .allowUserInteraction, animations: {
                 scrollView.contentOffset = CGPoint(x: toValue, y: 0)
                 scrollView.layoutIfNeeded()
             }, completion: nil)
             currentItem = snapToIndex
-            
+
         } else {
             // This is a much better way to scroll to a cell:
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             flowLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             currentItem = indexOfMajorCell
         }
-        self.pageControl.currentPage = currentItem
-         self.pageControl.cancelAnimation()
+        adapter?.pageControl(transitionCompleted: currentItem)
     }
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.isAnimating = false
+        self.direction = .idle
+    }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         indexOfCellBeforeDragging = indexOfMajorCell()
-        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
-        
-        var nextItem = currentItem
-        if translation.x >= 0 {
-            // left
-            direction = .left
-            nextItem = max(currentItem - 1, 0)
-        } else {
-            // right
-            direction = .right
-            nextItem = min(currentItem + 1, items.count - 1)
-        }
-        
-        self.pageControl.beginAnimation(from: currentItem, to: nextItem)
+        self.isAnimating = true
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let numberOfPages = items.count
-        let total = scrollView.contentSize.width - scrollView.bounds.width
-        let offset = scrollView.contentOffset.x
-        let percent = Double(offset / total)
-
-        let progress = percent * Double(numberOfPages - 1)
-
-        var newProgress = progress.truncatingRemainder(dividingBy: 1)
-        
-        switch direction {
-        case .left:
-            newProgress = abs(1 - newProgress)
-        case .right:
-            break
+        var nextItem = currentItem
+        if !isAnimating {
+            if lastContentOffset.x > scrollView.contentOffset.x {
+                // left
+                direction = .left
+                nextItem = max(currentItem - 1, 0)
+            } else {
+                // right
+                direction = .right
+                nextItem = min(currentItem + 1, items.count - 1)
+            }
+            adapter?.pageControl(startPage: currentItem, endPage: nextItem)
         }
+        if isAnimating {
+            let numberOfPages = items.count
+            let total = scrollView.contentSize.width - scrollView.bounds.width
+            let offset = scrollView.contentOffset.x
+            let percent = Double(offset / total)
 
-        self.pageControl(progress: newProgress)
+            let progress = percent * Double(numberOfPages - 1)
+
+            var newProgress = progress.truncatingRemainder(dividingBy: 1)
+
+            if lastContentOffset.x > scrollView.contentOffset.x {
+                newProgress = abs(1 - newProgress)
+            }
+            adapter?.pageControl(progress: newProgress)
+            self.lastContentOffset = scrollView.contentOffset
+        }
     }
     private func indexOfMajorCell() -> Int {
         let itemWidth = flowLayout.itemSize.width
@@ -154,12 +162,15 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
 }
 extension UICollectionViewControllerExample: UIPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
+//        print("!!!!!!!!!!! endAnimation \(page)")
         self.pageControl?.endAnimation(page: page)
     }
     func pageControl(startPage: Int, endPage: Int) {
+//        print("!!!!!!!!!!! beginAnimation \(startPage) \(endPage)")
         self.pageControl?.beginAnimation(from: startPage, to: endPage)
     }
     func pageControl(progress: Double) {
+//        print("!!!!!!!!!!! updateProgress \(progress)")
         self.pageControl?.updateProgress(progress: progress)
     }
 }
