@@ -20,7 +20,8 @@ class DemoViewController: UIViewController {
     var demos: [Demo] = [
         Demo(title: "UIPageViewController", bgImage: UIImage(named: "iphone-11")!),
         Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!),
-        Demo(title: "Rx+UIPageViewController", bgImage: UIImage(named: "induction-edition")!)
+        Demo(title: "Rx+UIPageViewController", bgImage: UIImage(named: "induction-edition")!),
+        Demo(title: "Rx+UICollectionViewController", bgImage: UIImage(named: "iPhone-11-2")!)
     ]
     
     override func viewDidLoad() {
