@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D9C428F22745894000A6585"
                BuildableName = "InkPageIndicator.framework"
-               BlueprintName = "InkPageIndicator-iOS"
+               BlueprintName = "InkPageIndicator"
                ReferencedContainer = "container:InkPageIndicator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -36,8 +36,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D9C42F02274604A000A6585"
-               BuildableName = "InkPageIndicator-iOSTests.xctest"
-               BlueprintName = "InkPageIndicator-iOSTests"
+               BuildableName = "InkPageIndicatorTests.xctest"
+               BlueprintName = "InkPageIndicatorTests"
                ReferencedContainer = "container:InkPageIndicator.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D9C428F22745894000A6585"
             BuildableName = "InkPageIndicator.framework"
-            BlueprintName = "InkPageIndicator-iOS"
+            BlueprintName = "InkPageIndicator"
             ReferencedContainer = "container:InkPageIndicator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -69,7 +69,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D9C428F22745894000A6585"
             BuildableName = "InkPageIndicator.framework"
-            BlueprintName = "InkPageIndicator-iOS"
+            BlueprintName = "InkPageIndicator"
             ReferencedContainer = "container:InkPageIndicator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -87,7 +87,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D9C428F22745894000A6585"
             BuildableName = "InkPageIndicator.framework"
-            BlueprintName = "InkPageIndicator-iOS"
+            BlueprintName = "InkPageIndicator"
             ReferencedContainer = "container:InkPageIndicator.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -26,6 +26,12 @@
 		BD4D6675232B2FC400D1D38A /* AssinPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6674232B2FC400D1D38A /* AssinPageController.swift */; };
 		BD4D6678232B350800D1D38A /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6677232B350800D1D38A /* ChildModel.swift */; };
 		BD63FB99232CB8770086BCB1 /* SamplePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */; };
+		BD63FBAF232CC4370086BCB1 /* RxInkPage.h in Headers */ = {isa = PBXBuildFile; fileRef = BD63FBAD232CC4370086BCB1 /* RxInkPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD63FBB2232CC4370086BCB1 /* RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD63FBAB232CC4360086BCB1 /* RxInkPage.framework */; };
+		BD63FBB3232CC4370086BCB1 /* RxInkPage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD63FBAB232CC4360086BCB1 /* RxInkPage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BD63FBC0232CC4880086BCB1 /* ReactiveInkPage.h in Headers */ = {isa = PBXBuildFile; fileRef = BD63FBBE232CC4880086BCB1 /* ReactiveInkPage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD63FBC3232CC4880086BCB1 /* ReactiveInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD63FBBC232CC4870086BCB1 /* ReactiveInkPage.framework */; };
+		BD63FBC4232CC4880086BCB1 /* ReactiveInkPage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD63FBBC232CC4870086BCB1 /* ReactiveInkPage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */; };
 		BD72620D232A8BBA009AA2F4 /* Array+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620C232A8BBA009AA2F4 /* Array+Subscript.swift */; };
 		BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */; };
@@ -63,6 +69,20 @@
 			remoteGlobalIDString = 3D9C428F22745894000A6585;
 			remoteInfo = "InkPageIndicator-iOS";
 		};
+		BD63FBB0232CC4370086BCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D9C428722745894000A6585 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD63FBAA232CC4360086BCB1;
+			remoteInfo = RxInkPage;
+		};
+		BD63FBC1232CC4880086BCB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D9C428722745894000A6585 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD63FBBB232CC4870086BCB1;
+			remoteInfo = ReactiveInkPage;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,6 +92,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BD63FBC4232CC4880086BCB1 /* ReactiveInkPage.framework in Embed Frameworks */,
+				BD63FBB3232CC4370086BCB1 /* RxInkPage.framework in Embed Frameworks */,
 				3D9C433522746323000A6585 /* InkPageIndicator.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -95,7 +117,7 @@
 		3D9C42DA22745DB0000A6585 /* .swift-version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-version"; sourceTree = SOURCE_ROOT; };
 		3D9C42DB22745DB0000A6585 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		3D9C42EC22745FDA000A6585 /* LinuxMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
-		3D9C42F12274604A000A6585 /* InkPageIndicator-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InkPageIndicator-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D9C42F12274604A000A6585 /* InkPageIndicatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InkPageIndicatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9C43212274629B000A6585 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D9C43232274629B000A6585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D9C432A2274629C000A6585 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,6 +136,15 @@
 		BD4D6674232B2FC400D1D38A /* AssinPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssinPageController.swift; sourceTree = "<group>"; };
 		BD4D6677232B350800D1D38A /* ChildModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModel.swift; sourceTree = "<group>"; };
 		BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplePageViewController.swift; sourceTree = "<group>"; };
+		BD63FBAB232CC4360086BCB1 /* RxInkPage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxInkPage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD63FBAD232CC4370086BCB1 /* RxInkPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxInkPage.h; sourceTree = "<group>"; };
+		BD63FBAE232CC4370086BCB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD63FBBC232CC4870086BCB1 /* ReactiveInkPage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveInkPage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD63FBBE232CC4880086BCB1 /* ReactiveInkPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveInkPage.h; sourceTree = "<group>"; };
+		BD63FBBF232CC4880086BCB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD63FBC9232CC5140086BCB1 /* ReactiveMoya.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactiveMoya.h; sourceTree = "<group>"; };
+		BD63FBCA232CC5140086BCB1 /* InkPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InkPage.h; sourceTree = "<group>"; };
+		BD63FBCC232CC5140086BCB1 /* RxInkPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxInkPage.h; sourceTree = "<group>"; };
 		BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssinPageControl+CALayer.swift"; sourceTree = "<group>"; };
 		BD72620C232A8BBA009AA2F4 /* Array+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Subscript.swift"; sourceTree = "<group>"; };
 		BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CABasicAnimation+Init.swift"; sourceTree = "<group>"; };
@@ -156,7 +187,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD63FBC3232CC4880086BCB1 /* ReactiveInkPage.framework in Frameworks */,
+				BD63FBB2232CC4370086BCB1 /* RxInkPage.framework in Frameworks */,
 				3D9C433422746323000A6585 /* InkPageIndicator.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD63FBA8232CC4360086BCB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD63FBB9232CC4870086BCB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +218,8 @@
 				3D9C42A32274595F000A6585 /* Tests */,
 				3D9C43222274629B000A6585 /* Example */,
 				3D9C429B227458E8000A6585 /* Configs */,
+				BD63FBAC232CC4370086BCB1 /* RxInkPage */,
+				BD63FBBD232CC4880086BCB1 /* ReactiveInkPage */,
 				3D9C429122745894000A6585 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -179,8 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				3D9C429022745894000A6585 /* InkPageIndicator.framework */,
-				3D9C42F12274604A000A6585 /* InkPageIndicator-iOSTests.xctest */,
+				3D9C42F12274604A000A6585 /* InkPageIndicatorTests.xctest */,
 				3D9C43212274629B000A6585 /* Example.app */,
+				BD63FBAB232CC4360086BCB1 /* RxInkPage.framework */,
+				BD63FBBC232CC4870086BCB1 /* ReactiveInkPage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +260,7 @@
 		3D9C42A0227458FA000A6585 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BD63FBC8232CC4F70086BCB1 /* Supporting Files */,
 				BD63FB9E232CBC9C0086BCB1 /* InkPage */,
 				BD63FBA1232CBFB10086BCB1 /* ReactiveInkPage */,
 				BD63FBA0232CBCCC0086BCB1 /* RxInkPage */,
@@ -296,6 +348,34 @@
 			path = ReactiveInkPage;
 			sourceTree = "<group>";
 		};
+		BD63FBAC232CC4370086BCB1 /* RxInkPage */ = {
+			isa = PBXGroup;
+			children = (
+				BD63FBAD232CC4370086BCB1 /* RxInkPage.h */,
+				BD63FBAE232CC4370086BCB1 /* Info.plist */,
+			);
+			path = RxInkPage;
+			sourceTree = "<group>";
+		};
+		BD63FBBD232CC4880086BCB1 /* ReactiveInkPage */ = {
+			isa = PBXGroup;
+			children = (
+				BD63FBBE232CC4880086BCB1 /* ReactiveInkPage.h */,
+				BD63FBBF232CC4880086BCB1 /* Info.plist */,
+			);
+			path = ReactiveInkPage;
+			sourceTree = "<group>";
+		};
+		BD63FBC8232CC4F70086BCB1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BD63FBCA232CC5140086BCB1 /* InkPage.h */,
+				BD63FBC9232CC5140086BCB1 /* ReactiveMoya.h */,
+				BD63FBCC232CC5140086BCB1 /* RxInkPage.h */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BD726212232A99C9009AA2F4 /* Animators */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,12 +433,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD63FBA6232CC4360086BCB1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD63FBAF232CC4370086BCB1 /* RxInkPage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD63FBB7232CC4870086BCB1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD63FBC0232CC4880086BCB1 /* ReactiveInkPage.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		3D9C428F22745894000A6585 /* InkPageIndicator-iOS */ = {
+		3D9C428F22745894000A6585 /* InkPageIndicator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D9C429822745894000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator-iOS" */;
+			buildConfigurationList = 3D9C429822745894000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator" */;
 			buildPhases = (
 				3D9C428B22745894000A6585 /* Headers */,
 				3D9C428C22745894000A6585 /* Sources */,
@@ -370,14 +466,14 @@
 			);
 			dependencies = (
 			);
-			name = "InkPageIndicator-iOS";
+			name = InkPageIndicator;
 			productName = InkPageIndicator;
 			productReference = 3D9C429022745894000A6585 /* InkPageIndicator.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		3D9C42F02274604A000A6585 /* InkPageIndicator-iOSTests */ = {
+		3D9C42F02274604A000A6585 /* InkPageIndicatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D9C42F92274604A000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator-iOSTests" */;
+			buildConfigurationList = 3D9C42F92274604A000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicatorTests" */;
 			buildPhases = (
 				3D9C42ED2274604A000A6585 /* Sources */,
 				3D9C42EE2274604A000A6585 /* Frameworks */,
@@ -388,9 +484,9 @@
 			dependencies = (
 				3D9C42F82274604A000A6585 /* PBXTargetDependency */,
 			);
-			name = "InkPageIndicator-iOSTests";
+			name = InkPageIndicatorTests;
 			productName = "InkPageIndicator-iOSTests";
-			productReference = 3D9C42F12274604A000A6585 /* InkPageIndicator-iOSTests.xctest */;
+			productReference = 3D9C42F12274604A000A6585 /* InkPageIndicatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3D9C43202274629B000A6585 /* Example */ = {
@@ -406,11 +502,49 @@
 			);
 			dependencies = (
 				3D9C433722746323000A6585 /* PBXTargetDependency */,
+				BD63FBB1232CC4370086BCB1 /* PBXTargetDependency */,
+				BD63FBC2232CC4880086BCB1 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
 			productReference = 3D9C43212274629B000A6585 /* Example.app */;
 			productType = "com.apple.product-type.application";
+		};
+		BD63FBAA232CC4360086BCB1 /* RxInkPage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD63FBB4232CC4370086BCB1 /* Build configuration list for PBXNativeTarget "RxInkPage" */;
+			buildPhases = (
+				BD63FBA6232CC4360086BCB1 /* Headers */,
+				BD63FBA7232CC4360086BCB1 /* Sources */,
+				BD63FBA8232CC4360086BCB1 /* Frameworks */,
+				BD63FBA9232CC4360086BCB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RxInkPage;
+			productName = RxInkPage;
+			productReference = BD63FBAB232CC4360086BCB1 /* RxInkPage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BD63FBBB232CC4870086BCB1 /* ReactiveInkPage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD63FBC5232CC4880086BCB1 /* Build configuration list for PBXNativeTarget "ReactiveInkPage" */;
+			buildPhases = (
+				BD63FBB7232CC4870086BCB1 /* Headers */,
+				BD63FBB8232CC4870086BCB1 /* Sources */,
+				BD63FBB9232CC4870086BCB1 /* Frameworks */,
+				BD63FBBA232CC4870086BCB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveInkPage;
+			productName = ReactiveInkPage;
+			productReference = BD63FBBC232CC4870086BCB1 /* ReactiveInkPage.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -432,6 +566,12 @@
 					3D9C43202274629B000A6585 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
+					BD63FBAA232CC4360086BCB1 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					BD63FBBB232CC4870086BCB1 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 				};
 			};
 			buildConfigurationList = 3D9C428A22745894000A6585 /* Build configuration list for PBXProject "InkPageIndicator" */;
@@ -447,8 +587,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D9C428F22745894000A6585 /* InkPageIndicator-iOS */,
-				3D9C42F02274604A000A6585 /* InkPageIndicator-iOSTests */,
+				3D9C428F22745894000A6585 /* InkPageIndicator */,
+				3D9C42F02274604A000A6585 /* InkPageIndicatorTests */,
+				BD63FBAA232CC4360086BCB1 /* RxInkPage */,
+				BD63FBBB232CC4870086BCB1 /* ReactiveInkPage */,
 				3D9C43202274629B000A6585 /* Example */,
 			);
 		};
@@ -476,6 +618,20 @@
 				BD3F0B342329BF39009AA076 /* Main.storyboard in Resources */,
 				3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */,
 				3D9C432B2274629C000A6585 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD63FBA9232CC4360086BCB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD63FBBA232CC4870086BCB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,18 +713,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BD63FBA7232CC4360086BCB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD63FBB8232CC4870086BCB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		3D9C42F82274604A000A6585 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D9C428F22745894000A6585 /* InkPageIndicator-iOS */;
+			target = 3D9C428F22745894000A6585 /* InkPageIndicator */;
 			targetProxy = 3D9C42F72274604A000A6585 /* PBXContainerItemProxy */;
 		};
 		3D9C433722746323000A6585 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D9C428F22745894000A6585 /* InkPageIndicator-iOS */;
+			target = 3D9C428F22745894000A6585 /* InkPageIndicator */;
 			targetProxy = 3D9C433622746323000A6585 /* PBXContainerItemProxy */;
+		};
+		BD63FBB1232CC4370086BCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD63FBAA232CC4360086BCB1 /* RxInkPage */;
+			targetProxy = BD63FBB0232CC4370086BCB1 /* PBXContainerItemProxy */;
+		};
+		BD63FBC2232CC4880086BCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD63FBBB232CC4870086BCB1 /* ReactiveInkPage */;
+			targetProxy = BD63FBC1232CC4880086BCB1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -847,6 +1027,110 @@
 			};
 			name = Release;
 		};
+		BD63FBB5232CC4370086BCB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxInkPage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hucet.RxInkPageIndicator.RxInkPage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD63FBB6232CC4370086BCB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RxInkPage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hucet.RxInkPageIndicator.RxInkPage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD63FBC6232CC4880086BCB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ReactiveInkPage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hucet.ReactiveInkPage.ReactiveInkPage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD63FBC7232CC4880086BCB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ReactiveInkPage/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hucet.ReactiveInkPage.ReactiveInkPage;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -859,7 +1143,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D9C429822745894000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator-iOS" */ = {
+		3D9C429822745894000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D9C429922745894000A6585 /* Debug */,
@@ -868,7 +1152,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D9C42F92274604A000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator-iOSTests" */ = {
+		3D9C42F92274604A000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D9C42FA2274604A000A6585 /* Debug */,
@@ -882,6 +1166,24 @@
 			buildConfigurations = (
 				3D9C43312274629C000A6585 /* Debug */,
 				3D9C43322274629C000A6585 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD63FBB4232CC4370086BCB1 /* Build configuration list for PBXNativeTarget "RxInkPage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD63FBB5232CC4370086BCB1 /* Debug */,
+				BD63FBB6232CC4370086BCB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD63FBC5232CC4880086BCB1 /* Build configuration list for PBXNativeTarget "ReactiveInkPage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD63FBC6232CC4880086BCB1 /* Debug */,
+				BD63FBC7232CC4880086BCB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
