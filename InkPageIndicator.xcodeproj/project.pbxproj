@@ -48,6 +48,7 @@
 		BD83DD5D232D885900C86363 /* UIPageViewPageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */; };
 		BD83DD68232D8E6900C86363 /* InkPagePageViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD67232D8E6900C86363 /* InkPagePageViewBridge.swift */; };
 		BD83DD6A232D8E8300C86363 /* InkPageViewScrollingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD69232D8E8300C86363 /* InkPageViewScrollingBehavior.swift */; };
+		BD83DDB6232DB40600C86363 /* WrapInkPageControlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DDB5232DB40600C86363 /* WrapInkPageControlAdapter.swift */; };
 		BD978C4D232CE7670073FBE3 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD978C4C232CE7670073FBE3 /* DemoViewController.swift */; };
 		BDABF19D232B39D9003350DA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19C232B39D9003350DA /* Generator.swift */; };
 		BDABF19F232B3A06003350DA /* UICollectionViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */; };
@@ -163,6 +164,7 @@
 		BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewPageable.swift; sourceTree = "<group>"; };
 		BD83DD67232D8E6900C86363 /* InkPagePageViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPagePageViewBridge.swift; sourceTree = "<group>"; };
 		BD83DD69232D8E8300C86363 /* InkPageViewScrollingBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPageViewScrollingBehavior.swift; sourceTree = "<group>"; };
+		BD83DDB5232DB40600C86363 /* WrapInkPageControlAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapInkPageControlAdapter.swift; sourceTree = "<group>"; };
 		BD978C4C232CE7670073FBE3 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BDABF19C232B39D9003350DA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewControllerExample.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 				BD726218232AA39A009AA2F4 /* DotType.swift */,
 				BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */,
 				BDFA50C7232CB57B00116B3A /* InkPageControlAdapter.swift */,
+				BD83DDB5232DB40600C86363 /* WrapInkPageControlAdapter.swift */,
 			);
 			path = InkPage;
 			sourceTree = "<group>";
@@ -774,6 +777,7 @@
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
 				BD83DD68232D8E6900C86363 /* InkPagePageViewBridge.swift in Sources */,
 				BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */,
+				BD83DDB6232DB40600C86363 /* WrapInkPageControlAdapter.swift in Sources */,
 				BD83DD57232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift in Sources */,
 				BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */,
 				BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */,

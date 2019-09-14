@@ -12,14 +12,13 @@ import InkPageIndicator
 // MARK: - ViewController
 
 /// The ViewController
-class UIPageViewControllerExample: UIViewController, StoryboardInitializable {
-
+class UIPageViewControllerExample: UIViewController, StoryboardInitializable, WrapInkPageControlAdapter {
     // MARK: Properties
 
     @IBOutlet weak var pageViewController: UIView!
     @IBOutlet weak var pageControl: AssinPageControl!
     
-    private lazy var pageContoller: AssinPageController = {
+    internal lazy var pageContoller: AssinPageController? = {
        return pageControl
     }()
     /// View did load
@@ -44,17 +43,5 @@ class UIPageViewControllerExample: UIViewController, StoryboardInitializable {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    }
-}
-
-extension UIPageViewControllerExample: InkPageControlAdapter {
-    func pageControl(transitionCompleted page: Int) {
-        pageContoller.endAnimation(page: page)
-    }
-    func pageControl(startPage: Int, endPage: Int) {
-        pageContoller.beginAnimation(from: startPage, to: endPage)
-    }
-    func pageControl(progress: Double) {
-        pageContoller.updateProgress(progress: progress)
     }
 }

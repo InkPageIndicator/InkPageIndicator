@@ -9,7 +9,8 @@
 import InkPageIndicator
 import UIKit
 
-class UICollectionViewControllerExample: UIViewController, StoryboardInitializable {
+class UICollectionViewControllerExample: UIViewController, StoryboardInitializable, WrapInkPageControlAdapter {
+    
 
     lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -22,10 +23,11 @@ class UICollectionViewControllerExample: UIViewController, StoryboardInitializab
     fileprivate var items = ChildModel.dummy
 
     @IBOutlet weak var pageControl: AssinPageControl!
-    weak var adapter: InkPageControlAdapter?
-
-    private lazy var behavior = InkCollectionViewScrollingBehavior(self, adapter: adapter)
-
+    private lazy var behavior = InkCollectionViewScrollingBehavior(self, adapter: self)
+    
+    internal lazy var pageContoller: AssinPageController? = {
+       return pageControl
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         pageControl.pageIndicatorTintColor = UIColor.lightGray
@@ -39,7 +41,6 @@ class UICollectionViewControllerExample: UIViewController, StoryboardInitializab
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
         flowLayout.itemSize = collectionView.bounds.size
-        adapter = self
     }
 }
 
@@ -93,18 +94,5 @@ extension UICollectionViewControllerExample: InkPageCollectionViewBridge {
     func scrollToItem(page: Int) {
         let indexPath = IndexPath(item: page, section: 0)
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-    }
-
-}
-
-extension UICollectionViewControllerExample: InkPageControlAdapter {
-    func pageControl(transitionCompleted page: Int) {
-        self.pageControl?.endAnimation(page: page)
-    }
-    func pageControl(startPage: Int, endPage: Int) {
-        self.pageControl?.beginAnimation(from: startPage, to: endPage)
-    }
-    func pageControl(progress: Double) {
-        self.pageControl?.updateProgress(progress: progress)
     }
 }
