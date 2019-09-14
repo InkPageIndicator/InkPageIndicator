@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2D85A5AD798AC690EAF1ACD9 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E55B213C2BBDB84F2383A5 /* Pods_Example.framework */; };
-		3322EFDCAD2E786F0B80CD04 /* Pods_RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C10E7FE15B5EA5354C75E0 /* Pods_RxInkPage.framework */; };
 		3D9C42A222745900000A6585 /* AssinPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C42A122745900000A6585 /* AssinPageControl.swift */; };
 		3D9C42F62274604A000A6585 /* InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; };
 		3D9C42FC22746078000A6585 /* InkPageIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C42D722745CDE000A6585 /* InkPageIndicatorTests.swift */; };
@@ -17,7 +16,7 @@
 		3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9C432C2274629C000A6585 /* LaunchScreen.storyboard */; };
 		3D9C433422746323000A6585 /* InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; };
 		3D9C433522746323000A6585 /* InkPageIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6DD920B99C57D47AD94A5DB3 /* Pods_InkPageIndicator_RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C7FE1ADEF934567F8F38EC /* Pods_InkPageIndicator_RxInkPage.framework */; };
+		8CE4A4A4395C7F24A4B594EF /* Pods_RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C10E7FE15B5EA5354C75E0 /* Pods_RxInkPage.framework */; };
 		BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */; };
 		BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */; };
 		BD3F0B342329BF39009AA076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3F0B332329BF39009AA076 /* Main.storyboard */; };
@@ -203,8 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD63FBD7232CCF340086BCB1 /* InkPageIndicator.framework in Frameworks */,
-				3322EFDCAD2E786F0B80CD04 /* Pods_RxInkPage.framework in Frameworks */,
-				6DD920B99C57D47AD94A5DB3 /* Pods_InkPageIndicator_RxInkPage.framework in Frameworks */,
+				8CE4A4A4395C7F24A4B594EF /* Pods_RxInkPage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
