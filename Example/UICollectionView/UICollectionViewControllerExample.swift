@@ -13,7 +13,7 @@ enum ScrollDirection {
     case left
     case right
 }
-class UICollectionViewControllerExample: UIViewController {
+class UICollectionViewControllerExample: UIViewController, StoryboardInitializable {
 
     lazy var flowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()

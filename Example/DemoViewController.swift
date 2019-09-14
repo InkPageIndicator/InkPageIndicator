@@ -32,7 +32,16 @@ class DemoViewController: UIViewController {
 }
 
 extension DemoViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.item {
+        case 0:
+            self.show(UIPageViewControllerExample.initFromStoryboard(), sender: self)
+        case 1:
+            self.show(UICollectionViewControllerExample.initFromStoryboard(), sender: self)
+        default:
+            break
+        }
+    }
 }
 
 extension DemoViewController: UITableViewDataSource {

@@ -57,6 +57,7 @@
 		BDC8023D232A0C7700BEF13C /* CenterLayoutArrangerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */; };
 		BDC80240232A0DBE00BEF13C /* CGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023E232A0DAE00BEF13C /* CGUtils.swift */; };
 		BDC80242232A207100BEF13C /* Array+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80241232A207100BEF13C /* Array+Row.swift */; };
+		BDD9E747232CF4780005D0BC /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD9E746232CF4780005D0BC /* StoryboardInitializable.swift */; };
 		BDFA50C8232CB57B00116B3A /* UIPageControlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */; };
 		FC4D596BDC2C39F19D14EBED /* Pods_RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F56FF424036F6EFB0DEDC741 /* Pods_RxInkPage.framework */; };
 /* End PBXBuildFile section */
@@ -165,6 +166,7 @@
 		BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutArrangerTest.swift; sourceTree = "<group>"; };
 		BDC8023E232A0DAE00BEF13C /* CGUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGUtils.swift; sourceTree = "<group>"; };
 		BDC80241232A207100BEF13C /* Array+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Row.swift"; sourceTree = "<group>"; };
+		BDD9E746232CF4780005D0BC /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControlAdapter.swift; sourceTree = "<group>"; };
 		D74EBE907A670E074022A187 /* Pods_InkPageIndicatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InkPageIndicatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E15725A5F821988392D0E418 /* Pods-RxInkPage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInkPage.release.xcconfig"; path = "Target Support Files/Pods-RxInkPage/Pods-RxInkPage.release.xcconfig"; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		3D9C43222274629B000A6585 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				3D9C4333227462B9000A6585 /* Resources */,
 				BDC620A9232CE8A700D450F0 /* Utils */,
 				BDABF1A3232B3A92003350DA /* UICollectionView */,
 				BDABF1A2232B3A88003350DA /* UIPageView */,
@@ -290,7 +293,6 @@
 				BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */,
 				BD3F0B352329C8EA009AA076 /* ChildViewController.swift */,
 				BD4D6677232B350800D1D38A /* ChildModel.swift */,
-				3D9C4333227462B9000A6585 /* Resources */,
 				BDABF19C232B39D9003350DA /* Generator.swift */,
 				BD978C4C232CE7670073FBE3 /* DemoViewController.swift */,
 				BDC620A7232CE86F00D450F0 /* DemoCaseCell.swift */,
@@ -416,6 +418,7 @@
 			children = (
 				BDC620AA232CE8B000D450F0 /* NibForName.swift */,
 				BDABF1A8232B3B1A003350DA /* SwiftNameIdentifier.swift */,
+				BDD9E746232CF4780005D0BC /* StoryboardInitializable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				BDABF1A1232B3A31003350DA /* UIPageViewControllerExample.swift in Sources */,
 				BDC620AB232CE8B000D450F0 /* NibForName.swift in Sources */,
 				BD3F0B362329C8EA009AA076 /* ChildViewController.swift in Sources */,
+				BDD9E747232CF4780005D0BC /* StoryboardInitializable.swift in Sources */,
 				BD63FB99232CB8770086BCB1 /* SamplePageViewController.swift in Sources */,
 				BDC620A8232CE86F00D450F0 /* DemoCaseCell.swift in Sources */,
 				BDABF1A7232B3B08003350DA /* ScrollingImageCell.swift in Sources */,

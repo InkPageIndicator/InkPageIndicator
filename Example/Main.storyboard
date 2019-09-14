@@ -42,7 +42,7 @@
         <!--Page View Controller Example-->
         <scene sceneID="nQe-3c-25D">
             <objects>
-                <viewController id="tOh-K0-9kA" customClass="UIPageViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIPageViewControllerExample" id="tOh-K0-9kA" customClass="UIPageViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lPF-3D-pvm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -100,7 +100,7 @@
         <!--Collection View Controller Example-->
         <scene sceneID="cal-hq-bNh">
             <objects>
-                <viewController id="UIa-bq-gd5" customClass="UICollectionViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UICollectionViewControllerExample" id="UIa-bq-gd5" customClass="UICollectionViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2tA-Fg-BYh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
