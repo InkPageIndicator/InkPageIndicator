@@ -16,6 +16,7 @@
 		3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9C432C2274629C000A6585 /* LaunchScreen.storyboard */; };
 		3D9C433422746323000A6585 /* InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; };
 		3D9C433522746323000A6585 /* InkPageIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BD31FF6D232D0AB000BDDDE1 /* RxUIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31FF6C232D0AB000BDDDE1 /* RxUIPageViewController.swift */; };
 		BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */; };
 		BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */; };
 		BD3F0B342329BF39009AA076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3F0B332329BF39009AA076 /* Main.storyboard */; };
@@ -129,6 +130,7 @@
 		3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitlab-ci.yml"; sourceTree = SOURCE_ROOT; };
 		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
 		A68AC680C9E4C1D8C54CAC5C /* Pods-RxInkPage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInkPage.debug.xcconfig"; path = "Target Support Files/Pods-RxInkPage/Pods-RxInkPage.debug.xcconfig"; sourceTree = "<group>"; };
+		BD31FF6C232D0AB000BDDDE1 /* RxUIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUIPageViewController.swift; sourceTree = "<group>"; };
 		BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Paging.swift"; sourceTree = "<group>"; };
 		BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
 		BD3F0B332329BF39009AA076 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -322,6 +324,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BD31FF6B232D0AA200BDDDE1 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				BD31FF6C232D0AB000BDDDE1 /* RxUIPageViewController.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
 		BD3F0B432329DB13009AA076 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +407,7 @@
 		BDABF1A2232B3A88003350DA /* UIPageView */ = {
 			isa = PBXGroup;
 			children = (
+				BD31FF6B232D0AA200BDDDE1 /* Rx */,
 				BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */,
 				BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */,
 				BDABF1A0232B3A31003350DA /* UIPageViewControllerExample.swift */,
@@ -763,6 +774,7 @@
 				BD63FB99232CB8770086BCB1 /* SamplePageViewController.swift in Sources */,
 				BDC620A8232CE86F00D450F0 /* DemoCaseCell.swift in Sources */,
 				BDABF1A7232B3B08003350DA /* ScrollingImageCell.swift in Sources */,
+				BD31FF6D232D0AB000BDDDE1 /* RxUIPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

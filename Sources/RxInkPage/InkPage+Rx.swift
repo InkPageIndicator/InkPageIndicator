@@ -8,11 +8,25 @@
 
 import Foundation
 import InkPageIndicator
-import RxSwift
 import RxCocoa
+import RxSwift
 
-public extension Reactive where Base: AssinPageControl {
-    func test() {
-        let pageControl = AssinPageControl()
+public typealias PageControlBeginParameter = (Int, Int)
+
+public extension Reactive where Base: AssinPageController {
+    var progress: Binder<Double> {
+        return Binder(self.base) { pager, progress in
+            pager.updateProgress(progress: progress)
+        }
+    }
+    var beginAnimation: Binder<PageControlBeginParameter> {
+        return Binder(self.base) { pager, pages in
+            pager.beginAnimation(from: pages.0, to: pages.1)
+        }
+    }
+    var endAnimation: Binder<Int> {
+        return Binder(self.base) { pager, completePage in
+            pager.endAnimation(page: completePage)
+        }
     }
 }

@@ -165,6 +165,49 @@
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="-282.25446428571428"/>
         </scene>
+        <!--RxUI Page View Controller Example-->
+        <scene sceneID="Vld-Qz-kpJ">
+            <objects>
+                <viewController id="OUu-R0-TYN" customClass="RxUIPageViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ssO-s5-jtp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-m2-hDa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <segue destination="0t8-Ai-mqc" kind="embed" id="mJw-CU-bzm"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JB5-cm-457" customClass="AssinPageControl" customModule="InkPageIndicator">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jNV-vj-1LL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JB5-cm-457" firstAttribute="top" secondItem="M1f-YB-Q5x" secondAttribute="top" id="5Eu-8f-LLP"/>
+                            <constraint firstItem="JB5-cm-457" firstAttribute="leading" secondItem="M1f-YB-Q5x" secondAttribute="leading" id="JG7-Kf-wH6"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="centerY" secondItem="M1f-YB-Q5x" secondAttribute="centerY" id="KgT-H5-3pG"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="leading" secondItem="M1f-YB-Q5x" secondAttribute="leading" id="Ss7-Qv-wqo"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="centerX" secondItem="M1f-YB-Q5x" secondAttribute="centerX" id="dt8-Zi-zvQ"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="top" secondItem="M1f-YB-Q5x" secondAttribute="top" id="kkC-90-6xu"/>
+                            <constraint firstItem="JB5-cm-457" firstAttribute="centerX" secondItem="M1f-YB-Q5x" secondAttribute="centerX" id="xIs-NT-byA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M1f-YB-Q5x"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="JB5-cm-457" id="6Sb-ro-FlN"/>
+                        <outlet property="pageViewController" destination="eP1-m2-hDa" id="ZUK-pa-Fz1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h5-Aa-hvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="-283"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="yDF-iI-IFe">
             <objects>
@@ -182,6 +225,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJD-fB-yjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1955.072463768116" y="-111.16071428571428"/>
+        </scene>
+        <!--Sample Page View Controller-->
+        <scene sceneID="dPB-LU-Dvu">
+            <objects>
+                <viewController id="0t8-Ai-mqc" customClass="SamplePageViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSq-HK-aRS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9b-KI-JzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="-283"/>
         </scene>
     </scenes>
 </document>

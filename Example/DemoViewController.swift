@@ -19,7 +19,8 @@ class DemoViewController: UIViewController {
     
     var demos: [Demo] = [
         Demo(title: "UIPageViewController", bgImage: UIImage(named: "iphone-11")!),
-        Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!)
+        Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!),
+        Demo(title: "Rx+UIPageViewController", bgImage: UIImage(named: "induction-edition")!)
     ]
     
     override func viewDidLoad() {
@@ -37,6 +38,8 @@ extension DemoViewController: UITableViewDelegate {
         case 0:
             self.show(UIPageViewControllerExample.initFromStoryboard(), sender: self)
         case 1:
+            self.show(UICollectionViewControllerExample.initFromStoryboard(), sender: self)
+        case 2:
             self.show(UICollectionViewControllerExample.initFromStoryboard(), sender: self)
         default:
             break
