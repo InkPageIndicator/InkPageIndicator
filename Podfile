@@ -10,26 +10,12 @@ target 'Example' do
 
 end
 
-target 'InkPageIndicator' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for InkPageIndicator
-
-  target 'InkPageIndicatorTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'RxInkPage' do
+target 'RxInkPage' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-    # use_frameworks!
+    use_frameworks!
     inhibit_all_warnings!
 
-    pod 'InkPageIndicator', :path => '/'
     pod 'RxSwift', '~> 5'
     pod 'RxCocoa', '~> 5'
 
   end
-
-end

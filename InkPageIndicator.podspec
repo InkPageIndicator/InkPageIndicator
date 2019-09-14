@@ -11,12 +11,12 @@ Pod::Spec.new do |s|
   s.swift_version             = '5.0'
 
   s.subspec "Core" do |ss|
-  ss.source_files  = "Sources/InkPage/**/*"
+  ss.source_files  = "Sources/InkPage/**/*.{swift,h,m}"
   ss.framework  = "Foundation"
   end
 
   s.subspec "RxInkPage" do |ss|
-  ss.source_files = "Sources/RxInkPage/**/*"
+  ss.source_files = "Sources/RxInkPage/**/*.{swift,h,m}"
   ss.dependency "InkPageIndicator/Core"
   ss.dependency "RxSwift", "~> 5.0"
   end

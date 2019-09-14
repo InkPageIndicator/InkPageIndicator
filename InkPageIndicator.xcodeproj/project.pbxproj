@@ -18,7 +18,6 @@
 		3D9C433422746323000A6585 /* InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; };
 		3D9C433522746323000A6585 /* InkPageIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6DD920B99C57D47AD94A5DB3 /* Pods_InkPageIndicator_RxInkPage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C7FE1ADEF934567F8F38EC /* Pods_InkPageIndicator_RxInkPage.framework */; };
-		937D9A04520DFC0A036D7F0D /* Pods_InkPageIndicatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A54BE61C4BBAB80BF7A23F6 /* Pods_InkPageIndicatorTests.framework */; };
 		BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */; };
 		BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */; };
 		BD3F0B342329BF39009AA076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3F0B332329BF39009AA076 /* Main.storyboard */; };
@@ -57,7 +56,6 @@
 		BDC80240232A0DBE00BEF13C /* CGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023E232A0DAE00BEF13C /* CGUtils.swift */; };
 		BDC80242232A207100BEF13C /* Array+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80241232A207100BEF13C /* Array+Row.swift */; };
 		BDFA50C8232CB57B00116B3A /* UIPageControlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */; };
-		ED3952091251A4633A4C9161 /* Pods_InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC79206BD919374F50C5C691 /* Pods_InkPageIndicator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,10 +127,6 @@
 		3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitlab-ci.yml"; sourceTree = SOURCE_ROOT; };
 		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
 		41C10E7FE15B5EA5354C75E0 /* Pods_RxInkPage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxInkPage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		477FED60514201150667B145 /* Pods-InkPageIndicatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkPageIndicatorTests.debug.xcconfig"; path = "Target Support Files/Pods-InkPageIndicatorTests/Pods-InkPageIndicatorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4A3CD5A3116C5E30C4A728AB /* Pods-InkPageIndicator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkPageIndicator.release.xcconfig"; path = "Target Support Files/Pods-InkPageIndicator/Pods-InkPageIndicator.release.xcconfig"; sourceTree = "<group>"; };
-		7DDA746707F4073ABFB5BC32 /* Pods-InkPageIndicator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkPageIndicator.debug.xcconfig"; path = "Target Support Files/Pods-InkPageIndicator/Pods-InkPageIndicator.debug.xcconfig"; sourceTree = "<group>"; };
-		A6C05160BA54231EB9EDA0C0 /* Pods-InkPageIndicatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InkPageIndicatorTests.release.xcconfig"; path = "Target Support Files/Pods-InkPageIndicatorTests/Pods-InkPageIndicatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC47498BCAF520A863EBE8E4 /* Pods-RxInkPage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInkPage.debug.xcconfig"; path = "Target Support Files/Pods-RxInkPage/Pods-RxInkPage.debug.xcconfig"; sourceTree = "<group>"; };
 		BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Paging.swift"; sourceTree = "<group>"; };
 		BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
@@ -183,7 +177,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED3952091251A4633A4C9161 /* Pods_InkPageIndicator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D9C42F62274604A000A6585 /* InkPageIndicator.framework in Frameworks */,
-				937D9A04520DFC0A036D7F0D /* Pods_InkPageIndicatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +275,6 @@
 			children = (
 				BD63FBC8232CC4F70086BCB1 /* Supporting Files */,
 				BD63FB9E232CBC9C0086BCB1 /* InkPage */,
-				BD63FBA1232CBFB10086BCB1 /* ReactiveInkPage */,
 				BD63FBA0232CBCCC0086BCB1 /* RxInkPage */,
 			);
 			path = Sources;
@@ -338,10 +329,6 @@
 				21C1D4AD2BCEDCAA7180A4F1 /* Pods-RxInkPage.release.xcconfig */,
 				FFC0889434BD0D91F3536342 /* Pods-InkPageIndicator-RxInkPage.debug.xcconfig */,
 				BD7EABB4C07DE486BD39BDF1 /* Pods-InkPageIndicator-RxInkPage.release.xcconfig */,
-				7DDA746707F4073ABFB5BC32 /* Pods-InkPageIndicator.debug.xcconfig */,
-				4A3CD5A3116C5E30C4A728AB /* Pods-InkPageIndicator.release.xcconfig */,
-				477FED60514201150667B145 /* Pods-InkPageIndicatorTests.debug.xcconfig */,
-				A6C05160BA54231EB9EDA0C0 /* Pods-InkPageIndicatorTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -380,13 +367,6 @@
 				BD63FBCE232CC63C0086BCB1 /* InkPage+Rx.swift */,
 			);
 			path = RxInkPage;
-			sourceTree = "<group>";
-		};
-		BD63FBA1232CBFB10086BCB1 /* ReactiveInkPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ReactiveInkPage;
 			sourceTree = "<group>";
 		};
 		BD63FBC8232CC4F70086BCB1 /* Supporting Files */ = {
@@ -471,7 +451,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D9C429822745894000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicator" */;
 			buildPhases = (
-				FEAB8BACDCE85507BCECD040 /* [CP] Check Pods Manifest.lock */,
 				3D9C428B22745894000A6585 /* Headers */,
 				3D9C428C22745894000A6585 /* Sources */,
 				3D9C428D22745894000A6585 /* Frameworks */,
@@ -491,7 +470,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D9C42F92274604A000A6585 /* Build configuration list for PBXNativeTarget "InkPageIndicatorTests" */;
 			buildPhases = (
-				2AE5E5173B0A1F98415067AC /* [CP] Check Pods Manifest.lock */,
 				3D9C42ED2274604A000A6585 /* Sources */,
 				3D9C42EE2274604A000A6585 /* Frameworks */,
 				3D9C42EF2274604A000A6585 /* Resources */,
@@ -643,29 +621,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InkPageIndicator-RxInkPage-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2AE5E5173B0A1F98415067AC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InkPageIndicatorTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxInkPage-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -736,28 +692,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FEAB8BACDCE85507BCECD040 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InkPageIndicator-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -986,7 +920,6 @@
 		};
 		3D9C429922745894000A6585 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DDA746707F4073ABFB5BC32 /* Pods-InkPageIndicator.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1017,7 +950,6 @@
 		};
 		3D9C429A22745894000A6585 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A3CD5A3116C5E30C4A728AB /* Pods-InkPageIndicator.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1047,7 +979,6 @@
 		};
 		3D9C42FA2274604A000A6585 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 477FED60514201150667B145 /* Pods-InkPageIndicatorTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Configs/InkPageIndicatorTests.plist;
@@ -1066,7 +997,6 @@
 		};
 		3D9C42FB2274604A000A6585 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6C05160BA54231EB9EDA0C0 /* Pods-InkPageIndicatorTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Configs/InkPageIndicatorTests.plist;
@@ -1129,7 +1059,7 @@
 		};
 		BD63FBB5232CC4370086BCB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FFC0889434BD0D91F3536342 /* Pods-InkPageIndicator-RxInkPage.debug.xcconfig */;
+			baseConfigurationReference = BC47498BCAF520A863EBE8E4 /* Pods-RxInkPage.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1156,7 +1086,7 @@
 		};
 		BD63FBB6232CC4370086BCB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD7EABB4C07DE486BD39BDF1 /* Pods-InkPageIndicator-RxInkPage.release.xcconfig */;
+			baseConfigurationReference = 21C1D4AD2BCEDCAA7180A4F1 /* Pods-RxInkPage.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

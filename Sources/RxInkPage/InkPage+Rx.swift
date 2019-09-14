@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 
 
-public extension Reactive where Base: InkPage {
+public extension Reactive where Base: AssinPageControl {
     func test() {
         let pageControl = AssinPageControl()
     }
