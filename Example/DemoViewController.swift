@@ -11,6 +11,8 @@ import UIKit
 struct Demo {
     let title: String
     let bgImage: UIImage
+    let isReady: Bool
+    let soon: String = "Soon"
 }
 
 class DemoViewController: UIViewController {
@@ -18,10 +20,10 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var demoTableView: UITableView!
     
     var demos: [Demo] = [
-        Demo(title: "UIPageViewController", bgImage: UIImage(named: "iphone-11")!),
-        Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!),
-        Demo(title: "Rx+UIPageViewController", bgImage: UIImage(named: "induction-edition")!),
-        Demo(title: "Rx+UICollectionViewController", bgImage: UIImage(named: "iPhone-11-2")!)
+        Demo(title: "UIPageViewController", bgImage: UIImage(named: "iphone-11")!, isReady: true),
+        Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!, isReady: true),
+        Demo(title: "Rx+UIPageViewController", bgImage: UIImage(named: "induction-edition")!, isReady: false),
+        Demo(title: "Rx+UICollectionViewController", bgImage: UIImage(named: "iPhone-11-2")!, isReady: false)
     ]
     
     override func viewDidLoad() {
@@ -40,8 +42,6 @@ extension DemoViewController: UITableViewDelegate {
             self.show(UIPageViewControllerExample.initFromStoryboard(), sender: self)
         case 1:
             self.show(UICollectionViewControllerExample.initFromStoryboard(), sender: self)
-        case 2:
-            self.show(UICollectionViewControllerExample.initFromStoryboard(), sender: self)
         default:
             break
         }
@@ -53,19 +53,26 @@ extension DemoViewController: UITableViewDataSource {
         return demos.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 160
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DemoCaseCell.swiftIdentifier, for: indexPath) as? DemoCaseCell else {
             return UITableViewCell()
         }
-        
-        cell.titleView.text = demos[indexPath.row].title
+        let item = demos[indexPath.row]
+        cell.titleView.text = item.title
         cell.titleView.textColor = UIColor.white
         cell.titleView.font = cell.titleView.font.withSize(25)
-        cell.bgImageView.image = demos[indexPath.row].bgImage
+        cell.bgImageView.image = item.bgImage
         cell.bgImageView.contentMode = .scaleAspectFill
+        if !item.isReady {
+            cell.bgImageView.blurView.setup(style: .dark, alpha: 0.9).enable()
+            cell.soon.text = item.soon
+            cell.titleView.textColor = UIColor.darkGray
+            cell.soon.textColor = UIColor.white
+            cell.soon.font = cell.titleView.font.withSize(30)
+        }
         return cell
     }
 }

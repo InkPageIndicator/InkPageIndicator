@@ -25,6 +25,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIH-hd-xlL">
+                        <rect key="frame" x="622" y="15" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="YdW-d7-94H" firstAttribute="leading" secondItem="Uzf-lV-gog" secondAttribute="leading" id="CrJ-Xh-Iww"/>
@@ -32,11 +38,14 @@
                     <constraint firstItem="YdW-d7-94H" firstAttribute="top" secondItem="Uzf-lV-gog" secondAttribute="top" id="Ii8-8g-ZMt"/>
                     <constraint firstAttribute="trailing" secondItem="99m-vY-FQN" secondAttribute="trailing" constant="26" id="Jtv-ke-U1Q"/>
                     <constraint firstItem="YdW-d7-94H" firstAttribute="centerY" secondItem="Uzf-lV-gog" secondAttribute="centerY" id="Rv4-5c-h0C"/>
+                    <constraint firstItem="PIH-hd-xlL" firstAttribute="trailing" secondItem="99m-vY-FQN" secondAttribute="trailing" id="eGJ-qX-JHy"/>
+                    <constraint firstItem="PIH-hd-xlL" firstAttribute="top" secondItem="Uzf-lV-gog" secondAttribute="top" constant="15" id="hdA-t9-CfT"/>
                     <constraint firstAttribute="bottom" secondItem="99m-vY-FQN" secondAttribute="bottom" constant="20" id="rSN-Vm-Hu1"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="bgImageView" destination="YdW-d7-94H" id="4sU-Tv-f2n"/>
+                <outlet property="soon" destination="PIH-hd-xlL" id="13i-39-PuS"/>
                 <outlet property="titleView" destination="99m-vY-FQN" id="c48-MS-dum"/>
             </connections>
             <point key="canvasLocation" x="-46" y="31"/>

@@ -45,6 +45,7 @@
 		BD72621E232AD257009AA2F4 /* UIBeizerPathProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */; };
 		BD83DD57232D7D2200C86363 /* InkPageScrollBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */; };
 		BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */; };
+		BD83DD5A232D876E00C86363 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD59232D876E00C86363 /* UIView+Blur.swift */; };
 		BD978C4D232CE7670073FBE3 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD978C4C232CE7670073FBE3 /* DemoViewController.swift */; };
 		BDABF19D232B39D9003350DA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19C232B39D9003350DA /* Generator.swift */; };
 		BDABF19F232B3A06003350DA /* UICollectionViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */; };
@@ -157,6 +158,7 @@
 		BD72621C232AD202009AA2F4 /* UIBeizerPathProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBeizerPathProviderTest.swift; sourceTree = "<group>"; };
 		BD83DD55232D7D2200C86363 /* InkPageScrollBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageScrollBehavior.swift; sourceTree = "<group>"; };
 		BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageCollectionViewBridge.swift; sourceTree = "<group>"; };
+		BD83DD59232D876E00C86363 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		BD978C4C232CE7670073FBE3 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BDABF19C232B39D9003350DA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewControllerExample.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 				BDC620AA232CE8B000D450F0 /* NibForName.swift */,
 				BDABF1A8232B3B1A003350DA /* SwiftNameIdentifier.swift */,
 				BDD9E746232CF4780005D0BC /* StoryboardInitializable.swift */,
+				BD83DD59232D876E00C86363 /* UIView+Blur.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -773,6 +776,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDABF19F232B3A06003350DA /* UICollectionViewControllerExample.swift in Sources */,
+				BD83DD5A232D876E00C86363 /* UIView+Blur.swift in Sources */,
 				BD3F0B3E2329CCD8009AA076 /* UIImage+Dot.swift in Sources */,
 				BD4D6678232B350800D1D38A /* ChildModel.swift in Sources */,
 				BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */,

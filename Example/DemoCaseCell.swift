@@ -11,5 +11,5 @@ import UIKit
 class DemoCaseCell: UITableViewCell, NibForName {
     @IBOutlet weak var titleView: UILabel!
     @IBOutlet weak var bgImageView: UIImageView!
-    
+    @IBOutlet weak var soon: UILabel!
 }
