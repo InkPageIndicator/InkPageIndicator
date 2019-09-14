@@ -15,19 +15,17 @@
 		3D9C432E2274629C000A6585 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D9C432C2274629C000A6585 /* LaunchScreen.storyboard */; };
 		3D9C433422746323000A6585 /* InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; };
 		3D9C433522746323000A6585 /* InkPageIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BD3F0B2C2329BCEB009AA076 /* SamplePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B2B2329BCEB009AA076 /* SamplePageViewController.swift */; };
 		BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */; };
 		BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */; };
 		BD3F0B342329BF39009AA076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3F0B332329BF39009AA076 /* Main.storyboard */; };
 		BD3F0B362329C8EA009AA076 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B352329C8EA009AA076 /* ChildViewController.swift */; };
-		BD3F0B382329C9C1009AA076 /* UIPageContarolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */; };
 		BD3F0B3E2329CCD8009AA076 /* UIImage+Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */; };
 		BD3F0B402329CF13009AA076 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3F2329CF13009AA076 /* Logger.swift */; };
 		BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */; };
 		BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B3F2329CF13009AA076 /* Logger.swift */; };
-		BD3F0B462329DC1D009AA076 /* UIPageContarolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */; };
 		BD4D6675232B2FC400D1D38A /* AssinPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6674232B2FC400D1D38A /* AssinPageController.swift */; };
 		BD4D6678232B350800D1D38A /* ChildModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D6677232B350800D1D38A /* ChildModel.swift */; };
+		BD63FB99232CB8770086BCB1 /* SamplePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */; };
 		BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */; };
 		BD72620D232A8BBA009AA2F4 /* Array+Subscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620C232A8BBA009AA2F4 /* Array+Subscript.swift */; };
 		BD72620F232A8BCD009AA2F4 /* CABasicAnimation+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */; };
@@ -47,6 +45,7 @@
 		BDC8023D232A0C7700BEF13C /* CenterLayoutArrangerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */; };
 		BDC80240232A0DBE00BEF13C /* CGUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC8023E232A0DAE00BEF13C /* CGUtils.swift */; };
 		BDC80242232A207100BEF13C /* Array+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC80241232A207100BEF13C /* Array+Row.swift */; };
+		BDFA50C8232CB57B00116B3A /* UIPageControlAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,17 +104,16 @@
 		3DB91AC4229AC263002668DA /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		3DB91AC5229AC26C002668DA /* .gitlab-ci.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".gitlab-ci.yml"; sourceTree = SOURCE_ROOT; };
 		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
-		BD3F0B2B2329BCEB009AA076 /* SamplePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplePageViewController.swift; sourceTree = "<group>"; };
 		BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Paging.swift"; sourceTree = "<group>"; };
 		BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
 		BD3F0B332329BF39009AA076 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BD3F0B352329C8EA009AA076 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageContarolDelegate.swift; sourceTree = "<group>"; };
 		BD3F0B3D2329CCD8009AA076 /* UIImage+Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Dot.swift"; sourceTree = "<group>"; };
 		BD3F0B3F2329CF13009AA076 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BD3F0B422329D9C2009AA076 /* InkPagePlayGround.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = InkPagePlayGround.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BD4D6674232B2FC400D1D38A /* AssinPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssinPageController.swift; sourceTree = "<group>"; };
 		BD4D6677232B350800D1D38A /* ChildModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModel.swift; sourceTree = "<group>"; };
+		BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SamplePageViewController.swift; sourceTree = "<group>"; };
 		BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AssinPageControl+CALayer.swift"; sourceTree = "<group>"; };
 		BD72620C232A8BBA009AA2F4 /* Array+Subscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Subscript.swift"; sourceTree = "<group>"; };
 		BD72620E232A8BCD009AA2F4 /* CABasicAnimation+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CABasicAnimation+Init.swift"; sourceTree = "<group>"; };
@@ -135,6 +133,7 @@
 		BDC8023A232A0BDE00BEF13C /* CenterLayoutArrangerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterLayoutArrangerTest.swift; sourceTree = "<group>"; };
 		BDC8023E232A0DAE00BEF13C /* CGUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGUtils.swift; sourceTree = "<group>"; };
 		BDC80241232A207100BEF13C /* Array+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Row.swift"; sourceTree = "<group>"; };
+		BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControlAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,15 +211,15 @@
 			children = (
 				BD726217232A9A2B009AA2F4 /* Extensions */,
 				BD726216232A9A1A009AA2F4 /* General */,
-				BD726215232A9A02009AA2F4 /* Delegates */,
 				BD726212232A99C9009AA2F4 /* Animators */,
 				BD3F0B432329DB13009AA076 /* Utils */,
-				BD4D6674232B2FC400D1D38A /* AssinPageController.swift */,
 				3D9C42A122745900000A6585 /* AssinPageControl.swift */,
+				BD4D6674232B2FC400D1D38A /* AssinPageController.swift */,
 				BD72620A232A8726009AA2F4 /* AssinPageControl+CALayer.swift */,
 				BDC80238232A0B3B00BEF13C /* CenterLayoutArranger.swift */,
 				BD726218232AA39A009AA2F4 /* DotType.swift */,
 				BD72621A232AD171009AA2F4 /* UIBeizerPathProvider.swift */,
+				BDFA50C7232CB57B00116B3A /* UIPageControlAdapter.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -281,14 +280,6 @@
 			path = Animators;
 			sourceTree = "<group>";
 		};
-		BD726215232A9A02009AA2F4 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				BD3F0B372329C9C1009AA076 /* UIPageContarolDelegate.swift */,
-			);
-			path = Delegates;
-			sourceTree = "<group>";
-		};
 		BD726216232A9A1A009AA2F4 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,9 +302,9 @@
 		BDABF1A2232B3A88003350DA /* UIPageView */ = {
 			isa = PBXGroup;
 			children = (
+				BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */,
 				BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */,
 				BDABF1A0232B3A31003350DA /* UIPageViewControllerExample.swift */,
-				BD3F0B2B2329BCEB009AA076 /* SamplePageViewController.swift */,
 			);
 			path = UIPageView;
 			sourceTree = "<group>";
@@ -350,7 +341,6 @@
 				3D9C428D22745894000A6585 /* Frameworks */,
 				3D9C428E22745894000A6585 /* Resources */,
 				3D9C42CE22745AEA000A6585 /* Run SwiftLint */,
-				BD3F0B4A2329DDAF009AA076 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -387,7 +377,6 @@
 				3D9C431E2274629B000A6585 /* Frameworks */,
 				3D9C431F2274629B000A6585 /* Resources */,
 				3D9C433822746323000A6585 /* Embed Frameworks */,
-				BD035FEE232ADC4A0084D234 /* Copy File */,
 			);
 			buildRules = (
 			);
@@ -487,44 +476,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		BD035FEE232ADC4A0084D234 /* Copy File */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/InkPageIndicator-iOS",
-			);
-			name = "Copy File";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
-		};
-		BD3F0B4A2329DDAF009AA076 /* Copy Files */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/InkPageIndicator-iOS",
-			);
-			name = "Copy Files";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -534,6 +485,7 @@
 			files = (
 				BD726211232A8EAD009AA2F4 /* EasingFunction.swift in Sources */,
 				BD72621B232AD171009AA2F4 /* UIBeizerPathProvider.swift in Sources */,
+				BDFA50C8232CB57B00116B3A /* UIPageControlAdapter.swift in Sources */,
 				BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */,
 				BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */,
 				BD726219232AA39A009AA2F4 /* DotType.swift in Sources */,
@@ -545,7 +497,6 @@
 				BDC80242232A207100BEF13C /* Array+Row.swift in Sources */,
 				BDC5C62D232A745D003B2C76 /* AssinError.swift in Sources */,
 				BDC5C62B232A70F9003B2C76 /* FunctionTool.swift in Sources */,
-				BD3F0B462329DC1D009AA076 /* UIPageContarolDelegate.swift in Sources */,
 				BDC80239232A0B3B00BEF13C /* CenterLayoutArranger.swift in Sources */,
 				3D9C42A222745900000A6585 /* AssinPageControl.swift in Sources */,
 			);
@@ -569,16 +520,15 @@
 				BDABF19F232B3A06003350DA /* UICollectionViewControllerExample.swift in Sources */,
 				BD3F0B3E2329CCD8009AA076 /* UIImage+Dot.swift in Sources */,
 				BD4D6678232B350800D1D38A /* ChildModel.swift in Sources */,
-				BD3F0B382329C9C1009AA076 /* UIPageContarolDelegate.swift in Sources */,
 				BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */,
 				BDABF1A9232B3B1A003350DA /* SwiftNameIdentifier.swift in Sources */,
 				BD3F0B402329CF13009AA076 /* Logger.swift in Sources */,
 				3D9C43242274629B000A6585 /* AppDelegate.swift in Sources */,
-				BD3F0B2C2329BCEB009AA076 /* SamplePageViewController.swift in Sources */,
 				BDABF19D232B39D9003350DA /* Generator.swift in Sources */,
 				BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */,
 				BDABF1A1232B3A31003350DA /* UIPageViewControllerExample.swift in Sources */,
 				BD3F0B362329C8EA009AA076 /* ChildViewController.swift in Sources */,
+				BD63FB99232CB8770086BCB1 /* SamplePageViewController.swift in Sources */,
 				BDABF1A7232B3B08003350DA /* ScrollingImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

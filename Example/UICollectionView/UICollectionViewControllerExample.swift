@@ -28,7 +28,7 @@ class UICollectionViewControllerExample: UIViewController {
     @IBOutlet weak var pageControl: AssinPageControl!
     private var currentItem: Int = 0
     private var direction: ScrollDirection = .left
-    
+    weak var adapter: UIPageControlAdapter?
     private var indexOfCellBeforeDragging = 0
     
     override func viewDidLoad() {
@@ -152,12 +152,9 @@ extension UICollectionViewControllerExample: UIGestureRecognizerDelegate {
         return safeIndex
     }
 }
-extension UICollectionViewControllerExample: UIPageContarolDelegate {
+extension UICollectionViewControllerExample: UIPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
         self.pageControl?.endAnimation(page: page)
-    }
-    func pageControl(finished: Bool) {
-        
     }
     func pageControl(startPage: Int, endPage: Int) {
         self.pageControl?.beginAnimation(from: startPage, to: endPage)

@@ -39,7 +39,7 @@ class UIPageViewControllerExample: UIViewController {
         super.prepare(for: segue, sender: sender)
         if let page = segue.destination as? SamplePageViewController {
             page.pages = pages
-            page.controlDelegate = self
+            page.adapter = self
         }
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +47,7 @@ class UIPageViewControllerExample: UIViewController {
     }
 }
 
-extension UIPageViewControllerExample: UIPageContarolDelegate {
+extension UIPageViewControllerExample: UIPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
         pageContoller.endAnimation(page: page)
     }

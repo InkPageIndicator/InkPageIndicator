@@ -8,14 +8,15 @@
 
 
 import UIKit
+import InkPageIndicator
 
 class SamplePageViewController: UIPageViewController {
-
-
+    
+    
     private var currentPage = 0
     
     var pages: [UIViewController] = []
-    weak var controlDelegate: UIPageContarolDelegate?
+    weak var adapter: UIPageControlAdapter?
     
     override init(
         transitionStyle style: UIPageViewController.TransitionStyle,
@@ -45,18 +46,18 @@ extension SamplePageViewController: UIPageViewControllerDataSource {
             return nil
         }
         let previousIndex = currentIndex - 1
-
+        
         if previousIndex < 0 {
             return nil
         } else {
             return pages[previousIndex]
         }
     }
-
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
         let nextIndex = currentIndex + 1
-
+        
         if nextIndex >= pages.count {
             return nil
         } else {
@@ -70,13 +71,13 @@ extension SamplePageViewController: UIPageViewControllerDataSource {
 extension SamplePageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         if let page = pages.firstIndex(where: { vc in vc == pendingViewControllers.first }) {
-            controlDelegate?.pageControl(startPage: currentPage, endPage: page)
+            adapter?.pageControl(startPage: currentPage, endPage: page)
             currentPage = page
         }
     }
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            controlDelegate?.pageControl(transitionCompleted: currentPage)
+            adapter?.pageControl(transitionCompleted: currentPage)
         } else {
             if let page = pages.firstIndex(where: { vc in vc == previousViewControllers.first }) {
                 currentPage = page
@@ -97,6 +98,6 @@ extension SamplePageViewController: UIScrollViewDelegate {
         
         var newProgress = progress
         newProgress = abs(1 - progress)
-        controlDelegate?.pageControl(progress: newProgress)
+        adapter?.pageControl(progress: newProgress)
     }
 }
