@@ -17,7 +17,6 @@
 		3D9C433422746323000A6585 /* InkPageIndicator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; };
 		3D9C433522746323000A6585 /* InkPageIndicator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C429022745894000A6585 /* InkPageIndicator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BD31FF6D232D0AB000BDDDE1 /* RxUIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD31FF6C232D0AB000BDDDE1 /* RxUIPageViewController.swift */; };
-		BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */; };
 		BD3F0B322329BEC4009AA076 /* UIViewController+AddChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */; };
 		BD3F0B342329BF39009AA076 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD3F0B332329BF39009AA076 /* Main.storyboard */; };
 		BD3F0B362329C8EA009AA076 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3F0B352329C8EA009AA076 /* ChildViewController.swift */; };
@@ -47,6 +46,8 @@
 		BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */; };
 		BD83DD5A232D876E00C86363 /* UIView+Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD59232D876E00C86363 /* UIView+Blur.swift */; };
 		BD83DD5D232D885900C86363 /* UIPageViewPageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */; };
+		BD83DD68232D8E6900C86363 /* InkPagePageViewBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD67232D8E6900C86363 /* InkPagePageViewBridge.swift */; };
+		BD83DD6A232D8E8300C86363 /* InkPageViewScrollingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD83DD69232D8E8300C86363 /* InkPageViewScrollingBehavior.swift */; };
 		BD978C4D232CE7670073FBE3 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD978C4C232CE7670073FBE3 /* DemoViewController.swift */; };
 		BDABF19D232B39D9003350DA /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19C232B39D9003350DA /* Generator.swift */; };
 		BDABF19F232B3A06003350DA /* UICollectionViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */; };
@@ -135,7 +136,6 @@
 		3DB91AC6229AC272002668DA /* azure-pipelines.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = "azure-pipelines.yml"; sourceTree = SOURCE_ROOT; };
 		A68AC680C9E4C1D8C54CAC5C /* Pods-RxInkPage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInkPage.debug.xcconfig"; path = "Target Support Files/Pods-RxInkPage/Pods-RxInkPage.debug.xcconfig"; sourceTree = "<group>"; };
 		BD31FF6C232D0AB000BDDDE1 /* RxUIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxUIPageViewController.swift; sourceTree = "<group>"; };
-		BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPageViewController+Paging.swift"; sourceTree = "<group>"; };
 		BD3F0B312329BEC4009AA076 /* UIViewController+AddChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AddChild.swift"; sourceTree = "<group>"; };
 		BD3F0B332329BF39009AA076 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BD3F0B352329C8EA009AA076 /* ChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +161,8 @@
 		BD83DD56232D7D2200C86363 /* InkPageCollectionViewBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InkPageCollectionViewBridge.swift; sourceTree = "<group>"; };
 		BD83DD59232D876E00C86363 /* UIView+Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Blur.swift"; sourceTree = "<group>"; };
 		BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewPageable.swift; sourceTree = "<group>"; };
+		BD83DD67232D8E6900C86363 /* InkPagePageViewBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPagePageViewBridge.swift; sourceTree = "<group>"; };
+		BD83DD69232D8E8300C86363 /* InkPageViewScrollingBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InkPageViewScrollingBehavior.swift; sourceTree = "<group>"; };
 		BD978C4C232CE7670073FBE3 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BDABF19C232B39D9003350DA /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		BDABF19E232B3A06003350DA /* UICollectionViewControllerExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewControllerExample.swift; sourceTree = "<group>"; };
@@ -424,7 +426,9 @@
 		BD83DD65232D8A9F00C86363 /* UIPageView */ = {
 			isa = PBXGroup;
 			children = (
+				BD83DD67232D8E6900C86363 /* InkPagePageViewBridge.swift */,
 				BD83DD5B232D884F00C86363 /* UIPageViewPageable.swift */,
+				BD83DD69232D8E8300C86363 /* InkPageViewScrollingBehavior.swift */,
 			);
 			path = UIPageView;
 			sourceTree = "<group>";
@@ -443,7 +447,6 @@
 			children = (
 				BD31FF6B232D0AA200BDDDE1 /* Rx */,
 				BD63FB98232CB8770086BCB1 /* SamplePageViewController.swift */,
-				BD3F0B2D2329BD59009AA076 /* UIPageViewController+Paging.swift */,
 				BDABF1A0232B3A31003350DA /* UIPageViewControllerExample.swift */,
 			);
 			path = UIPageView;
@@ -763,11 +766,13 @@
 				BDFA50C8232CB57B00116B3A /* InkPageControlAdapter.swift in Sources */,
 				BD83DD5D232D885900C86363 /* UIPageViewPageable.swift in Sources */,
 				BD3F0B442329DC1D009AA076 /* UIImage+Dot.swift in Sources */,
+				BD83DD6A232D8E8300C86363 /* InkPageViewScrollingBehavior.swift in Sources */,
 				BD726214232A99D1009AA2F4 /* TranslateDotAnimator.swift in Sources */,
 				BD726219232AA39A009AA2F4 /* DotType.swift in Sources */,
 				BD72620D232A8BBA009AA2F4 /* Array+Subscript.swift in Sources */,
 				BD4D6675232B2FC400D1D38A /* AssinPageController.swift in Sources */,
 				BD3F0B452329DC1D009AA076 /* Logger.swift in Sources */,
+				BD83DD68232D8E6900C86363 /* InkPagePageViewBridge.swift in Sources */,
 				BD72620B232A8726009AA2F4 /* AssinPageControl+CALayer.swift in Sources */,
 				BD83DD57232D7D2200C86363 /* InkCollectionViewScrollingBehavior.swift in Sources */,
 				BD83DD58232D7D2200C86363 /* InkPageCollectionViewBridge.swift in Sources */,
@@ -799,7 +804,6 @@
 				BD83DD5A232D876E00C86363 /* UIView+Blur.swift in Sources */,
 				BD3F0B3E2329CCD8009AA076 /* UIImage+Dot.swift in Sources */,
 				BD4D6678232B350800D1D38A /* ChildModel.swift in Sources */,
-				BD3F0B2E2329BD59009AA076 /* UIPageViewController+Paging.swift in Sources */,
 				BDABF1A9232B3B1A003350DA /* SwiftNameIdentifier.swift in Sources */,
 				BD63FBCF232CC63C0086BCB1 /* InkPage+Rx.swift in Sources */,
 				BD3F0B402329CF13009AA076 /* Logger.swift in Sources */,
