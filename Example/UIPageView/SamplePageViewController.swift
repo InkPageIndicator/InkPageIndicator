@@ -10,35 +10,32 @@
 import UIKit
 import InkPageIndicator
 
-class SamplePageViewController: UIPageViewController {
-    
-    
-    private var currentPage = 0
-    
+class SamplePageViewController: UIPageViewController, UIPageViewPageable {
+
     var pages: [UIViewController] = []
-    weak var adapter: UIPageControlAdapter?
-    
+    weak var adapter: InkPageControlAdapter?
+    private lazy var behavior: InkPageViewScrollingBehavior = InkPageViewScrollingBehavior(self, adapter: adapter)
     override init(
         transitionStyle style: UIPageViewController.TransitionStyle,
         navigationOrientation: UIPageViewController.NavigationOrientation,
-        options: [UIPageViewController.OptionsKey : Any]? = nil
-        ) {
+        options: [UIPageViewController.OptionsKey: Any]? = nil
+    ) {
         super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation, options: options)
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.enableSwipeGesture(self)
         self.scrollView?.delegate = self
         self.delegate = self
-        setViewControllers([pages[currentPage]], direction: .forward, animated: true)
+        setViewControllers([pages[0]], direction: .forward, animated: true)
     }
 }
-//
+
 extension SamplePageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
@@ -46,18 +43,18 @@ extension SamplePageViewController: UIPageViewControllerDataSource {
             return nil
         }
         let previousIndex = currentIndex - 1
-        
+
         if previousIndex < 0 {
             return nil
         } else {
             return pages[previousIndex]
         }
     }
-    
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
         let nextIndex = currentIndex + 1
-        
+
         if nextIndex >= pages.count {
             return nil
         } else {
@@ -70,34 +67,31 @@ extension SamplePageViewController: UIPageViewControllerDataSource {
 }
 extension SamplePageViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        if let page = pages.firstIndex(where: { vc in vc == pendingViewControllers.first }) {
-            adapter?.pageControl(startPage: currentPage, endPage: page)
-            currentPage = page
-        }
+        self.behavior.pageViewController(pageViewController, willTransitionTo: pendingViewControllers)
     }
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if completed {
-            adapter?.pageControl(transitionCompleted: currentPage)
-        } else {
-            if let page = pages.firstIndex(where: { vc in vc == previousViewControllers.first }) {
-                currentPage = page
-            }
-        }
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted
+        completed: Bool) {
+        self.behavior.pageViewController(
+            pageViewController,
+            didFinishAnimating: finished,
+            previousViewControllers: previousViewControllers,
+            transitionCompleted: completed
+        )
     }
 }
 
 extension SamplePageViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let numberOfPages = pages.count
-        let total = scrollView.contentSize.width - scrollView.bounds.width
-        let offset = scrollView.contentOffset.x
-        let percent = Double(offset / total)
-        
-        let progress = percent * Double(numberOfPages - 1)
-        
-        
-        var newProgress = progress
-        newProgress = abs(1 - progress)
-        adapter?.pageControl(progress: newProgress)
+        self.behavior.scrollViewDidScroll(scrollView)
+    }
+}
+
+extension SamplePageViewController: InkPagePageViewBridge {
+    func pageFirstIndex(viewControllers: [UIViewController]) -> Int? {
+        pages.firstIndex(where: { vc in vc == viewControllers.first })
+    }
+    
+    var itemCount: Int {
+        return pages.count
     }
 }

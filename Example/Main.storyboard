@@ -1,44 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ani-dI-QfF">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ani-dI-QfF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Demo View Controller-->
         <scene sceneID="Yaq-v1-3xk">
             <objects>
-                <viewController id="q3P-Zt-cTA" sceneMemberID="viewController">
+                <viewController id="q3P-Zt-cTA" customClass="DemoViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PCw-Sa-AeD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-Ni-STy">
-                                <rect key="frame" x="122" y="100" width="149" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="UIPageViewController"/>
-                                <connections>
-                                    <segue destination="tOh-K0-9kA" kind="show" id="wwz-W3-Idb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynA-vv-f4S">
-                                <rect key="frame" x="104" y="158" width="184" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="UICollectionViewController"/>
-                                <connections>
-                                    <segue destination="UIa-bq-gd5" kind="show" id="JcQ-wZ-A6T"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ECs-1M-Bv4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ECs-1M-Bv4" firstAttribute="leading" secondItem="gMI-71-fXb" secondAttribute="leading" id="FLe-ZX-okM"/>
+                            <constraint firstItem="ECs-1M-Bv4" firstAttribute="centerX" secondItem="gMI-71-fXb" secondAttribute="centerX" id="SSe-vc-EUv"/>
+                            <constraint firstItem="ECs-1M-Bv4" firstAttribute="centerY" secondItem="gMI-71-fXb" secondAttribute="centerY" id="Vcc-aS-RKA"/>
+                            <constraint firstItem="ECs-1M-Bv4" firstAttribute="top" secondItem="gMI-71-fXb" secondAttribute="top" id="uHO-Pp-Yc9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gMI-71-fXb"/>
                     </view>
                     <navigationItem key="navigationItem" id="RmC-Ms-NMo"/>
+                    <connections>
+                        <outlet property="demoTableView" destination="ECs-1M-Bv4" id="N1j-QU-2Rt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ALR-8F-1wO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,19 +42,19 @@
         <!--Page View Controller Example-->
         <scene sceneID="nQe-3c-25D">
             <objects>
-                <viewController id="tOh-K0-9kA" customClass="UIPageViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIPageViewControllerExample" id="tOh-K0-9kA" customClass="UIPageViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lPF-3D-pvm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJM-vH-pX2">
-                                <rect key="frame" x="0.0" y="135.5" width="414" height="726.5"/>
+                                <rect key="frame" x="0.0" y="89.5" width="414" height="772.5"/>
                                 <connections>
                                     <segue destination="icg-U3-rXG" kind="embed" id="u0f-er-jie"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGi-nw-pA9" customClass="AssinPageControl" customModule="InkPageIndicator">
-                                <rect key="frame" x="0.0" y="88" width="414" height="47.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="45.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfPages">
@@ -105,13 +100,13 @@
         <!--Collection View Controller Example-->
         <scene sceneID="cal-hq-bNh">
             <objects>
-                <viewController id="UIa-bq-gd5" customClass="UICollectionViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UICollectionViewControllerExample" id="UIa-bq-gd5" customClass="UICollectionViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2tA-Fg-BYh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axT-7T-vet" customClass="AssinPageControl" customModule="InkPageIndicator">
-                                <rect key="frame" x="0.0" y="83" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="39" width="414" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cnW-rb-wwd"/>
@@ -123,7 +118,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FFR-Pq-Mih">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CXR-9a-GnP">
                                     <size key="itemSize" width="50" height="50"/>
@@ -160,7 +155,7 @@
             <objects>
                 <viewController id="icg-U3-rXG" customClass="SamplePageViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="05M-qC-ihn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="726.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="772.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Ip8-En-lpC"/>
@@ -169,6 +164,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wO8-Lp-BbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="-282.25446428571428"/>
+        </scene>
+        <!--RxUI Page View Controller Example-->
+        <scene sceneID="Vld-Qz-kpJ">
+            <objects>
+                <viewController id="OUu-R0-TYN" customClass="RxUIPageViewControllerExample" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ssO-s5-jtp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eP1-m2-hDa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <segue destination="0t8-Ai-mqc" kind="embed" id="mJw-CU-bzm"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JB5-cm-457" customClass="AssinPageControl" customModule="InkPageIndicator">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jNV-vj-1LL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JB5-cm-457" firstAttribute="top" secondItem="M1f-YB-Q5x" secondAttribute="top" id="5Eu-8f-LLP"/>
+                            <constraint firstItem="JB5-cm-457" firstAttribute="leading" secondItem="M1f-YB-Q5x" secondAttribute="leading" id="JG7-Kf-wH6"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="centerY" secondItem="M1f-YB-Q5x" secondAttribute="centerY" id="KgT-H5-3pG"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="leading" secondItem="M1f-YB-Q5x" secondAttribute="leading" id="Ss7-Qv-wqo"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="centerX" secondItem="M1f-YB-Q5x" secondAttribute="centerX" id="dt8-Zi-zvQ"/>
+                            <constraint firstItem="eP1-m2-hDa" firstAttribute="top" secondItem="M1f-YB-Q5x" secondAttribute="top" id="kkC-90-6xu"/>
+                            <constraint firstItem="JB5-cm-457" firstAttribute="centerX" secondItem="M1f-YB-Q5x" secondAttribute="centerX" id="xIs-NT-byA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M1f-YB-Q5x"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="JB5-cm-457" id="6Sb-ro-FlN"/>
+                        <outlet property="pageViewController" destination="eP1-m2-hDa" id="ZUK-pa-Fz1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h5-Aa-hvN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="-283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yDF-iI-IFe">
@@ -187,6 +225,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sJD-fB-yjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1955.072463768116" y="-111.16071428571428"/>
+        </scene>
+        <!--Sample Page View Controller-->
+        <scene sceneID="dPB-LU-Dvu">
+            <objects>
+                <viewController id="0t8-Ai-mqc" customClass="SamplePageViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dSq-HK-aRS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i9b-KI-JzZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2212" y="-283"/>
         </scene>
     </scenes>
 </document>

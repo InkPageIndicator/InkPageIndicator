@@ -12,7 +12,7 @@ import InkPageIndicator
 // MARK: - ViewController
 
 /// The ViewController
-class UIPageViewControllerExample: UIViewController {
+class UIPageViewControllerExample: UIViewController, StoryboardInitializable {
 
     // MARK: Properties
 
@@ -47,7 +47,7 @@ class UIPageViewControllerExample: UIViewController {
     }
 }
 
-extension UIPageViewControllerExample: UIPageControlAdapter {
+extension UIPageViewControllerExample: InkPageControlAdapter {
     func pageControl(transitionCompleted page: Int) {
         pageContoller.endAnimation(page: page)
     }
