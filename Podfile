@@ -21,14 +21,15 @@ target 'InkPageIndicator' do
     # Pods for testing
   end
 
-end
+  target 'RxInkPage' do
+    # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+    # use_frameworks!
+    inhibit_all_warnings!
 
-target 'RxInkPage' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  use_frameworks!
-  inhibit_all_warnings!
+    pod 'InkPageIndicator', :path => '/'
+    pod 'RxSwift', '~> 5'
+    pod 'RxCocoa', '~> 5'
 
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
+  end
 
 end

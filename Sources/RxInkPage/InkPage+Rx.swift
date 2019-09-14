@@ -7,5 +7,13 @@
 //
 
 import Foundation
+import InkPageIndicator
 import RxSwift
 import RxCocoa
+
+
+public extension Reactive where Base: InkPage {
+    func test() {
+        let pageControl = AssinPageControl()
+    }
+}

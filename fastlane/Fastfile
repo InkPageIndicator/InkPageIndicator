@@ -72,7 +72,7 @@ platform :ios do
     # Perform iOS Tests
     scan(
       project: "InkPageIndicator.xcodeproj",
-      scheme: "InkPageIndicator-iOS",
+      scheme: "InkPageIndicator",
       clean: true
     )
     # Perform tvOS Tests

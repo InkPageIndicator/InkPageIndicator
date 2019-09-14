@@ -34,7 +34,7 @@ class UIBeizerPathProviderTest: XCTestCase {
         expect.addCurve(to: CGPoint(x: 25, y: 8), controlPoint1: CGPoint(x: 0, y: 16), controlPoint2: CGPoint(x: 25, y: 16))
         expect.addCurve(to: CGPoint(x: 0, y: 0), controlPoint1: CGPoint(x: 25, y: 0), controlPoint2: CGPoint(x: 0, y: 0))
         expect.close()
-        let actual = UIBeizerPathProvider.instance.inkPage(frame: viewSize, controlX: 25, spacing: 20)
+        let actual = UIBeizerPathProvider.instance.inkPage(frame: viewSize, controlX: 25)
         XCTAssertEqual(expect, actual)
     }
 }
