@@ -1,5 +1,7 @@
 
 # Created by https://www.gitignore.io/api/macos,xcode,carthage,cocoapods,fastlane
+.DS_Store
+/*.xcworkspace
 
 ### Carthage ###
 # Carthage
