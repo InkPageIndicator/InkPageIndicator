@@ -20,19 +20,17 @@
    </a>
 </p>
 
-# InkPageIndicator
 
-<p align="center">
-ℹ️ Short description of InkPageIndicator
-</p>
+InkPageIndicator is a beatuful UIPageControl
+
+<img width="200" src="/Documents/Demo.gif" alt="InkPageIndicator Logo">
+
 
 ## Features
 
-- [x] ℹ️ Add InkPageIndicator features
+- [x] Supporting The [RxSwift](https://github.com/ReactiveX/RxSwift)
+- [x] Timing issue for fast scrolling
 
-## Example
-
-The example application is the best way to see `InkPageIndicator` in action. Simply open the `InkPageIndicator.xcodeproj` and run the `Example` scheme.
 
 ## Installation
 
@@ -81,26 +79,4 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 Contributions are very welcome 🙌
 
 ## License
-
-```
-InkPageIndicator
-Copyright (c) 2019 Tyler kimtaesoo188@gmail.com
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-```
+InkPageIndicator is released under the MIT license. See LICENSE for details.
