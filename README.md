@@ -23,7 +23,7 @@
 
 InkPageIndicator is a beatuful UIPageControl
 
-<img width="200" src="/Screenshots/Demo.gif" alt="InkPageIndicator Logo">
+<img width="200" src="https://github.com/kimtaesu/Resources/blob/master/Demos/InkPageIndicator_Demo.gif" alt="InkPageIndicator Logo">
 
 
 ## Features
@@ -57,23 +57,143 @@ Run `carthage update` to build the framework and drag the built `InkPageIndicato
 
 On your application targets’ “Build Phases” settings tab, click the “+” icon and choose “New Run Script Phase” and add the Framework path as mentioned in [Carthage Getting started Step 4, 5 and 6](https://github.com/Carthage/Carthage/blob/master/README.md#if-youre-building-for-ios-tvos-or-watchos)
 
-### Swift Package Manager
-
-To integrate using Apple's [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "git@github.com:kimtaesu/InkPageIndicator.git.git", from: "1.0.0")
-]
-```
-
 ### Manually
 
-If you prefer not to use any of the aforementioned dependency managers, you can integrate InkPageIndicator into your project manually. Simply drag the `Sources` Folder into your Xcode project.
+* Open up Terminal, `cd` into your top-level project directory, and run the following command
+```
+pod install --repo-update
+open InkPageIndicator.xcworkspace
+```
+ 
 
 ## Usage
 
-ℹ️ Describe the usage of your Kit
+### for 'UIPageViewController'
+
+##### YourUIViewController
+Conform the 'WrapInkPageControlAdapter' protocol
+```
+class YourUIViewController: UIViewController, WrapInkPageControlAdapter {
+private lazy var pageContoller: AssinPageController = {
+   return pageControl
+}()
+```
+
+And set adapter to `YourUIPageViewController`
+```
+page.adapter = self
+```
+
+##### YourUIPageViewController
+
+Enable swipe gesture and register delegate of scrollView,
+To enable swipe gesture `YourUIPageViewController` conform `UIPageViewPageable`
+```
+class YourUIPageViewController: UIPageViewController, UIPageViewPageable
+
+override func viewDidLoad() {
+   super.viewDidLoad()
+   self.enableSwipeGesture(self)
+   self.scrollView?.delegate = self
+}
+```
+
+Conform the 'InkPagePageViewBridge' protocol 
+```
+extension YourUIPageViewController: InkPagePageViewBridge {
+   func pageFirstIndex(viewControllers:) -> Int? {
+    }
+    
+    var itemCount: Int {
+    }
+}
+```
+
+Conform the 'UIPageViewControllerDelegate' protocol,
+And call the function below codes
+```
+extension YourUIPageViewController: UIPageViewControllerDelegate {
+    func pageViewController(_:willTransitionTo:) {
+        self.behavior.pageViewController(pageViewController, willTransitionTo: pendingViewControllers)
+    }
+    func pageViewController(_: didFinishAnimating:previousViewControllers:transitionCompleted:) {
+        self.behavior.pageViewController(
+            pageViewController,
+            didFinishAnimating: finished,
+            previousViewControllers: previousViewControllers,
+            transitionCompleted: completed
+        )
+    }
+}
+
+
+Declares a variable in your 'YourUIPageViewController'
+```
+private lazy var behavior = InkPageViewScrollingBehavior(self, adapter: self)
+```
+
+```
+Conform the 'UIScrollViewDelegate' protocol
+```
+extension YourUIViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.behavior.scrollViewDidScroll(scrollView)
+    }
+}
+```
+
+
+### for 'UICollectionView'
+
+Conform the 'WrapInkPageControlAdapter' protocol
+```
+class YourUIViewController: UIViewController, WrapInkPageControlAdapter {
+private lazy var pageContoller: AssinPageController = {
+   return pageControl
+}()
+```
+
+Declares a variable in your 'UIViewController'
+```
+private lazy var behavior = InkCollectionViewScrollingBehavior(self, adapter: self)
+```
+
+Conform the 'InkPageCollectionViewBridge' protocol
+```
+extension YourUIViewController: InkPageCollectionViewBridge {
+    var itemCount: Int {
+    }
+
+    var itemWidth: CGFloat {
+    }
+
+    var contentOffset: CGPoint {
+    }
+
+    func scrollToItem(page: Int) {
+    }
+}
+```
+
+Conform the 'UICollectionViewDelegateFlowLayout' protocol, 
+And call the function below codes
+```
+extension UICollectionViewControllerExample: UICollectionViewDataSource {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.behavior.scrollViewWillBeginDragging(scrollView)
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        self.behavior.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
+
+    }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        self.behavior.scrollViewWillEndDragging(scrollView, withVelocity: velocity, targetContentOffset: targetContentOffset)
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        self.behavior.scrollViewDidScroll(scrollView)
+    }
+}
+```
 
 ## Contributing
 Contributions are very welcome 🙌
