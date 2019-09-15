@@ -65,6 +65,19 @@ open InkPageIndicator.xcworkspace
 
 ## Usage
 
+### AssinPageControl
+<img width="450" src="https://github.com/kimtaesu/Resources/blob/master/InkPageIndicator_Desc.png" alt="InkPageIndicator Logo">
+
+```
+pageControl.pageIndicatorTintColor = UIColor.lightGray
+pageControl.numberOfPages = pages.count
+pageControl.currentPage = 1
+pageControl.currentPageIndicatorTintColor = UIColor.black
+pageControl.dotSize = CGSize(width: 10, height: 10)
+pageControl.spacing = 20
+```
+
+
 ### for UIPageViewController
 
 ##### YourUIViewController
