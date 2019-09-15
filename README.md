@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/Icon/icon.png" alt="InkPageIndicator Logo">
+   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/logo/logo.png" alt="InkPageIndicator Logo">
 </p>
 
 <p align="center">
@@ -15,9 +15,6 @@
    <a href="https://github.com/Carthage/Carthage">
       <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
    </a>
-   <a href="https://github.com/apple/swift-package-manager">
-      <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="SPM">
-   </a>
 </p>
 
 
@@ -25,11 +22,16 @@ InkPageIndicator is a beatuful UIPageControl
 
 <img width="200" src="https://github.com/kimtaesu/Resources/blob/master/Demos/InkPageIndicator_Demo.gif" alt="InkPageIndicator Logo">
 
+## Requirements
+* iOS 10.0+
+* Xcode 10.2+
+* Swift 5+
 
 ## Features
 
 - [x] Supporting The [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [x] Timing issue for fast scrolling
+- [x] To customize UIBeizerPath and LayoutArranger
 
 
 ## Installation
@@ -68,7 +70,7 @@ open InkPageIndicator.xcworkspace
 
 ## Usage
 
-### for UIPageViewController
+### For UIPageViewController
 
 ##### YourUIViewController
 Conform the `WrapInkPageControlAdapter` protocol
@@ -142,7 +144,7 @@ extension YourUIViewController: UIScrollViewDelegate {
 ```
 
 
-### for UICollectionView
+### For UICollectionView
 
 Conform the `WrapInkPageControlAdapter` protocol
 ```
