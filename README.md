@@ -132,7 +132,6 @@ Declares a variable in your `YourUIPageViewController`
 private lazy var behavior = InkPageViewScrollingBehavior(self, adapter: self)
 ```
 
-```
 Conform the `UIScrollViewDelegate` protocol
 ```
 extension YourUIViewController: UIScrollViewDelegate {
