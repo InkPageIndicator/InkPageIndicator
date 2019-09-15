@@ -68,10 +68,10 @@ open InkPageIndicator.xcworkspace
 
 ## Usage
 
-### for 'UIPageViewController'
+### for `UIPageViewController`
 
-##### YourUIViewController
-Conform the 'WrapInkPageControlAdapter' protocol
+##### `YourUIViewController`
+Conform the `WrapInkPageControlAdapter` protocol
 ```
 class YourUIViewController: UIViewController, WrapInkPageControlAdapter {
 private lazy var pageContoller: AssinPageController = {
@@ -84,7 +84,7 @@ And set adapter to `YourUIPageViewController`
 page.adapter = self
 ```
 
-##### YourUIPageViewController
+##### `YourUIPageViewController`
 
 Enable swipe gesture and register delegate of scrollView,
 To enable swipe gesture `YourUIPageViewController` conform `UIPageViewPageable`
@@ -98,7 +98,7 @@ override func viewDidLoad() {
 }
 ```
 
-Conform the 'InkPagePageViewBridge' protocol 
+Conform the `InkPagePageViewBridge` protocol 
 ```
 extension YourUIPageViewController: InkPagePageViewBridge {
    func pageFirstIndex(viewControllers:) -> Int? {
@@ -109,7 +109,7 @@ extension YourUIPageViewController: InkPagePageViewBridge {
 }
 ```
 
-Conform the 'UIPageViewControllerDelegate' protocol,
+Conform the `UIPageViewControllerDelegate` protocol,
 And call the function below codes
 ```
 extension YourUIPageViewController: UIPageViewControllerDelegate {
@@ -127,13 +127,13 @@ extension YourUIPageViewController: UIPageViewControllerDelegate {
 }
 
 
-Declares a variable in your 'YourUIPageViewController'
+Declares a variable in your `YourUIPageViewController`
 ```
 private lazy var behavior = InkPageViewScrollingBehavior(self, adapter: self)
 ```
 
 ```
-Conform the 'UIScrollViewDelegate' protocol
+Conform the `UIScrollViewDelegate` protocol
 ```
 extension YourUIViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -143,9 +143,9 @@ extension YourUIViewController: UIScrollViewDelegate {
 ```
 
 
-### for 'UICollectionView'
+### for `UICollectionView`
 
-Conform the 'WrapInkPageControlAdapter' protocol
+Conform the `WrapInkPageControlAdapter` protocol
 ```
 class YourUIViewController: UIViewController, WrapInkPageControlAdapter {
 private lazy var pageContoller: AssinPageController = {
@@ -158,7 +158,7 @@ Declares a variable in your 'UIViewController'
 private lazy var behavior = InkCollectionViewScrollingBehavior(self, adapter: self)
 ```
 
-Conform the 'InkPageCollectionViewBridge' protocol
+Conform the `InkPageCollectionViewBridge` protocol
 ```
 extension YourUIViewController: InkPageCollectionViewBridge {
     var itemCount: Int {
@@ -175,7 +175,7 @@ extension YourUIViewController: InkPageCollectionViewBridge {
 }
 ```
 
-Conform the 'UICollectionViewDelegateFlowLayout' protocol, 
+Conform the `UICollectionViewDelegateFlowLayout` protocol, 
 And call the function below codes
 ```
 extension UICollectionViewControllerExample: UICollectionViewDataSource {
