@@ -22,6 +22,10 @@ InkPageIndicator is a beatuful UIPageControl
 
 <img width="200" src="https://github.com/kimtaesu/Resources/blob/master/Demos/InkPageIndicator_Demo.gif" alt="InkPageIndicator Logo">
 
+## Requirements
+* iOS 10.0+
+* Xcode 10.2+
+* Swift 5+
 
 ## Features
 
