@@ -68,9 +68,9 @@ open InkPageIndicator.xcworkspace
 
 ## Usage
 
-### for `UIPageViewController`
+### for UIPageViewController
 
-##### `YourUIViewController`
+##### YourUIViewController
 Conform the `WrapInkPageControlAdapter` protocol
 ```
 class YourUIViewController: UIViewController, WrapInkPageControlAdapter {
@@ -84,7 +84,7 @@ And set adapter to `YourUIPageViewController`
 page.adapter = self
 ```
 
-##### `YourUIPageViewController`
+##### YourUIPageViewController
 
 Enable swipe gesture and register delegate of scrollView,
 To enable swipe gesture `YourUIPageViewController` conform `UIPageViewPageable`
@@ -125,7 +125,7 @@ extension YourUIPageViewController: UIPageViewControllerDelegate {
         )
     }
 }
-
+```
 
 Declares a variable in your `YourUIPageViewController`
 ```
@@ -143,7 +143,7 @@ extension YourUIViewController: UIScrollViewDelegate {
 ```
 
 
-### for `UICollectionView`
+### for UICollectionView
 
 Conform the `WrapInkPageControlAdapter` protocol
 ```
