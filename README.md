@@ -15,9 +15,6 @@
    <a href="https://github.com/Carthage/Carthage">
       <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible">
    </a>
-   <a href="https://github.com/apple/swift-package-manager">
-      <img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="SPM">
-   </a>
 </p>
 
 
