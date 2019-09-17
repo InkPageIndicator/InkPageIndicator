@@ -244,7 +244,13 @@ extension AssinPageControl: AssinPageController {
     }
     
     private func clearAnimations() {
-        CATransaction.flush()
+        /*
+        https://www.calayer.com/core-animation/2016/05/17/catransaction-in-depth.html
+         
+        CATransaction.flush() is a mysterious function that has confusing documentation. Someone did a lot of in-depth exploration of what flushing transactions does, and rather than rehash what they discovered, you can read all about it yourself. The gist is that 99.9999% of the time, you will never need to call this function in your working code.
+ */
+//        CATransaction.flush()
+
         self.fromAnimationLayer?.removeAllAnimations()
         self.fromAnimationLayer?.removeFromSuperlayer()
         self.fromAnimationLayer = nil
