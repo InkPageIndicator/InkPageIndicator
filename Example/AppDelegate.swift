@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AssinLaunhcer
 // MARK: - AppDelegate
 
 /// The AppDelegate
@@ -25,6 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /// - Returns: The launch result
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let window = UIWindow()
+               let launcherViewController = AssinLauncherViewController {
+                window.rootViewController = DemoViewController.initFromStoryboard()
+               }
+               
+               window.makeKeyAndVisible()
+               window.backgroundColor = .white
+               window.rootViewController = launcherViewController
+               self.window = window
         return true
     }
 

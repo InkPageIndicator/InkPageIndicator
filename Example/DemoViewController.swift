@@ -15,15 +15,13 @@ struct Demo {
     let soon: String = "Soon"
 }
 
-class DemoViewController: UIViewController {
+class DemoViewController: UIViewController, StoryboardInitializable {
     
     @IBOutlet weak var demoTableView: UITableView!
     
     var demos: [Demo] = [
         Demo(title: "UIPageViewController", bgImage: UIImage(named: "iphone-11")!, isReady: true),
-        Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!, isReady: true),
-        Demo(title: "Rx+UIPageViewController", bgImage: UIImage(named: "induction-edition")!, isReady: false),
-        Demo(title: "Rx+UICollectionViewController", bgImage: UIImage(named: "iPhone-11-2")!, isReady: false)
+        Demo(title: "UICollectionViewController", bgImage: UIImage(named: "Apple-Watch")!, isReady: true)
     ]
     
     override func viewDidLoad() {
