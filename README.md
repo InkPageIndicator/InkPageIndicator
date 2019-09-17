@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/Icon/icon.png" alt="InkPageIndicator Logo">
+   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/logo/v1/v1.png" alt="InkPageIndicator Logo">
 </p>
 
 <p align="center">
@@ -20,13 +20,18 @@
 
 InkPageIndicator is a beatuful UIPageControl
 
-<img width="200" src="https://github.com/kimtaesu/Resources/blob/master/Demos/InkPageIndicator_Demo.gif" alt="InkPageIndicator Logo">
+<img width="200" src="https://github.com/kimtaesu/Resources/blob/master/InkPageIndicator/demo.gif" alt="InkPageIndicator Logo">
 
+## Requirements
+* iOS 10.0+
+* Xcode 10.2+
+* Swift 5+
 
 ## Features
 
 - [x] Supporting The [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [x] Timing issue for fast scrolling
+- [x] To customize UIBeizerPath and LayoutArranger
 
 
 ## Installation
@@ -64,21 +69,18 @@ open InkPageIndicator.xcworkspace
  
 
 ## Usage
-
-### AssinPageControl
-<img width="450" src="https://github.com/kimtaesu/Resources/blob/master/InkPageIndicator_Desc.png" alt="InkPageIndicator Logo">
+<img width="400" src="https://github.com/kimtaesu/Resources/blob/master/InkPageIndicator/usage.png" alt="InkPageIndicator Logo">
 
 ```
 pageControl.pageIndicatorTintColor = UIColor.lightGray
-pageControl.numberOfPages = pages.count
-pageControl.currentPage = 1
+pageControl.numberOfPages = items.count
 pageControl.currentPageIndicatorTintColor = UIColor.black
-pageControl.dotSize = CGSize(width: 10, height: 10)
+pageControl.currentPage = 1
+pageControl.dotSize = CGSize(width: 8, height: 8)
 pageControl.spacing = 20
 ```
 
-
-### for UIPageViewController
+### For UIPageViewController
 
 ##### YourUIViewController
 Conform the `WrapInkPageControlAdapter` protocol
@@ -152,7 +154,7 @@ extension YourUIViewController: UIScrollViewDelegate {
 ```
 
 
-### for UICollectionView
+### For UICollectionView
 
 Conform the `WrapInkPageControlAdapter` protocol
 ```
@@ -187,7 +189,7 @@ extension YourUIViewController: InkPageCollectionViewBridge {
 Conform the `UICollectionViewDelegateFlowLayout` protocol, 
 And call the function below codes
 ```
-extension UICollectionViewControllerExample: UICollectionViewDataSource {
+extension UICollectionViewControllerExample: UICollectionViewDelegateFlowLayout {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.behavior.scrollViewWillBeginDragging(scrollView)
     }
