@@ -8,12 +8,16 @@
 
 import UIKit
 
+
 class TranslateDotAnimator {
+    
+    static let easeInCubic = CAMediaTimingFunction(controlPoints: 0.55, 0.055, 0.675, 0.19)
+    
     func animate(
         layer: CALayer,
         dX: CGFloat,
         duration: TimeInterval,
-        timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(EasingFunction.easeInCubic.rawValue),
+        timingFunction: CAMediaTimingFunction = easeInCubic,
         before: (() -> Void)? = nil,
         completion: (() -> Void)? = nil
     ) {
