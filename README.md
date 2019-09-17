@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/logo/logo.png" alt="InkPageIndicator Logo">
+   <img width="300" src="https://github.com/kimtaesu/Resources/blob/master/logo/v1/v1.png" alt="InkPageIndicator Logo">
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 
 InkPageIndicator is a beatuful UIPageControl
 
-<img width="200" src="https://github.com/kimtaesu/Resources/blob/master/Demos/InkPageIndicator_Demo.gif" alt="InkPageIndicator Logo">
+<img width="200" src="https://github.com/kimtaesu/Resources/blob/master/InkPageIndicator/demo.gif" alt="InkPageIndicator Logo">
 
 ## Requirements
 * iOS 10.0+
@@ -69,6 +69,16 @@ open InkPageIndicator.xcworkspace
  
 
 ## Usage
+<img width="400" src="https://github.com/kimtaesu/Resources/blob/master/InkPageIndicator/usage.png" alt="InkPageIndicator Logo">
+
+```
+pageControl.pageIndicatorTintColor = UIColor.lightGray
+pageControl.numberOfPages = items.count
+pageControl.currentPageIndicatorTintColor = UIColor.black
+pageControl.currentPage = 1
+pageControl.dotSize = CGSize(width: 8, height: 8)
+pageControl.spacing = 20
+```
 
 ### For UIPageViewController
 
