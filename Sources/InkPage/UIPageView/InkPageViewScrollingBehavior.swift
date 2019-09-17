@@ -25,7 +25,6 @@ public final class InkPageViewScrollingBehavior: NSObject {
 
         let progress = percent * Double(numberOfPages - 1)
 
-
         var newProgress = progress
         newProgress = abs(1 - progress)
         adapter?.pageControl(progress: newProgress)
