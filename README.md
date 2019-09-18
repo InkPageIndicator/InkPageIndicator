@@ -189,7 +189,7 @@ extension YourUIViewController: InkPageCollectionViewBridge {
 Conform the `UICollectionViewDelegateFlowLayout` protocol, 
 And call the function below codes
 ```
-extension UICollectionViewControllerExample: UICollectionViewDataSource {
+extension UICollectionViewControllerExample: UICollectionViewDelegateFlowLayout {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         self.behavior.scrollViewWillBeginDragging(scrollView)
     }
